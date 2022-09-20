@@ -1,0 +1,41 @@
+{% load static %}
+{% load i18n %} 
+<!DOCTYPE html>
+<html lang="{{current_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% if current_lang == 'uk' %}
+        <meta http-equiv="Content-Language" content="uk">
+        <meta name="subject" content="Введення нового пароля після скидання">
+        <meta name="description" content="Введіть новий пароль, щоб відновити доступ до облікового запису Pidvezu.">
+    {% else %}
+        <meta http-equiv="Content-Language" content="ru">
+        <meta name="subject" content="Ввод нового пароля после сброса">
+        <meta name="description" content="Введите новый пароль, чтобы восстановить доступ к Вашему аккаунту на Pidvezu.">
+    {% endif %}
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/registration.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+    <title>{% translate "Поменять пароль" %}</title>
+</head>
+<body>
+    <div class="box">
+        <h1 class="header">{% translate "Введите новый пароль" %}</h1>
+        <form method="POST" action="{% url 'account:set_new_pswrd' uidb64 token %}">
+            {% csrf_token %}
+            <div class="input_textbox">
+                <input type="password" id="password" name="password" required placeholder="Пароль"><br>
+            </div>		    
+            <button type="submit" class="button login">
+                <span class="button_text">{% translate "Готово" %}</span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

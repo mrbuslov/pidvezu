@@ -1,0 +1,26 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Помилка 500 на Pidvezu">
+    <meta name="description" content="Ця помилка означає те, що сервер пустує і перестав відповідати. Спробуйте ще раз.">
+    {% else %}
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Ошибка 500 на Pidvezu">
+    <meta name="description" content="Эта ошибка значит то, что сервер шалит и перестал отвечать. Попробуйте ещё раз.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Ошибка 500" %}{% endblock %}
+
+{% block content %} 
+<div class="exception_block">
+    <h1 class="exception_h1">{% translate "Ошибка 500" %}</h1>
+    <h3 class="exception_h3">{% translate "Сервер воротит носом и не хочет отвечать" %}<br>{% translate "Мы уже занимаемся это проблемой" %}</h3>
+    <img src="{% static 'img/500.svg' %}" alt="" class="error_image">
+</div>
+{% endblock %}

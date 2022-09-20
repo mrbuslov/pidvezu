@@ -1,0 +1,164 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}Підвезу{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="alternate" href="https://pidvezu.com.ua/" hreflang="uk-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/ru/" hreflang="ru-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Допомога у доставці людей, тварин, гуманітарної допомоги та речей від водіїв-волонтерів в Україну">
+    <meta name="description" content="Pidvezu - безкоштовна платформа, де водії-волонтери можуть опублікувати свій маршрут, а інші люди можуть передати речі, їжу, тварин, або бути пасажиром для доставки в або з гарячих точок України на pidvezu.com.ua.">
+    <meta name="google-site-verification" content="yPDKyH53ZVIl2bn3ErsBWC4Rnz5JCMy91ZFQkRxeFO8" />
+    <meta name="yandex-verification" content="ea804dadc8300ef3" />
+    {% else %}
+    <link rel="alternate" href="https://pidvezu.com.ua/" hreflang="uk-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/ru/" hreflang="ru-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Помощь в доставке людей, животных, гуманитарной помощи и вещей от водителей-волонтеров в Украине">
+    <meta name="description" content="Pidvezu - бесплатная платформа, где водители-волонтеры могут опубликовать свой маршрут, а другие люди могут передать вещи, еду, животных, или же быть пассажиром для доставки в или из горячих точек Украины на pidvezu.com.ua.">
+    <meta name="google-site-verification" content="yPDKyH53ZVIl2bn3ErsBWC4Rnz5JCMy91ZFQkRxeFO8" />
+    <meta name="yandex-verification" content="ea804dadc8300ef3" />
+    {% endif %}
+    <!--<meta property="og:image" content="https://pidvezu.com.ua/static/img/start_image.jpg" />-->
+    <!-- <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="702"> -->
+    <!-- <meta property="og:image:secure_url" content="https://pidvezu.com.ua/static/img/start_image.jpg">
+    <meta property="og:image:url" content="https://pidvezu.com.ua/static/img/start_image.jpg"> -->
+    <meta property="og:image" content="https://pidvezu.com.ua/static/img/start_image.jpg">
+    <meta property="og:title" content="Pidvezu - допомога українцям" />
+    <meta property="og:title" content="Pidvezu - безкоштовна платформа для водіїв та пасажирів" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pidvezu.com.ua" />
+{% endblock %}
+
+{% block styles %}
+  <!-- {{map.header.render|safe}} -->
+  <!-- Для загрузки карты на главной странице -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css">
+{% endblock %}
+
+{% block content %} 
+<form method="get" id="searchForm">
+    <div class="locations_search">
+        <input type="text" name="locations_search" id="id_locations_search" placeholder="{% translate 'Введите адрес или город' %}" value="{{locations_query}}">
+        <input type="submit" id="locations_search_btn" value='{% translate "Поиск" %}'>
+    </div>
+</form>
+<div class="i_driver_passeng_btns">
+    <a href="{% url 'autostop:passenger_index' %}">{% translate "Я водитель" %}</a>
+    <!--<span class="public_num">({{passenger_publc_num}})</span>-->
+    <a href="{% url 'autostop:index' %}">{% translate "Я пассажир (заявщик)" %}</a>
+    <!--<span class="public_num">({{driver_publc_num}})</span>-->
+</div>
+
+
+<h3 class="watch_points_map_field_title">{% translate "Быстро просмотреть точки отправления на интерактивной карте:" %}</h3>
+<span class="watch_points_map_field_span">{% translate "Чтобы посмотреть полный маршрут и доп.информацию, нажмите на точку" %}</span>
+<div class="watch_points_map_field">
+  <div class="watch_map_titles">
+    <div class="watch_as_driver">
+      <p>{% translate "Всех водителей" %}</p>
+      <input type="hidden" class="what_search_on_map" value="search_drivers">
+    </div>
+  
+    <div class="watch_as_passenger">
+      <p>{% translate "Всех пассажиров" %}</p>
+      <input type="hidden" class="what_search_on_map" value="search_passengers">
+    </div>
+  </div>
+  <img src="{% static 'img/main_map_draft.jpg' %}" class="main_map_draft" alt="">
+  <div id="main_map"></div>
+</div>
+
+
+<div style="text-align: center; font-size: 15px; margin: 20px auto; color: #969696; max-width: 70%;">{% translate "Это" %} <strong>{% translate "бесплатная" %}</strong> {% translate "площадка, где водители-волонтёры публикуют свой маршрут, а другие люди могут передать вещи, еду, животных, или же быть пассажиром для доставки в/из горячих точек Украины" %}</div>
+<div style="text-align: center; font-size: 15px; margin: 20px auto; color: #969696; max-width: 70%;">{% translate "Вы можете" %} <strong><a href="{% url 'autostop:add' %}">{% translate "добавить маршрут" %}</a></strong>, {% translate "если Вы водитель, или " %} <strong><a href="{% url 'autostop:passenger_add' %}">{% translate "создать заявку" %}</a></strong>, {% translate "если Вы пассажир. Если Вам понравился маршрут водителя, перейдите к нему, подайте заявку, и водитель узнает об этом!" %}</div>
+<img src="{% static 'img/start_image.svg' %}" alt="" class="main_image">
+
+
+<h3 class="talk_about_us_h3">{% translate "Про нас пишут:" %}</h3>
+<div class="talk_about_us">
+    <div>
+        <a href="https://ain.ua/2022/04/16/zapustivsya-servis-pidvezu/" class="talk_about_us_a">
+            <img src="{% static 'img/ain.ua.png' %}" alt="{% translate 'Про нас говорит сайт' %} ain.ua">
+            <span>ain.ua</span>
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://vctr.media/ua/student-z-dnipra-stvoryv-bezplatnyj-servis-pidvezu-138375/" class="talk_about_us_a">
+            <img src="{% static 'img/vctr.media.png' %}" alt="{% translate 'Про нас говорит сайт' %} vctr.media">
+            <span>vctr.media</span>
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://informator.press/zapustyvsia-servis-pidvezu-iakyy-dopomahaie-bezkoshtovno-pidvezty-pasazhyriv-abo-dostavyty-rechi/" class="talk_about_us_a">
+            <img src="{% static 'img/informator.press.png' %}" alt="{% translate 'Про нас говорит сайт' %} informator.press">
+            <span>informator.press</span>
+        </a>
+    </div>
+    
+    <div>
+        <a href="https://www.44.ua/news/3378673/bezkostovna-platforma-dla-dopomogi-bizencam-pidvezu" class="talk_about_us_a">
+            <img src="{% static 'img/city_sites.png' %}" alt="{% translate 'Про нас говорит сайт' %} city_sites">
+            <span>CitySites</span>
+        </a>
+    </div>
+</div>
+<div class="talk_about_us">
+    <div>
+        <a href="https://mc.today/besplatnoe-obuchenie-dlya-biznesa-poisk-poteryannyh-zhivotnyh-i-drugoe-15-poleznyh-servisov-i-platform-dlya-ukraintsev/" class="talk_about_us_a">
+            <img src="{% static 'img/mc.today.png' %}" alt="{% translate 'Про нас говорит сайт' %} mc.today">
+            <span>mc.today</span>
+        </a>
+    </div>
+</div>
+
+</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+<!-- Load Leaflet from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+<!-- Load Esri Leaflet from CDN -->
+<script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+crossorigin=""></script>
+
+<!-- Load Esri Leaflet Geocoder from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+crossorigin=""></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+<script src="{% static 'js/start_page.js' %}?v=1"></script>
+{% endblock %}

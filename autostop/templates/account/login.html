@@ -1,0 +1,58 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{current_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if current_lang == 'uk' %}
+        <link rel="canonical" href="https://pidvezu.com.ua/login/">
+        <meta http-equiv="Content-Language" content="uk">
+        <meta name="subject" content="Вхід в особистий кабінет (аккаунт) на Pidvezu">
+        <meta name="description" content="Pidvezu – сторінка входу в особистий кабінет. Увійдіть до свого облікового запису, щоб опублікувати маршрут.">
+    {% else %}
+        <link rel="canonical" href="https://pidvezu.com.ua/ru/login/">
+        <meta http-equiv="Content-Language" content="ru">
+        <meta name="subject" content="Вход в личный кабинет (аккаунт) на Pidvezu">
+        <meta name="description" content="Pidvezu - страница входа в личный кабинет. Войдите в свой аккаунт, чтобы опубликовать маршрут.">
+    {% endif %}
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/registration.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}">
+
+
+    <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+    <title>{% translate "Вход" %} на Pidvezu</title>
+</head>
+<body>
+    <div class="box"> 
+        <h1 class="header">{% translate "Вход" %}</h1>
+
+        <form method="post" action="{% url 'account:login' %}" id="loginForm"> 
+            {% csrf_token %}
+            <div class="input_textbox">
+                <input type="text" name="email" required="" autofocus id="email_login" placeholder="{% translate 'Телефон или email' %}"><br>
+                <span id="email_error_text"></span>
+            </div>
+            <div class="input_textbox">
+                <input type="password" id="password" name="password" required="" placeholder="Пароль"><br>
+            </div>		    
+
+            {% if request.GET.next %}
+                <input type="hidden" name="next" value="{{request.GET.next}}">
+            {% endif %}
+
+            <button type="submit" class="button">
+                <span class="button_text">{% translate "Войти" %}</span>
+            </button>
+
+            <p class="go_to_register">{% translate "Ещё нет аккаунта?" %} <a href="{% url 'account:registration' %}">{% translate "Создайте" %}</a></p>
+            <p class="forgot_password"><a href="{% url 'account:reset_email' %}">{% translate "Забыли пароль?" %}</a></p>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.box{
+    width: 400px;
+    background: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.input_textbox{
+    position: relative;
+}
+
+.input_textbox input{
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #247dc9;
+    outline: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+#phone_number{
+    margin-bottom: 0;
+}
+#phone_error_text{
+    color: #f00;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: 5px;
+}
+.header{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+.button{
+    width: 100%;
+    padding: 13px 0;
+    border-radius: 10px;
+    border: 0;
+    color: #fff;
+    box-sizing: border-box;
+    background: #247dc9;
+    font-size: 14px;
+    cursor: pointer;
+}
+.go_to_register, .forgot_password{
+    text-align: center;
+    font-size: 15px;
+}
+
+.agree_checkbox{
+    display: none;
+}
+.agree_over{
+	display: inline-block;
+	position: relative;
+	width: 20px;
+    height: 20px;
+	top: 3px;
+    border: 1px solid #4f4f4f;
+	box-sizing: border-box;
+	transition: 0.25s;
+	border-radius: 5px;
+	transition: .5s ease-out;
+  
+	background: linear-gradient(45deg, #247dc9 50%, #fff 50%) right;
+	background-size: 300%;
+}
+.agree_checkbox:checked + .agree_over{
+	background-position: left;
+	border: 0;
+}
+.agree_checkbox:checked + .agree_over:before{
+	opacity: 1;
+	transform: rotate(0) translate(-7px, 0);
+}
+.agree_checkbox_label{
+    font-size: 12px;
+    text-align: center;
+    display:block;
+    margin-bottom: 15px;
+}
+/*------------------------------ Reset Email success -----------------------------------------------*/
+.registration_greeting{
+    text-align: center;
+}
+.email_not_sent{
+    display: block;
+    text-align: center;
+    margin: 8px;
+    font-weight: normal;
+}
+.go_to_index{
+    display: block;
+    text-align: center;
+}
+/*------------------------------ Registration success -----------------------------------------------*/

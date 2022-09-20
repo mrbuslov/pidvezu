@@ -1,0 +1,101 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/route_passenger/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Маршрут пасажира: {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}">
+    <meta name="description" content="{{route.content|truncatechars:100}}">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/route_passenger/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Маршрут пассажира: {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}">
+    <meta name="description" content="{{route.content|truncatechars:100}}">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}Маршрут {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}{% endblock %}
+
+{% block styles %}
+    {{map.header.render|safe}}
+{% endblock %}
+
+{% block content %}  
+    <div class="content">
+        <div class="author_block">
+            <div class="author_card">
+                {% if author.image %}
+                    <img src="{{author.image.url}}" alt="Фото получателя" class="author_image">
+                {% else %}
+                    <img src="{% static 'img/user.svg' %}" alt="Нет фото получателя" class="author_image">
+                {% endif %}
+        
+                <p class="author_contacts">
+                    {% if author.first_name and author.last_name %}
+                        {{author.first_name}} {{author.last_name}}
+                    {% elif author.first_name %}
+                        {{author.first_name}}
+                    {% elif author.last_name %}
+                        {{author.last_name}}
+                    {% else %}
+                        {{author.email}}
+                    {% endif %}
+                </p>
+                <p class="author_contacts"><a href="tel:{{author.phone_number}}">{{author.phone_number}}</a></p>
+            </div>
+            
+            <div class="apply_field">
+                            
+                {% if route.author == request.user %}
+                    <div class="change_route_btns">
+                        <a href="{% url 'autostop:delete_passenger_route' route.slug %}" class="change_route_btn delete_btn" style="width: 100%;">{% translate "Удалить" %}</a>
+                    </div>
+                {% else %}
+                    <a href="{{route.get_google_routing}}" class="check_google_route_button" style="width: 100%;">{% translate "Google Карты" %}</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="route_content">
+            <div class="route_description">
+                <ul class="route_addresses">
+                    <li><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{fist_address}}</span></li>
+                    <li><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{last_address}}</span></li>
+                </ul>
+
+                <br>
+                <p>{% translate "Время отправления" %}: <span class="departure_time">{{route.departure_time|date:"d E в H:i"}}</span></p>
+                <p>{% translate "Рубрика" %}:
+                    {% for rubric in rubrics %}
+                        {{rubric}}
+                    {% endfor %}
+                </p>
+                <p>Описание:</p>
+                <div class="description">{{route.content}}</div>
+                <span class="published"> {% translate "Опубликовано" %}:
+                    {% if time_now1 == route.published|date:"d.m.Y" %}
+                        {% translate "Сегодня" %} в {{route.published|date:"H:i"}}
+                    {% elif time_now2 == route.published|date:"d.m.Y" %}
+                        {% translate "Вчера" %} в {{route.published|date:"H:i"}}
+                    {% else %}
+                        {{route.published|date:"d E"}} в {{route.published|date:"H:i"}}
+                    {% endif %}
+                </span>
+            
+            </div>
+            <div class="map">
+                <span>
+                    {{map.html.render|safe}}
+                </span>
+                <script id="map_script" async>
+                    {{map.script.render|safe}}
+                    $('.map').css('opacity','1')
+                </script>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% load static %}
+{% load i18n %} 
+<!DOCTYPE html>
+<html lang="{{current_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if current_lang == 'uk' %}
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Реєстрація на Pidvezu успішна!">
+    <meta name="description" content="Реєстрація успішна! Перейдіть до своєї поштової скриньки, щоб вивірити обліковий запис.">
+    {% else %}
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Регистрация на Pidvezu успешна!">
+    <meta name="description" content="Регистрация успешна! Перейдите в свой почтовый ящик, чтобы верифицировать аккаунт.">
+    {% endif %}
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/registration.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+    <title>{% translate "Вы с нами" %}!</title>
+</head>
+<body style="flex-direction: column;">
+
+    <h1 class="registration_greeting">{% translate "Спасибо, что Вы с нами" %}!</h1>
+    <h3 class="email_not_sent">{% translate "Проверьте свой почтовый ящик для подтвержения почты" %}</h3>
+    <h3 class="email_not_sent">{% translate "Если письма нет, подождите немного, Gmail делает проверку" %}</h3>
+    <h3 class="email_not_sent">{% translate "Если же его долго нет, посмотрите в папки 'Спам' и 'Вся почта'" %}</h3>
+    <a href="{% url 'autostop:index' %}" class="go_to_index">{% translate "Вернуться на главную" %}</a>
+</body>
+</html>

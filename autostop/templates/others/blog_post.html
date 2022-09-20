@@ -1,0 +1,83 @@
+{% extends 'autostop/base.html' %} 
+{% load static %} 
+{% load i18n %} 
+
+{% block language %}
+    <html lang="{{current_lang}}">
+{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="alternate" href="https://pidvezu.com.ua/blog/{{blog_obj.slug}}" hreflang="ru-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/uk/blog/{{blog_obj.slug}}" hreflang="uk-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/uk/blog/{{blog_obj.slug}}">
+
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="{{blog_obj.title_uk}}">
+    <meta name="description" content="{{blog_obj.post_content_uk|truncatechars:100}}">
+    
+    <meta property="og:image" content="{{blog_obj.og_image}}">
+    <meta property="og:title" content="{{blog_obj.title_uk}}" />
+    <meta property="og:title" content="{{blog_obj.title_uk}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pidvezu.com.ua/blog/{{blog_obj.slug}}/" />
+    {% else %}
+    <link rel="alternate" href="https://pidvezu.com.ua/blog/{{blog_obj.slug}}" hreflang="ru-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/uk/blog/{{blog_obj.slug}}" hreflang="uk-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/blog/{{blog_obj.slug}}">
+
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="{{blog_obj.title_ru}}">
+    <meta name="description" content="{{blog_obj.post_content_ru|truncatechars:100}}">
+    
+    <meta property="og:image" content="{{blog_obj.og_image}}">
+    <meta property="og:title" content="{{blog_obj.title_ru}}" />
+    <meta property="og:title" content="{{blog_obj.title_ru}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pidvezu.com.ua/ru/blog/{{blog_obj.slug}}/" />
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+    {% if current_lang == 'uk' %}
+        {{blog_obj.title_uk}} - Pidvezu
+    {% else %}
+        {{blog_obj.title_ru}} - Pidvezu
+    {% endif %}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}  
+    <div class="blog">
+        {% if current_lang == 'uk' %}
+            <div class="blog_block">
+                <h1 class="blog_h1">{{blog_obj.title_uk}}</h1>
+                <span class="blog_publ">
+                    <span>{{blog_obj.published|date:"d E Y"}}</span>
+                </span>
+                <div class="blog_content">
+                    {% autoescape off %}
+                        {{blog_obj.post_content_uk|linebreaks}}
+                    {% endautoescape %}
+                </div>
+            </div>
+        {% else %}
+            <div class="blog_block">
+                <h1 class="blog_h1">{{blog_obj.title_ru}}</h1>
+                <span class="blog_publ">
+                    <span>{{blog_obj.published|date:"d E Y"}}</span>
+                </span>
+                <div class="blog_content">
+                    {% autoescape off %}
+                        {{blog_obj.post_content_ru|linebreaks}}
+                    {% endautoescape %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    
+
+{% endblock %}

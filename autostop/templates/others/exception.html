@@ -1,0 +1,26 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Помилка на Pidvezu">
+    <meta name="description" content="Ця помилка означає те, що щось пішло не так. Спробуйте ще раз.">
+    {% else %}
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Ошибка на Pidvezu">
+    <meta name="description" content="Эта ошибка значит то, что что-то пошло не так. Попробуйте ещё раз.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Непредвиденная ошибка" %}{% endblock %}
+
+{% block content %} 
+<div class="exception_block">
+    <h1 class="exception_h1">{% translate "Эту ошибку мы не ждали..." %}</h1>
+    <h3 class="exception_h3">{% translate "Не волнуйтесь, её мы обязательно найдём и устраним" %}</h3>
+    <img src="{% static 'img/error.svg' %}" alt="" class="error_image">
+</div>
+{% endblock %}

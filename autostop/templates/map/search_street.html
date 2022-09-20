@@ -1,0 +1,192 @@
+<html>
+  <head>
+    <title>Leaflet and Nominatim example</title>
+
+
+     <!-- Load Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+<!-- Load Esri Leaflet from CDN -->
+<script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+  integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+  crossorigin=""></script>
+
+<!-- Load Esri Leaflet Geocoder from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+  integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+  crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+  integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+  crossorigin=""></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <style>
+  
+  
+  body {
+    margin: 0;
+  }
+  div#map {
+    width: 100%;
+    height: 100%;
+  }
+  div#search {
+  background-color: white;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  z-index: 1000;
+}
+div#search input {
+  width: 200px;
+}
+div#results {
+  font-style: sans-serif;
+  color: black;
+  font-size: 75%;
+}
+#my_location{
+    background-color: white;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  z-index: 1000;
+}
+  
+  </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="search">
+        <input type="text" name="addr" value="" id="addr" size="10" />
+        <button type="button" onclick="addr_search();">Search</button>
+        <div id="results"/>
+    </div>
+
+    <div id="my_location"></div>
+    <script>
+       // <!-- https://habr.com/ru/post/532902/ -->
+
+        // var coordinates = [49,32]
+        // var scale = 6
+
+        // const currentPosition = [latitude, longitude]
+        // // вызываем функцию, передавая ей текущую позицию и сообщение
+        // function getMap(position, tooltip) {
+        //     // если карта не была инициализирована
+        //     if (map === null) {
+        //         // второй аргумент, принимаемый методом setView - это масштаб (zoom)
+        //         map = L.map('map').setView([20,20], 15)
+        //     } else return
+                    
+        //     // что-то типа рекламы
+        //     // без этого карта работать не будет
+        //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //         attribution:
+        //         '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        //     }).addTo(map)
+
+        //     // добавляем маркер с сообщением
+        //     L.marker(position).addTo(map).bindPopup(tooltip).openPopup()
+        //     }
+
+        // getMap(currentPosition, 'You are here')
+        // }
+
+
+         var map = L.map('map').setView([49,32], 6);
+            data={};
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            var gcs = L.esri.Geocoding.geocodeService();
+            var count=0;
+
+
+
+        function addr_search() {
+        var inp = document.getElementById("addr");
+
+        $.getJSON('http://nominatim.openstreetmap.org/search?format=json&limit=5&countrycodes=ua&q=' + inp.value, function(data) {
+            var items = [];
+
+            $.each(data, function(key, val) {
+            items.push(
+                "<li><a href='#' onclick='chooseAddr(" +
+                val.lat + ", " + val.lon + ");'>" + val.display_name +
+                '</a></li>'
+            );
+            console.log(val.lat, '---', val.lon)
+            console.log(val.type)
+            console.log(val)
+            });
+            $('#results').empty();
+            if (items.length != 0) {
+            $('<p>', { html: "Search results:" }).appendTo('#results');
+            $('<ul/>', {
+                'class': 'my-new-list',
+                html: items.join('')
+            }).appendTo('#results');
+            } else {
+            $('<p>', { html: "No results found" }).appendTo('#results');
+            }
+        });
+        }
+
+        function chooseAddr(lat, lng, type) {
+            var location = new L.LatLng(lat, lng);
+            map.panTo(location);
+            console.log(type)
+
+            if (type == 'boundary' || type == 'administrative') { // https://github.com/osm-search/Nominatim/blob/80df4d3b560f5b1fd550dcf8cdc09a992b69fee0/settings/partitionedtags.def
+                map.setZoom(11);
+            } else {
+                console.log('else')
+                map.setZoom(20); // 13
+        }
+        }
+
+
+
+        $('#my_location').click(function() {
+            
+            // navigator.geolocation.getCurrentPosition(success, error, {
+            //     enableHighAccuracy: true
+            // })
+
+            // function success({ coords }) {
+            // const { latitude, longitude } = coords
+            // console.log(coords)
+            // map.panTo([coords['latitude'], coords['longitude']])
+            // map.setZoom(15);
+            // }
+            // function error({ message }) {
+            // console.log(message)
+            // }
+
+            map.locate({
+            setView: true,
+            enableHighAccuracy: true
+            })
+            .on('locationfound', function(e) {
+            var marker = new L.marker(e.latlng);
+            marker.addTo(map);
+            map.setZoom(30);
+            });
+            
+
+        })
+
+    </script>
+  </body>
+</html>

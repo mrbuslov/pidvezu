@@ -1,0 +1,70 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/i_applied/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Маршрути, на які ви подали заявку на Pidvezu">
+    <meta name="description" content="Маршрути, на які ви подали заявку на Pidvezu. Якщо Ви подали заявку випадково, Ви можете скасувати її.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/i_applied/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Маршруты, на которые Вы подали заявку на Pidvezu">
+    <meta name="description" content="Маршруты, на которые Вы подали заявку на Pidvezu. Если Вы подали случайно заявку, Вы можете отменить её.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Я сделал(а) заявку" %}{% endblock %}
+
+{% block content %} 
+<h1 class="applied_header">{% translate "Маршруты, на которые" %} <strong>{% translate "Вы" %}</strong> {% translate "подали заявку" %}</h1>
+<div class="application_list">
+    {% for application in applications %}
+        <div class="application_details">
+            <a href="{% url 'autostop:route' application.route.slug %}" class="route_name">{{application.route.first_last_location.0|truncatewords:2}} - {{application.route.first_last_location.1|truncatewords:2}}</a>
+            <p class="application_rubric">
+                Рубрика:
+                {% for rubric in application.rubric %}
+                    {% if rubric == 'people' %}
+                        🧍 {% translate "Люди" %}
+                    {% elif rubric == 'animals' %}
+                        🐕 {% translate "Животные" %}
+                    {% elif rubric == 'good' %}
+                        👖 {% translate "Вещи" %}
+                    {% elif rubric == 'food' %}
+                        🥕 {% translate "Продукты" %}
+                    {% elif rubric == 'others' %}
+                        {% translate "Другое" %}
+                    {% endif %}
+                {% endfor %}
+            </p>  
+            <ul class="application_addresses">
+                <li><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{application.first_last_location.0}}</span></li>
+                <li><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{application.first_last_location.1}}</span></li>
+            </ul>   
+            <p class="application_comment">{{application.comment}}</p>
+            <p class="application_rubric">Статус:
+                {% if application.status == 'justified' %}
+                    <span style="color: #08c408;"><strong>{% translate "Подтверждена" %}</strong></span>
+                {% elif application.status == 'considering' %}
+                    <span style="color: #939393;"><strong>{% translate "На рассмотрении" %}</strong></span>
+                {% elif application.status == 'rejected' %}
+                    <span style="color: #ff5151;"><strong>{% translate "Отклонена" %}</strong></span>
+                {% endif %}
+            </p>
+            <a href="{% url 'autostop:cancel_application' application.pk %}" class="cancel_application">{% translate "Отменить заявку" %}</a>
+        </div>
+    {% empty %}
+        <style>
+        .application_list{
+            display: block;
+        }
+        </style>
+        <h3 class="empty_list">{% translate "Пока Ваших заявок нет, но Вы можете" %} <a href="{% url 'autostop:index' %}">{% translate "подобрать" %}</a> {% translate "необходимый маршрут для себя" %}.</h3>
+        <img src="{% static 'img/i_applied_empty.svg' %}" alt="" class="i_applied_image">
+    {% endfor %}
+</div>
+{% endblock %}

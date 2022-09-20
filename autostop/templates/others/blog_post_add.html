@@ -1,0 +1,140 @@
+{% extends 'autostop/base.html' %} 
+{% load static %} 
+{% load i18n %} 
+
+{% block language %}
+    <html lang="{{current_lang}}">
+{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Створити публікацію блогу">
+    <meta name="description" content="Ви можете безкоштовно створити публікацію, в якій хочете розповісти корисні поради з тематики платформи або розповісти свій повчальний досвід.">
+    {% else %}
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Создать публикацию блога">
+    <meta name="description" content="Вы можете бесплатно создать публикацию, в которой хотите рассказать полезные советы по тематике платформы или же рассказать свой поучительный опыт.">
+    {% endif %}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    {{form.media}}
+{% endblock %}
+
+{% block title %}Pidvezu Блог{% endblock %}
+
+{% block content %}  
+
+
+    <style>
+        #id_title_ru, #id_title_uk{
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 0.3px solid #898989;
+            outline: none;
+            min-width: 300px;
+            text-align: center;
+        }
+        #cke_id_post_content_ru, .django-ckeditor-widget, #cke_id_post_content_uk{
+            width: 100% !important;
+        }
+        /* .cke_editable{
+            font-size: 14px !important;
+            font-family: Verdana !important;
+            margin: 0 !important;
+        } */
+        .button_upload_uk, .blog_add_btn{
+            padding: 15px;
+            border-radius: 7px;
+            border: none;
+            margin-top: 15px;
+            display: block;
+            margin: auto;
+            margin-top: 15px;
+            color: #fff;
+            background: #247dc9;
+            cursor: pointer;
+        }
+        .button_upload_uk:hover, .blog_add_btn:hover{
+            background: #4698d0;
+        }
+        .blog_add_btn{
+            padding: 20px;
+            font-size: 16px;
+            margin: 20px auto;
+        }
+        .check_uk_text, .blog_h3{
+            text-align: center;
+            font-weight: normal;
+            font-size: 20px;
+        }
+        .blog_h3{
+            font-size: 18px;
+        }
+    </style>
+    <form action="{% url 'autostop:add_blog_post' %}" method="post">
+        {% csrf_token %}
+        <div class="blog">
+            <div class="blog_block">
+                <h3 class="blog_h3">{% translate "Русская версия" %}</h3>
+                <h1 class="blog_h1">{{form.title_ru}}</h1>
+                
+                {{form.post_content_ru}}
+
+                <!-- <button class="button_upload_uk">{% translate "Загрузить украинскую версию" %}</button> -->
+            </div>
+
+            <div class="blog_block hidden_blog_block">
+                <!-- <h2 class="check_uk_text">{% translate "Проверьте Ваш текст на ошибки" %}</h2> -->
+                <h3 class="blog_h3">{% translate "Украинская версия" %}</h3>
+                <h1 class="blog_h1">{{form.title_uk}}</h1>
+                {{form.post_content_uk}}
+            </div>
+
+            <input type="submit" class="blog_add_btn" value="{% translate 'Добавить публикацию' %}">
+        </div>
+    </form>
+
+{% endblock %}
+
+
+{% block scripts %}  
+<script>
+    // function getCookie(name) {
+    //   var matches = document.cookie.match(new RegExp(
+    //       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    //   ));
+    //   return matches ? decodeURIComponent(matches[1]) : undefined;
+    // }
+
+    $(window).on('load', function(){
+        $( ".button_upload_uk" ).click(function() {
+            // console.log($('#cke_id_post_content_uk body').html())
+            console.log($('.cke_editable').html())
+            console.log(document.querySelector('.cke_editable'))
+            // $.ajax({
+            //     url: '/add_blog_post/',
+            //     type: 'POST',
+            //     headers: { "X-CSRFToken": getCookie("csrftoken") },
+            //     data: {
+            //         'text': $('#cke_id_post_content_uk body').html()
+            //     },
+            //     dataType: 'json',
+            //     success: function(data){
+            //         $('.map span').html(data['map_html']);
+            //         $('#map_script').html(data['map_script']);
+            //         $.globalEval(data['map_script']);
+            //         $('.map').css('opacity','1')
+            //         $('.route_addresses').css('opacity','1')
+            //     },
+            //     error: function(){
+            //         document.location.reload();
+            //     }0
+            // });
+        });
+    })
+</script>
+{% endblock %}

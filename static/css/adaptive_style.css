@@ -1,0 +1,532 @@
+.bottom_navigation{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    z-index: 10;
+    transition: bottom 0.25s ease-in;
+}
+.hide_bottom{
+    bottom: -50px;
+}
+.bottom_navigation a{
+    color: #000;
+}
+.bottom_navigation ul{
+    list-style: none;
+    display: flex;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}
+.bottom_navigation li{
+    margin-top: 10px;
+    width: 25%;
+    text-align: center;
+}
+.bottom_navigation img{
+    width: 20px;
+}
+.bottom_navigation span{
+    color: #a47c7c;
+    font-size: 12px;
+    margin: 0;
+    top: -2px;
+    position: relative;
+    display: block;
+}
+
+/*--------------------------------- ПЛАНШЕТ ВЕРТИКАЛЬНО --------------------------------------*/
+@media (orientation:portrait) and (max-width:1025px) and (max-height:1367px){
+    /* index */
+    .route{
+        width: 90%;
+    }
+    /* add */
+    .add_content{
+        margin: 0;
+    }
+    .fields {
+        padding: 20px 10px;
+    }
+    .map_field{
+        width: 46%;
+    }
+    /* profile */
+    .profile_data{
+        flex-direction: column;
+    }
+    .user_data{
+        justify-content: center;
+    }
+    .car_desc{
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+    #id_car_description{
+        width: 100%;
+    }
+    /* route */
+    .content{
+        flex-direction: column-reverse;
+    }
+    .author_block{
+        width: 100%;
+        margin: 0;
+    }
+    .route_content{
+        width: 100%;
+    }
+    .change_route_block{
+        width: 100%;
+    }
+    /* i applied */
+    .application_list{
+        width: 95%;
+    }
+    /* applied to me */
+    .applied_me_container{
+        width: 100%;
+    }
+}
+@media (orientation:portrait) and (max-width:768px) and (max-height:1024px){ 	
+
+}
+@media (orientation:portrait) and (max-width:600px) and (max-height:960px){ 	
+
+}
+@media (orientation:portrait) and (max-width:540px) and (max-height:720px){ 	
+
+}
+
+/*--------------------------------- ПЛАНШЕТ ГОРИЗОНТАЛЬНО --------------------------------------*/
+@media (orientation:landscape) and (max-width:1367px) and (max-height:1025px){
+    /* index */
+    .route{
+        width: 80%;
+    }
+}
+
+
+@media (orientation:landscape) and (max-width:1024px) and (max-height:768px){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------- Телефон ВЕРТИКАЛЬНО --------------------------------------*/
+@media (orientation:portrait) and (max-width:480px){
+    .bottom_navigation{
+        display: block; 
+    }
+    .top_slider{
+        display: none;
+    }
+    .top_slider_mobile{
+        display: flex;
+    }
+    .main{
+        padding-top: 50px;
+    }
+
+    /* index */
+    .i_driver_passeng_btns{
+        width: 95%;
+        flex-direction: column;
+    }
+    .i_driver_passeng_btns a{
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .main_map_draft{
+        height: auto;
+        width: 95%;
+    }
+    #main_map{
+        height: 300px;
+        width: 95%;
+    }
+    .watch_map_titles{
+        text-align: center;
+        flex-direction: column;
+        width: 70%;
+    }
+    .watch_as_driver{
+        margin-bottom: 10px;
+    }
+
+    .main_image, .error_image{
+        width: 100%;
+    }
+    .route_author{
+        display: none;
+    }
+    .route_content_index{
+        border-radius: 7px;
+    }
+    .mobile_main_intro{
+        display: flex;
+    }
+    .locations_search{
+        margin: 0;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        top: -60px;
+        transition: top 0.25s ease-in-out;  
+        display: flex !important;
+        z-index: 5;
+    }
+    #locations_search_btn, #id_locations_search{
+        border-radius: 0;
+    }
+    
+    
+    .mobile_pass_name{
+        display: block;
+    }
+    /* add */
+    .add_content{
+        margin: 0;
+    }
+    .text_content{
+        flex-direction: column;
+    }
+    .maps{
+        flex-direction: column;
+        height: 600px;
+    }
+    .departure_text_span{
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .map_field{
+        width: 100%;
+    }
+    #search1, #search2{
+        padding: 0;
+        padding-bottom: 5px;
+    }
+    #map1, #map2{
+        z-index: 0;
+    }
+    .submit_button{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    /* route */
+    .change_route_header{
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .route_content{
+        flex-direction: column;
+    }
+    .route_description{
+        width: 100%;
+    }
+    .map{
+        height: 300px;
+        width: 100%;
+        flex: initial;
+        z-index: 0;
+    }
+    .description{
+        max-width: 100%;
+    }
+    .content{
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    /* apply */
+    .applied_route{
+        flex-direction: column-reverse;
+    }
+    .applied_route_details, .applied_author_details{
+        width: 100%;
+    }
+    /* i applied */
+    .application_details{
+        width: 100%;
+    }
+    .cancel_application{
+        width: 60%;
+    }
+    .applied_header{
+        font-size: 22px;
+    }
+    /* applied to me */
+    .applied_me_status a, .applied_me_status span{
+        display: block;
+        text-align: center;
+    }
+    /* login */
+    .box{
+        width: 100%;
+        padding: 40px 20px;
+    }
+    /* my_routes */
+    .my_routes_image, .i_applied_image, .applied_to_me_image{
+        width: 50%;
+    }
+    .my_routes_btns{
+        display: block;
+        text-align: center;
+    }
+    .rejected_route_bg, .considering_route_bg, .edited_route_bg, .archive_route_bg{
+        align-items: baseline !important;
+        text-align: center;
+        padding-top: 20px;
+    }
+    /* prifile */
+    .profile_header{
+        font-size: 20px;
+    }
+    .car_desc{
+        padding: 0 20px;
+    }
+    /* rules and privacy policy */
+    .rules_field{
+        width: 100%;
+    }
+    .rules_block{
+        padding: 15px;
+    }
+    .rules_title{
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    /* footer */
+    footer{
+        display: none;
+    }
+    /* brief_info */
+    .info_block{
+        width: 100%;
+    }
+}
+@media (max-width:420px){
+
+}
+@media (max-width:380px){
+
+}
+@media (max-width:360px){
+
+}
+@media (max-width:320px){
+
+}
+
+@media (max-width:280px){	
+
+}
+
+
+/*--------------------------------- Телефон Горизонтально --------------------------------------*/
+@media (orientation:landscape) and (max-width:900px){
+    .bottom_navigation{
+        display: block; 
+    }
+    .top_slider{
+        display: none;
+    }
+    .top_slider_mobile{
+        display: flex;
+    }
+    .main{
+        padding-top: 50px;
+    }
+    /* index */
+    .i_driver_passeng_btns{
+        width: 95%;
+        flex-direction: column;
+    }
+    .i_driver_passeng_btns a{
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .main_map_draft{
+        height: auto;
+        width: 95%;
+    }
+    #main_map{
+        height: 300px;
+        width: 95%;
+    }
+    .watch_map_titles{
+        text-align: center;
+        width: 70%;
+    }
+
+    .main_image, .error_image{
+        width: 100%;
+    }
+    .route_author{
+        display: none;
+    }
+    .route_content_index{
+        border-radius: 7px;
+    }
+    .mobile_main_intro{
+        display: flex;
+    }
+    .locations_search{
+        margin: 0;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        top: -60px;
+        transition: top 0.25s ease-in-out;  
+        display: flex !important;
+        z-index: 5;
+    }
+    #locations_search_btn, #id_locations_search{
+        border-radius: 0;
+    }
+
+    .mobile_pass_name{
+        display: block;
+    }
+    /* add */
+    .add_content{
+        margin: 0;
+    }
+    .text_content{
+        flex-direction: column;
+    }
+    .maps{
+        flex-direction: column;
+        height: 600px;
+    }
+    .departure_text_span{
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .map_field{
+        width: 100%;
+    }
+    #search1, #search2{
+        padding: 0;
+        padding-bottom: 5px;
+        z-index: 0;
+    }
+    #map1, #map2{
+        z-index: 0;
+    }
+    .submit_button{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    /* route */
+    .content{
+        flex-direction: column-reverse;
+    }
+    .change_route_header{
+        font-size: 15px;
+        margin-top: 15px;
+    }
+    .route_content{
+        flex-direction: column;
+        width: 100%;
+    }
+    .route_description{
+        width: 100%;
+    }
+    .map{
+        height: 300px;
+        width: 100%;
+        flex: initial;
+        z-index: 0;
+    }
+    .description{
+        max-width: 100%;
+    }
+    .content{
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .author_block{
+        width: 100%;
+        margin: 0;
+    }
+    .apply_field{
+        margin-bottom: 20px;
+    }
+    .change_route_block{
+        width: 100%;
+    }
+    /* i applied */
+    .application_details{
+        width: 100%;
+    }
+    /* my_routes */
+    .my_routes_image, .i_applied_image, .applied_to_me_image{
+        width: 50%;
+    }
+    .my_routes_btns{
+        display: block;
+        text-align: center;
+    }   
+    .rejected_route_bg, .considering_route_bg, .edited_route_bg, .archive_route_bg{
+        align-items: baseline !important;
+        text-align: center;
+        padding-top: 20px;
+    }
+    /* prifile */
+    .profile_header{
+        font-size: 22px;
+    }
+    .profile_data{
+        flex-direction: column;
+    }
+    .user_data{
+        justify-content: center;
+    }
+    .car_desc{
+        padding: 0 50px;
+        box-sizing: border-box;
+    }
+    #id_car_description{
+        width: 100%;
+    }
+    /* rules and privacy policy */
+    .rules_field{
+        width: 100%;
+    }
+    .rules_block{
+        padding: 15px;
+    }
+    .rules_title{
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    /* footer */
+    footer{
+        display: none;
+    }
+    /* brief_info */
+    .info_block{
+        width: 100%;
+    }
+}
+@media (orientation:landscape) and (max-width:850px){
+    
+}
+@media (orientation:landscape) and (max-width:740px){
+    
+}
+@media (orientation:landscape) and (max-width:600px){
+
+}

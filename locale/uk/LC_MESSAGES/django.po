@@ -1,0 +1,2420 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-12 15:57+0300\n"
+"PO-Revision-Date: 2022-05-12 15:59+0202\n"
+"Last-Translator: Дмитро  <buslovdmitrij0@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Translated-Using: django-rosetta 0.9.7\n"
+
+#: .\account\forms.py:16
+msgid "Опишите Ваше транспортное средство..."
+msgstr "Опишіть Ваш транспортний засіб..."
+
+#: .\autostop\forms.py:12
+msgid "Напишите Ваши условия и дополнительную информацию..."
+msgstr "Напишіть Ваші умови та додаткову інформацію..."
+
+#: .\autostop\forms.py:26
+msgid "Напишите дополнительную информацию..."
+msgstr "Напишіть додаткову інформацію..."
+
+#: .\autostop\forms.py:40
+msgid "Напишите Вашу дополнительную информацию, чтобы водители увидели её..."
+msgstr "Напишіть Вашу додаткову інформацію, щоб водії побачили її..."
+
+#: .\autostop\forms.py:56
+msgid "Название публикации..."
+msgstr "Назва публікації..."
+
+#: .\autostop\forms.py:58
+#| msgid "Описание автомобиля"
+msgid "Описание публикации..."
+msgstr "Опис публікації..."
+
+#: .\autostop\models.py:24 .\autostop\models.py:101 .\autostop\models.py:140
+#: .\autostop\templates\account\account.html:89
+#: .\autostop\templates\autostop\add.html:73
+#: .\autostop\templates\autostop\add_passenger.html:72
+#: .\autostop\templates\autostop\applied_to_me.html:54
+#: .\autostop\templates\autostop\apply.html:63
+#: .\autostop\templates\autostop\apply.html:117
+#: .\autostop\templates\autostop\edit.html:70
+#: .\autostop\templates\autostop\i_applied.html:32
+#: .\autostop\templates\autostop\index.html:94
+#: .\autostop\templates\autostop\index_passenger.html:104
+#: .\autostop\templates\autostop\my_routes.html:86
+#: .\autostop\templates\autostop\my_routes.html:168
+#: .\autostop\templates\others\brief_intro.html:47
+msgid "Люди"
+msgstr "Люди"
+
+#: .\autostop\models.py:25 .\autostop\models.py:102 .\autostop\models.py:141
+#: .\autostop\templates\account\account.html:91
+#: .\autostop\templates\autostop\add.html:80
+#: .\autostop\templates\autostop\add_passenger.html:79
+#: .\autostop\templates\autostop\applied_to_me.html:56
+#: .\autostop\templates\autostop\apply.html:65
+#: .\autostop\templates\autostop\apply.html:124
+#: .\autostop\templates\autostop\edit.html:77
+#: .\autostop\templates\autostop\i_applied.html:34
+#: .\autostop\templates\autostop\index.html:96
+#: .\autostop\templates\autostop\index_passenger.html:106
+#: .\autostop\templates\autostop\my_routes.html:88
+#: .\autostop\templates\autostop\my_routes.html:170
+#: .\autostop\templates\others\brief_intro.html:54
+msgid "Животные"
+msgstr "Тварини"
+
+#: .\autostop\models.py:26 .\autostop\models.py:103 .\autostop\models.py:142
+#: .\autostop\templates\account\account.html:93
+#: .\autostop\templates\autostop\add.html:87
+#: .\autostop\templates\autostop\add_passenger.html:86
+#: .\autostop\templates\autostop\applied_to_me.html:58
+#: .\autostop\templates\autostop\apply.html:67
+#: .\autostop\templates\autostop\apply.html:131
+#: .\autostop\templates\autostop\edit.html:84
+#: .\autostop\templates\autostop\i_applied.html:36
+#: .\autostop\templates\autostop\index.html:98
+#: .\autostop\templates\autostop\index_passenger.html:108
+#: .\autostop\templates\autostop\my_routes.html:90
+#: .\autostop\templates\autostop\my_routes.html:172
+#: .\autostop\templates\others\brief_intro.html:61
+msgid "Вещи"
+msgstr "Речі"
+
+#: .\autostop\models.py:27 .\autostop\models.py:104 .\autostop\models.py:143
+#: .\autostop\templates\account\account.html:95
+#: .\autostop\templates\autostop\add.html:94
+#: .\autostop\templates\autostop\add_passenger.html:93
+#: .\autostop\templates\autostop\applied_to_me.html:60
+#: .\autostop\templates\autostop\apply.html:69
+#: .\autostop\templates\autostop\apply.html:138
+#: .\autostop\templates\autostop\edit.html:91
+#: .\autostop\templates\autostop\i_applied.html:38
+#: .\autostop\templates\autostop\index.html:100
+#: .\autostop\templates\autostop\index_passenger.html:110
+#: .\autostop\templates\autostop\my_routes.html:92
+#: .\autostop\templates\autostop\my_routes.html:174
+#: .\autostop\templates\others\brief_intro.html:68
+msgid "Продукты"
+msgstr "Продукти"
+
+#: .\autostop\models.py:28 .\autostop\models.py:105 .\autostop\models.py:144
+#: .\autostop\templates\account\account.html:97
+#: .\autostop\templates\autostop\add.html:101
+#: .\autostop\templates\autostop\add_passenger.html:100
+#: .\autostop\templates\autostop\applied_to_me.html:62
+#: .\autostop\templates\autostop\apply.html:71
+#: .\autostop\templates\autostop\apply.html:145
+#: .\autostop\templates\autostop\base.html:82
+#: .\autostop\templates\autostop\edit.html:98
+#: .\autostop\templates\autostop\i_applied.html:40
+#: .\autostop\templates\autostop\index.html:102
+#: .\autostop\templates\autostop\index_passenger.html:112
+#: .\autostop\templates\autostop\my_routes.html:94
+#: .\autostop\templates\autostop\my_routes.html:176
+#: .\autostop\templates\others\brief_intro.html:75
+#: .\autostop\templates\others\others.html:20
+msgid "Другое"
+msgstr "Інше"
+
+#: .\autostop\models.py:93 .\autostop\templates\autostop\applied_to_me.html:74
+#: .\autostop\templates\autostop\i_applied.html:53
+#: .\autostop\templates\autostop\my_routes.html:40
+#: .\autostop\templates\autostop\my_routes.html:122
+msgid "На рассмотрении"
+msgstr "На розгляді"
+
+#: .\autostop\models.py:94 .\autostop\templates\autostop\applied_to_me.html:70
+#: .\autostop\templates\autostop\i_applied.html:51
+msgid "Подтверждена"
+msgstr "Підтверджено"
+
+#: .\autostop\models.py:95 .\autostop\templates\autostop\applied_to_me.html:77
+#: .\autostop\templates\autostop\i_applied.html:55
+msgid "Отклонена"
+msgstr "Відхилено"
+
+#: .\autostop\templates\account\account.html:21
+msgid "Профиль"
+msgstr "Профіль"
+
+#: .\autostop\templates\account\account.html:30
+msgid "Вы на профиле"
+msgstr "Ви на профілі"
+
+#: .\autostop\templates\account\account.html:40
+msgid "поездок"
+msgstr "поїздок"
+
+#: .\autostop\templates\account\account.html:44
+msgid "Маршруты"
+msgstr "Маршрути"
+
+#: .\autostop\templates\account\account.html:76
+#: .\autostop\templates\autostop\index.html:81
+#: .\autostop\templates\autostop\index_passenger.html:91
+#: .\autostop\templates\autostop\my_routes.html:73
+#: .\autostop\templates\autostop\my_routes.html:155
+msgid "Отправление"
+msgstr "Відправлення"
+
+#: .\autostop\templates\account\account.html:78
+#: .\autostop\templates\autostop\index.html:83
+#: .\autostop\templates\autostop\index_passenger.html:93
+#: .\autostop\templates\autostop\my_routes.html:75
+#: .\autostop\templates\autostop\my_routes.html:157
+#: .\autostop\templates\autostop\route.html:107
+#: .\autostop\templates\autostop\route_passenger.html:80
+#: .\autostop\templates\others\blog.html:48
+#: .\autostop\templates\others\blog.html:70
+msgid "Сегодня"
+msgstr "Сьогодні"
+
+#: .\autostop\templates\account\account.html:80
+#: .\autostop\templates\autostop\index.html:85
+#: .\autostop\templates\autostop\index_passenger.html:95
+#: .\autostop\templates\autostop\my_routes.html:77
+#: .\autostop\templates\autostop\my_routes.html:159
+msgid "Завтра"
+msgstr "Завтра"
+
+#: .\autostop\templates\account\account.html:86
+#: .\autostop\templates\autostop\add.html:67
+#: .\autostop\templates\autostop\add_passenger.html:66
+#: .\autostop\templates\autostop\applied_to_me.html:51
+#: .\autostop\templates\autostop\apply.html:60
+#: .\autostop\templates\autostop\apply.html:111
+#: .\autostop\templates\autostop\edit.html:64
+#: .\autostop\templates\autostop\index.html:91
+#: .\autostop\templates\autostop\index_passenger.html:101
+#: .\autostop\templates\autostop\my_routes.html:83
+#: .\autostop\templates\autostop\my_routes.html:165
+#: .\autostop\templates\autostop\route.html:98
+#: .\autostop\templates\autostop\route_passenger.html:71
+msgid "Рубрика"
+msgstr "Рубрика"
+
+#: .\autostop\templates\account\account.html:103
+#: .\autostop\templates\autostop\my_routes.html:102
+#: .\autostop\templates\autostop\my_routes.html:183
+#: .\autostop\templates\autostop\route.html:76
+#: .\autostop\templates\autostop\route.html:78
+#: .\autostop\templates\autostop\route_passenger.html:57
+msgid "Google Карты"
+msgstr "Google Карти"
+
+#: .\autostop\templates\account\account.html:107
+msgid "Пока что маршрутов нет, давайте"
+msgstr "Поки маршрутів немає, давайте"
+
+#: .\autostop\templates\account\account.html:107
+msgid "поищем"
+msgstr "пошукаємо"
+
+#: .\autostop\templates\account\login.html:28
+#: .\autostop\templates\account\login.html:32
+msgid "Вход"
+msgstr "Вхід"
+
+#: .\autostop\templates\account\login.html:37
+msgid "Телефон или email"
+msgstr "Телефон або email"
+
+#: .\autostop\templates\account\login.html:49
+#: .\autostop\templates\account\registration.html:53
+msgid "Войти"
+msgstr "Увійти"
+
+#: .\autostop\templates\account\login.html:52
+msgid "Ещё нет аккаунта?"
+msgstr "Ще немає аккаунту?"
+
+#: .\autostop\templates\account\login.html:52
+msgid "Создайте"
+msgstr "Створіть"
+
+#: .\autostop\templates\account\login.html:53
+msgid "Забыли пароль?"
+msgstr "Забули пароль?"
+
+#: .\autostop\templates\account\profile.html:6
+msgid "Ваш профиль"
+msgstr "Ваш профіль"
+
+#: .\autostop\templates\account\profile.html:41
+msgid "Дополните данные о себе, чтобы больше людей отправили Вам заявки"
+msgstr "Доповніть дані про себе, щоб більше людей надіслали Вам заявки"
+
+#: .\autostop\templates\account\profile.html:54
+msgid "Загрузить фото"
+msgstr "Завантажити фото"
+
+#: .\autostop\templates\account\profile.html:60
+msgid "Email"
+msgstr "Email"
+
+#: .\autostop\templates\account\profile.html:61
+msgid "Имя"
+msgstr "Ім'я"
+
+#: .\autostop\templates\account\profile.html:62
+msgid "Фамилия"
+msgstr "Прізвище"
+
+#: .\autostop\templates\account\profile.html:63
+#: .\autostop\templates\account\registration.html:39
+msgid "Номер телефона"
+msgstr "Номер телефону"
+
+#: .\autostop\templates\account\profile.html:64
+msgid "Телеграм уведомления"
+msgstr "Телеграм повідомлення"
+
+#: .\autostop\templates\account\profile.html:76
+msgid "Нажмите 'Изменить', переходите к"
+msgstr "Натисніть 'Змінити', перейдіть до"
+
+#: .\autostop\templates\account\profile.html:76
+msgid "и нажимайте 'Старт', чтобы начать получать уведомления"
+msgstr "і натисніть 'Старт', щоб почати отримувати сповіщення"
+
+#: .\autostop\templates\account\profile.html:83
+msgid "Описание Т/С"
+msgstr "Опис Т/З"
+
+#: .\autostop\templates\account\profile.html:85
+#: .\autostop\templates\autostop\edit.html:141
+#: .\autostop\templates\autostop\my_routes.html:100
+#: .\autostop\templates\autostop\route.html:44
+msgid "Изменить"
+msgstr "Змінити"
+
+#: .\autostop\templates\account\registration.html:27
+#: .\autostop\templates\account\registration.html:31
+msgid "Регистрация"
+msgstr "Реєстрація"
+
+#: .\autostop\templates\account\registration.html:48
+msgid "Я соглашаюсь с"
+msgstr "Я погоджуюсь з"
+
+#: .\autostop\templates\account\registration.html:48
+msgid "Правилами сайта"
+msgstr "Правилами сайту"
+
+#: .\autostop\templates\account\registration.html:48
+msgid "и"
+msgstr "і"
+
+#: .\autostop\templates\account\registration.html:48
+#: .\autostop\templates\others\pidvezu_rules.html:47
+#: .\autostop\templates\others\pidvezu_rules.html:50
+msgid "Политикой конфиденциальности"
+msgstr "Політикою конфіденційності"
+
+#: .\autostop\templates\account\registration.html:48
+msgid "и даю согласие на обработку личных данных"
+msgstr "і даю згоду на обробку особистих даних"
+
+#: .\autostop\templates\account\registration.html:51
+msgid "Зарегистрироваться"
+msgstr "Зареєструватися"
+
+#: .\autostop\templates\account\registration.html:53
+msgid "Уже есть аккаунт"
+msgstr "Вже є аккаунт"
+
+#: .\autostop\templates\account\registration.html:54
+msgid "Забыли пароль"
+msgstr "Забули пароль"
+
+#: .\autostop\templates\account\registration_success.html:25
+msgid "Вы с нами"
+msgstr "Ви з нами"
+
+#: .\autostop\templates\account\registration_success.html:29
+msgid "Спасибо, что Вы с нами"
+msgstr "Дякуємо, що Ви з нами"
+
+#: .\autostop\templates\account\registration_success.html:30
+msgid "Проверьте свой почтовый ящик для подтвержения почты"
+msgstr "Перевірте свою поштову скриньку для підтвердження пошти"
+
+#: .\autostop\templates\account\registration_success.html:31
+msgid "Если письма нет, подождите немного, Gmail делает проверку"
+msgstr "Якщо листа немає, зачекайте трохи, Gmail перевіряє його"
+
+#: .\autostop\templates\account\registration_success.html:32
+msgid "Если же его долго нет, посмотрите в папки 'Спам' и 'Вся почта'"
+msgstr "Якщо ж його довго немає, подивіться в папки 'Спам' і 'Вся пошта'"
+
+#: .\autostop\templates\account\registration_success.html:33
+#: .\autostop\templates\account\reset_email_success.html:32
+msgid "Вернуться на главную"
+msgstr "Повернутися на головну"
+
+#: .\autostop\templates\account\reset_email.html:27
+msgid "Введите Вашу почту"
+msgstr "Введіть Вашу пошту"
+
+#: .\autostop\templates\account\reset_email.html:31
+msgid "Введите Ваш email для сброса пароля"
+msgstr "Введіть Ваш email для скидання пароля"
+
+#: .\autostop\templates\account\reset_email.html:38
+msgid "Отправить"
+msgstr "Надіслати"
+
+#: .\autostop\templates\account\reset_email_success.html:25
+msgid "Пароль сброшен"
+msgstr "Пароль скинутий"
+
+#: .\autostop\templates\account\reset_email_success.html:29
+msgid "Мы отправили Вам письмо"
+msgstr "Ми надіслали Вам лист"
+
+#: .\autostop\templates\account\reset_email_success.html:30
+msgid ""
+"Проверьте почту. Если письма нет, подождите немного, Gmail делает проверку"
+msgstr ""
+"Перевірте пошту. Якщо листа немає, зачекайте трохи, Gmail перевіряє його"
+
+#: .\autostop\templates\account\reset_email_success.html:31
+msgid "Если же его долго нет, посмотрите в папки "
+msgstr "Якщо ж його довго немає, подивіться в папки"
+
+#: .\autostop\templates\account\set_new_pswrd.html:25
+msgid "Поменять пароль"
+msgstr "Змінити пароль"
+
+#: .\autostop\templates\account\set_new_pswrd.html:29
+msgid "Введите новый пароль"
+msgstr "Введіть новий пароль"
+
+#: .\autostop\templates\account\set_new_pswrd.html:36
+msgid "Готово"
+msgstr "Готово"
+
+#: .\autostop\templates\autostop\add.html:6
+#: .\autostop\templates\autostop\add_passenger.html:6
+msgid "Добавить свой маршрут"
+msgstr "Додати свій маршрут"
+
+#: .\autostop\templates\autostop\add.html:52
+#: .\autostop\templates\autostop\base.html:60
+#: .\autostop\templates\autostop\base.html:81
+#: .\autostop\templates\autostop\base.html:91
+#: .\autostop\templates\others\brief_intro.html:35
+#: .\autostop\templates\others\brief_intro.html:38
+msgid "Добавить маршрут"
+msgstr "Додати маршрут"
+
+#: .\autostop\templates\autostop\add.html:56
+#: .\autostop\templates\autostop\add_passenger.html:56
+#: .\autostop\templates\autostop\start_page.html:57
+#: .\autostop\templates\others\brief_intro.html:30
+msgid "Я водитель"
+msgstr "Я водій"
+
+#: .\autostop\templates\autostop\add.html:57
+#: .\autostop\templates\autostop\add_passenger.html:57
+#: .\autostop\templates\others\brief_intro.html:31
+msgid "Я заявитель"
+msgstr "Я заявник"
+
+#: .\autostop\templates\autostop\add.html:65
+#: .\autostop\templates\autostop\add_passenger.html:65
+#: .\autostop\templates\autostop\apply.html:58
+#: .\autostop\templates\autostop\edit.html:62
+#: .\autostop\templates\autostop\route.html:96
+#: .\autostop\templates\autostop\route_passenger.html:70
+msgid "Время отправления"
+msgstr "Час відправлення"
+
+#: .\autostop\templates\autostop\add.html:66
+#: .\autostop\templates\autostop\apply.html:59
+#: .\autostop\templates\autostop\edit.html:63
+msgid "Осталось мест"
+msgstr "Залишилось місць"
+
+#: .\autostop\templates\autostop\add.html:108
+#: .\autostop\templates\autostop\add_passenger.html:107
+#: .\autostop\templates\autostop\edit.html:105
+msgid "Описание"
+msgstr "Опис"
+
+#: .\autostop\templates\autostop\add.html:114
+#: .\autostop\templates\autostop\add_passenger.html:113
+#: .\autostop\templates\autostop\apply.html:160
+msgid "Нажмите на карту, чтобы поставить точку, или найдите улицу по адресу"
+msgstr ""
+"Натисніть на карту, щоб поставити крапку, або знайдіть вулицю за адресою"
+
+#: .\autostop\templates\autostop\add.html:118
+#: .\autostop\templates\autostop\add_passenger.html:117
+#: .\autostop\templates\autostop\apply.html:164
+#: .\autostop\templates\autostop\edit.html:115
+msgid "Отправление из"
+msgstr "Відправлення з"
+
+#: .\autostop\templates\autostop\add.html:120
+#: .\autostop\templates\autostop\add_passenger.html:119
+#: .\autostop\templates\autostop\apply.html:166
+#: .\autostop\templates\autostop\edit.html:117
+msgid "Пример: Гагарина 1, Днепр"
+msgstr "Приклад: Гагаріна 1, Дніпро"
+
+#: .\autostop\templates\autostop\add.html:121
+#: .\autostop\templates\autostop\add.html:131
+#: .\autostop\templates\autostop\add_passenger.html:120
+#: .\autostop\templates\autostop\add_passenger.html:129
+#: .\autostop\templates\autostop\apply.html:167
+#: .\autostop\templates\autostop\apply.html:176
+#: .\autostop\templates\autostop\base.html:80
+#: .\autostop\templates\autostop\edit.html:118
+#: .\autostop\templates\autostop\edit.html:127
+#: .\autostop\templates\autostop\index.html:42
+#: .\autostop\templates\autostop\index_passenger.html:41
+#: .\autostop\templates\autostop\start_page.html:53
+msgid "Поиск"
+msgstr "Пошук"
+
+#: .\autostop\templates\autostop\add.html:128
+#: .\autostop\templates\autostop\add_passenger.html:126
+#: .\autostop\templates\autostop\apply.html:173
+#: .\autostop\templates\autostop\edit.html:124
+msgid "Прибытие в"
+msgstr "Прибуття в"
+
+#: .\autostop\templates\autostop\add.html:143
+#: .\autostop\templates\autostop\add_passenger.html:141
+#: .\autostop\templates\autostop\apply.html:188
+#: .\autostop\templates\autostop\edit.html:140
+msgid "Вы случайно пропустили одно из полей"
+msgstr "Ви випадково пропустили одне з полів"
+
+#: .\autostop\templates\autostop\add.html:143
+#: .\autostop\templates\autostop\add_passenger.html:141
+#: .\autostop\templates\autostop\apply.html:188
+#: .\autostop\templates\autostop\edit.html:140
+msgid "Заполните поле"
+msgstr "Заповніть поле"
+
+#: .\autostop\templates\autostop\add.html:144
+#: .\autostop\templates\autostop\add_passenger.html:142
+msgid "Добавить"
+msgstr "Додати"
+
+#: .\autostop\templates\autostop\add_passenger.html:52
+msgid "Запросить маршрут"
+msgstr "Запросити маршрут"
+
+#: .\autostop\templates\autostop\applied_to_me.html:20
+msgid "Мне сделали заявку"
+msgstr "Мені зробили заявку"
+
+#: .\autostop\templates\autostop\applied_to_me.html:23
+msgid "Заявки на"
+msgstr "Заявки на"
+
+#: .\autostop\templates\autostop\applied_to_me.html:23
+msgid "Ваши"
+msgstr "Ваші"
+
+#: .\autostop\templates\autostop\applied_to_me.html:23
+msgid "маршруты"
+msgstr "маршрути"
+
+#: .\autostop\templates\autostop\applied_to_me.html:25
+msgid ""
+"После подтверждения заявки, перейдите к маршруту, чтобы скорректировать путь"
+msgstr ""
+"Після підтвердження заявки перейдіть до маршруту, щоб скоригувати шлях"
+
+#: .\autostop\templates\autostop\applied_to_me.html:34
+#: .\autostop\templates\autostop\index_passenger.html:70
+msgid "Заявщик"
+msgstr "Заявник"
+
+#: .\autostop\templates\autostop\applied_to_me.html:46
+msgid "Комментарий"
+msgstr "Коментар"
+
+#: .\autostop\templates\autostop\applied_to_me.html:69
+#: .\autostop\templates\autostop\applied_to_me.html:73
+msgid "Отклонить заявку"
+msgstr "Відхилити заявку"
+
+#: .\autostop\templates\autostop\applied_to_me.html:72
+#: .\autostop\templates\autostop\applied_to_me.html:76
+msgid "Подвезу!"
+msgstr "Підвезу!"
+
+#: .\autostop\templates\autostop\applied_to_me.html:90
+msgid "Пока заявок нет. Вы можете"
+msgstr "Поки що заявок немає. Ви можете"
+
+#: .\autostop\templates\autostop\applied_to_me.html:90
+msgid "опубликовать"
+msgstr "опублікувати"
+
+#: .\autostop\templates\autostop\applied_to_me.html:90
+msgid "новый маршрут"
+msgstr "новий маршрут"
+
+#: .\autostop\templates\autostop\apply.html:20
+#: .\autostop\templates\autostop\apply.html:51
+#: .\autostop\templates\autostop\route.html:79
+#: .\autostop\templates\others\brief_intro.html:118
+#: .\autostop\templates\others\brief_intro.html:119
+msgid "Подать заявку"
+msgstr "Подати заявку"
+
+#: .\autostop\templates\autostop\apply.html:77
+msgid "Маршрут"
+msgstr "Маршрут"
+
+#: .\autostop\templates\autostop\apply.html:105
+msgid "Подайте заявку на данный маршрут"
+msgstr "Подайте заявку на цей маршрут"
+
+#: .\autostop\templates\autostop\apply.html:152
+msgid "Ваш комментарий"
+msgstr "Ваш коментар"
+
+#: .\autostop\templates\autostop\apply.html:189
+msgid "Отправить заявку"
+msgstr "Надіслати заявку"
+
+#: .\autostop\templates\autostop\base.html:49
+#: .\autostop\templates\autostop\base.html:93
+#: .\autostop\templates\autostop\my_routes.html:20
+#: .\autostop\templates\others\brief_intro.html:84
+#: .\autostop\templates\others\brief_intro.html:106
+#: .\autostop\templates\others\others.html:39
+msgid "Мои маршруты"
+msgstr "Мої маршрути"
+
+#: .\autostop\templates\autostop\base.html:50
+#: .\autostop\templates\autostop\base.html:94
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+#: .\autostop\templates\others\others.html:38
+msgid "Мой профиль"
+msgstr "Мій профіль"
+
+#: .\autostop\templates\autostop\base.html:51
+#: .\autostop\templates\autostop\base.html:95
+#: .\autostop\templates\others\brief_intro.html:103
+#: .\autostop\templates\others\others.html:41
+msgid "Заявки мне"
+msgstr "Заявки мені"
+
+#: .\autostop\templates\autostop\base.html:52
+#: .\autostop\templates\autostop\base.html:96
+#: .\autostop\templates\others\brief_intro.html:128
+#: .\autostop\templates\others\others.html:40
+msgid "Мои заявки"
+msgstr "Мої заявки"
+
+#: .\autostop\templates\autostop\base.html:53
+#: .\autostop\templates\others\others.html:43
+msgid "Выйти"
+msgstr "Вийти"
+
+#: .\autostop\templates\autostop\base.html:56
+msgid "Войти в аккаунт"
+msgstr "Увійти в акаунт"
+
+#: .\autostop\templates\autostop\base.html:59
+#: .\autostop\templates\autostop\base.html:92
+#: .\autostop\templates\others\brief_intro.html:109
+#: .\autostop\templates\others\brief_intro.html:132
+#: .\autostop\templates\others\others.html:37
+msgid "Телеграм Бот"
+msgstr "Телеграм Бот"
+
+#: .\autostop\templates\autostop\base.html:79
+#: .\autostop\templates\autostop\base.html:90
+msgid "Главная"
+msgstr "Головна"
+
+#: .\autostop\templates\autostop\base.html:88
+msgid "Навигация по сайту"
+msgstr "Навігація по сайту"
+
+#: .\autostop\templates\autostop\base.html:100
+msgid "Как пользоваться сервисом и прочее"
+msgstr "Як користуватися сервісом та інше"
+
+#: .\autostop\templates\autostop\base.html:102
+#: .\autostop\templates\others\others.html:48
+#: .\autostop\templates\others\privacy_policy.html:20
+#: .\autostop\templates\others\privacy_policy.html:25
+msgid "Политика конфиденциальности"
+msgstr "Політика конфіденційності"
+
+#: .\autostop\templates\autostop\base.html:103
+#: .\autostop\templates\others\others.html:49
+msgid "Правила сайта"
+msgstr "Правила сайту"
+
+#: .\autostop\templates\autostop\base.html:104
+#: .\autostop\templates\others\others.html:50
+msgid "Краткое введние"
+msgstr "Короткий вступ"
+
+#: .\autostop\templates\autostop\base.html:108
+msgid "Контакты"
+msgstr "Контакти"
+
+#: .\autostop\templates\autostop\base.html:110
+#: .\autostop\templates\others\others.html:51
+msgid "Почта:"
+msgstr "Пошта:"
+
+#: .\autostop\templates\autostop\base.html:115
+msgid ""
+"Pidvezu - площадка, где водители опубликовывают свой маршрут, а другие люди "
+"могут бесплатно передать вещи, еду, животных, или же быть пассажиром для "
+"доставки в/из горячих точек Украины."
+msgstr ""
+"Pidvezu - платформа, де водії опубліковують свій маршрут, а інші люди можуть"
+" безкоштовно передати речі, їжу, тварин, або бути пасажиром для доставки в/з"
+" гарячих точок України."
+
+#: .\autostop\templates\autostop\edit.html:20
+msgid "Изменить свой маршрут"
+msgstr "Змінити свій маршрут"
+
+#: .\autostop\templates\autostop\edit.html:53
+msgid "Изменить маршрут"
+msgstr "Змінити маршрут"
+
+#: .\autostop\templates\autostop\edit.html:111
+msgid ""
+"Нажмите на карту, чтобы переставить точку, или измените улицу по адресу"
+msgstr ""
+"Натисніть на карту, щоб переставити точку, або змініть вулицю на адресу"
+
+#: .\autostop\templates\autostop\i_applied.html:20
+msgid "Я сделал(а) заявку"
+msgstr "Я зробив(ла) заявку"
+
+#: .\autostop\templates\autostop\i_applied.html:23
+msgid "Маршруты, на которые"
+msgstr "Маршрути, на які"
+
+#: .\autostop\templates\autostop\i_applied.html:23
+msgid "Вы"
+msgstr "Ви"
+
+#: .\autostop\templates\autostop\i_applied.html:23
+msgid "подали заявку"
+msgstr "подали заявку"
+
+#: .\autostop\templates\autostop\i_applied.html:58
+msgid "Отменить заявку"
+msgstr "Скасувати заявку"
+
+#: .\autostop\templates\autostop\i_applied.html:66
+msgid "Пока Ваших заявок нет, но Вы можете"
+msgstr "Поки що Ваших заявок немає, але Ви можете"
+
+#: .\autostop\templates\autostop\i_applied.html:66
+msgid "подобрать"
+msgstr "підібрати"
+
+#: .\autostop\templates\autostop\i_applied.html:66
+msgid "необходимый маршрут для себя"
+msgstr "необхідний маршрут для себе"
+
+#: .\autostop\templates\autostop\index.html:41
+#: .\autostop\templates\autostop\index_passenger.html:40
+#: .\autostop\templates\autostop\start_page.html:52
+msgid "Введите адрес или город"
+msgstr "Введіть адресу або місто"
+
+#: .\autostop\templates\autostop\index.html:46
+msgid "Маршруты водителей"
+msgstr "Маршрути водіїв"
+
+#: .\autostop\templates\autostop\index.html:54
+#: .\autostop\templates\autostop\index_passenger.html:53
+msgid "Фото автора маршрута"
+msgstr "Фото автора маршруту"
+
+#: .\autostop\templates\autostop\index.html:56
+#: .\autostop\templates\autostop\index_passenger.html:55
+msgid "Нет фото автора маршрута"
+msgstr "Немає фото автора маршруту"
+
+#: .\autostop\templates\autostop\index.html:71
+msgid "Поездок"
+msgstr "Поїздок"
+
+#: .\autostop\templates\autostop\index.html:109
+#: .\autostop\templates\autostop\my_routes.html:190
+msgid "Маршрутов пока нет, но Вы можете"
+msgstr "Маршрутів поки що немає, але Ви можете"
+
+#: .\autostop\templates\autostop\index.html:109
+#: .\autostop\templates\autostop\index_passenger.html:119
+#: .\autostop\templates\autostop\my_routes.html:190
+msgid "добавить"
+msgstr "додати"
+
+#: .\autostop\templates\autostop\index.html:109
+msgid "свой маршрут, чтобы волонтёрские организации смогли увидеть его"
+msgstr "свій маршрут, щоб волонтерські організації змогли побачити його"
+
+#: .\autostop\templates\autostop\index.html:110
+#: .\autostop\templates\autostop\index_passenger.html:120
+#: .\autostop\templates\autostop\start_page.html:83
+msgid "Это"
+msgstr "Це"
+
+#: .\autostop\templates\autostop\index.html:110
+#: .\autostop\templates\autostop\index_passenger.html:120
+#: .\autostop\templates\autostop\start_page.html:83
+msgid "бесплатная"
+msgstr "безкоштовна"
+
+#: .\autostop\templates\autostop\index.html:110
+#: .\autostop\templates\autostop\index_passenger.html:120
+#: .\autostop\templates\autostop\start_page.html:83
+msgid ""
+"площадка, где водители-волонтёры публикуют свой маршрут, а другие люди могут"
+" передать вещи, еду, животных, или же быть пассажиром для доставки в/из "
+"горячих точек Украины"
+msgstr ""
+"платформа, де водії-волонтери публікують свій маршрут, а інші люди можуть "
+"передати речі, їжу, тварин, або бути пасажиром для доставки в/з гарячих "
+"точок України"
+
+#: .\autostop\templates\autostop\index.html:123
+#: .\autostop\templates\autostop\index_passenger.html:133
+msgid "из"
+msgstr "із"
+
+#: .\autostop\templates\autostop\index_passenger.html:7
+msgid "заявщики"
+msgstr "заявники"
+
+#: .\autostop\templates\autostop\index_passenger.html:45
+msgid "Маршруты пассажиров"
+msgstr "Маршрути пасажирів"
+
+#: .\autostop\templates\autostop\index_passenger.html:75
+msgid "Пассажир"
+msgstr "Пасажир"
+
+#: .\autostop\templates\autostop\index_passenger.html:119
+msgid "Заявок от пассажиров пока нет. Вы можете"
+msgstr "Заявок від пасажирів поки що немає. Ви можете"
+
+#: .\autostop\templates\autostop\index_passenger.html:119
+msgid "маршрут, чтобы пассажиры нашли Вас"
+msgstr "маршрут, щоб пасажири знайшли Вас"
+
+#: .\autostop\templates\autostop\my_routes.html:23
+msgid "Ваши маршруты"
+msgstr "Ваші маршрути"
+
+#: .\autostop\templates\autostop\my_routes.html:25
+msgid "Добавьте Ваше имя и фамилию, чтобы люди больше доверяли Вам"
+msgstr "Додайте Ваше ім'я та прізвище, щоб люди більше довіряли Вам"
+
+#: .\autostop\templates\autostop\my_routes.html:27
+msgid "Добавьте Ваше имя, чтобы люди больше доверяли Вам"
+msgstr "Додайте Ваше ім'я, щоб люди більше довіряли Вам"
+
+#: .\autostop\templates\autostop\my_routes.html:29
+msgid "Добавьте Вашу фамилию, чтобы люди больше доверяли Вам"
+msgstr "Додайте Ваше прізвище, щоб люди більше довіряли Вам"
+
+#: .\autostop\templates\autostop\my_routes.html:32
+msgid "Вы водитель:"
+msgstr "Ви водій:"
+
+#: .\autostop\templates\autostop\my_routes.html:38
+#: .\autostop\templates\autostop\my_routes.html:120
+msgid "Объявление отклонено"
+msgstr "Оголошення відхилено"
+
+#: .\autostop\templates\autostop\my_routes.html:42
+#: .\autostop\templates\autostop\my_routes.html:124
+msgid "Объявление изменено"
+msgstr "Оголошення змінено"
+
+#: .\autostop\templates\autostop\my_routes.html:42
+#: .\autostop\templates\autostop\my_routes.html:124
+msgid "Скоро появится на сайте"
+msgstr "Незабаром з'явиться на сайті"
+
+#: .\autostop\templates\autostop\my_routes.html:44
+#: .\autostop\templates\autostop\my_routes.html:126
+msgid "Объявление в архиве"
+msgstr "Оголошення в архіві"
+
+#: .\autostop\templates\autostop\my_routes.html:101
+#: .\autostop\templates\autostop\my_routes.html:182
+#: .\autostop\templates\autostop\route.html:43
+#: .\autostop\templates\autostop\route_passenger.html:54
+msgid "Удалить"
+msgstr "Видалити"
+
+#: .\autostop\templates\autostop\my_routes.html:112
+msgid "Вы пассажир (заявщик):"
+msgstr "Ви пасажир (заявник):"
+
+#: .\autostop\templates\autostop\my_routes.html:190
+msgid "один"
+msgstr "один"
+
+#: .\autostop\templates\autostop\route.html:30
+msgid ""
+"Перетащите адрес, чтобы поменять порядок движения, и посмотрите "
+"приблизительный путь"
+msgstr ""
+"Перетягніть адресу, щоб змінити порядок руху, і перегляньте приблизний шлях"
+
+#: .\autostop\templates\autostop\route.html:70
+msgid "Описание автомобиля"
+msgstr "Опис автомобілю"
+
+#: .\autostop\templates\autostop\route.html:97
+msgid "Свободных мест"
+msgstr "Вільних місць"
+
+#: .\autostop\templates\autostop\route.html:105
+#: .\autostop\templates\autostop\route_passenger.html:78
+msgid "Опубликовано"
+msgstr "Опубліковано"
+
+#: .\autostop\templates\autostop\route.html:109
+#: .\autostop\templates\autostop\route_passenger.html:82
+#: .\autostop\templates\others\blog.html:51
+#: .\autostop\templates\others\blog.html:73
+msgid "Вчера"
+msgstr "Вчора"
+
+#: .\autostop\templates\autostop\start_page.html:58
+msgid "Я пассажир (заявщик)"
+msgstr "Я пасажир (заявник)"
+
+#: .\autostop\templates\autostop\start_page.html:62
+msgid "Быстро просмотреть точки отправления на интерактивной карте:"
+msgstr "Швидко переглянути точки відправлення на інтерактивній карті:"
+
+#: .\autostop\templates\autostop\start_page.html:63
+msgid "Чтобы посмотреть полный маршрут и доп.информацию, нажмите на точку"
+msgstr ""
+"Щоб переглянути повний маршрут та додаткову інформацію, натисніть на точку"
+
+#: .\autostop\templates\autostop\start_page.html:67
+msgid "Всех водителей"
+msgstr "Усіх водіїв"
+
+#: .\autostop\templates\autostop\start_page.html:72
+msgid "Всех пассажиров"
+msgstr "Усіх пасажирів"
+
+#: .\autostop\templates\autostop\start_page.html:84
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "Вы можете"
+msgstr "Ви можете"
+
+#: .\autostop\templates\autostop\start_page.html:84
+msgid "добавить маршрут"
+msgstr "додати маршрут"
+
+#: .\autostop\templates\autostop\start_page.html:84
+msgid "если Вы водитель, или "
+msgstr "якщо Ви водій, або"
+
+#: .\autostop\templates\autostop\start_page.html:84
+msgid "создать заявку"
+msgstr "створити заявку"
+
+#: .\autostop\templates\autostop\start_page.html:84
+msgid ""
+"если Вы пассажир. Если Вам понравился маршрут водителя, перейдите к нему, "
+"подайте заявку, и водитель узнает об этом!"
+msgstr ""
+"якщо ви пасажир. Якщо Вам сподобався маршрут водія, перейдіть до нього, "
+"подайте заявку і водій дізнається про це!"
+
+#: .\autostop\templates\autostop\start_page.html:87
+msgid "Про нас пишут:"
+msgstr "Про нас пишуть:"
+
+#: .\autostop\templates\autostop\start_page.html:91
+#: .\autostop\templates\autostop\start_page.html:98
+msgid "Про нас говорит сайт"
+msgstr "Про нас говорить сайт"
+
+#: .\autostop\templates\autostop\u_cant_edit.html:18
+msgid "Вы не можете изменить маршрут"
+msgstr "Ви не можете змінити маршрут"
+
+#: .\autostop\templates\autostop\u_cant_edit.html:24
+msgid ""
+"Вы уже начали принимать заявки, поэтому, к сожалению, Вы не можете внести "
+"изменения в данный маршрут"
+msgstr ""
+"Ви вже почали приймати заявки, тому, на жаль, Ви не можете внести зміни до "
+"цього маршруту"
+
+#: .\autostop\templates\others\404.html:18
+#: .\autostop\templates\others\404.html:22
+msgid "Ошибка 404"
+msgstr "Помилка 404"
+
+#: .\autostop\templates\others\404.html:23
+msgid "Мы искали Вашу страницу, но так ничего не нашли ("
+msgstr "Ми шукали Вашу сторінку, але так нічого не знайшли ("
+
+#: .\autostop\templates\others\500.html:18
+#: .\autostop\templates\others\500.html:22
+msgid "Ошибка 500"
+msgstr "Помилка 500"
+
+#: .\autostop\templates\others\500.html:23
+msgid "Сервер воротит носом и не хочет отвечать"
+msgstr "Сервер вертає носом і не хоче відповідати"
+
+#: .\autostop\templates\others\500.html:23
+msgid "Мы уже занимаемся это проблемой"
+msgstr "Ми вже займаємося цією проблемою"
+
+#: .\autostop\templates\others\blog.html:37
+msgid "Pidvezu блог - статьи для развития и не только"
+msgstr "Pidvezu блог - статті для розвитку і не тільки"
+
+#: .\autostop\templates\others\blog.html:49
+#: .\autostop\templates\others\blog.html:52
+#: .\autostop\templates\others\blog.html:71
+#: .\autostop\templates\others\blog.html:74
+msgid "Свежее"
+msgstr "Свіже"
+
+#: .\autostop\templates\others\blog.html:62
+#: .\autostop\templates\others\blog.html:82
+msgid "Публикаций пока нет, но мы вскоре напишем что-то интересное"
+msgstr "Публікацій поки що немає, але ми незабаром напишемо щось цікаве"
+
+#: .\autostop\templates\others\blog_post_add.html:82
+msgid "Русская версия"
+msgstr "Російська версія"
+
+#: .\autostop\templates\others\blog_post_add.html:87
+msgid "Загрузить украинскую версию"
+msgstr "Завантажити українську версію"
+
+#: .\autostop\templates\others\blog_post_add.html:91
+msgid "Проверьте Ваш текст на ошибки"
+msgstr "Перевірте текст на помилки"
+
+#: .\autostop\templates\others\blog_post_add.html:92
+msgid "Украинская версия"
+msgstr "Українська версія"
+
+#: .\autostop\templates\others\blog_post_add.html:97
+#| msgid "Добавить свой маршрут"
+msgid "Добавить публикацию"
+msgstr "Додати публікацію"
+
+#: .\autostop\templates\others\brief_intro.html:20
+msgid "Краткое введение"
+msgstr "Короткий вступ"
+
+#: .\autostop\templates\others\brief_intro.html:27
+msgid "Краткое введение в работу сервиса Pidvezu"
+msgstr "Короткий вступ до служби сервісу Pidvezu"
+
+#: .\autostop\templates\others\brief_intro.html:36
+msgid "Рады, что Вы хотите помочь Украине, добавив свой маршрут"
+msgstr "Раді, що Ви хочете допомогти Україні, додавши свій маршрут"
+
+#: .\autostop\templates\others\brief_intro.html:37
+msgid ""
+"Чтобы сделать это, Вы можете нажать на кнопку сверху (если Вы пользуетесь "
+"сервисом через ноутбук) или же на кнопку внизу"
+msgstr ""
+"Щоб зробити це, Ви можете натиснути на кнопку зверху (якщо Ви користуєтесь "
+"сервісом через ноутбук) або на кнопку внизу"
+
+#: .\autostop\templates\others\brief_intro.html:39
+msgid "(если Вы с мобильного устройства)"
+msgstr "(якщо Ви з мобільного устройства)"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "Далее укажите"
+msgstr "Далі вкажіть"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "время отправления"
+msgstr "час відправлення"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "сколько у Вас осталось"
+msgstr "скільки у Вас залишилося"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "мест"
+msgstr "місць"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "в транспортном средстве и нажмите на один или несколько"
+msgstr "у транспортному засобі та натисніть на один або кілька"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "'чекбоксов'"
+msgstr "'чекбоксів'"
+
+#: .\autostop\templates\others\brief_intro.html:41
+msgid "чтобы указать, что Вы можете везти"
+msgstr "щоб вказати, що Ви можете везти"
+
+#: .\autostop\templates\others\brief_intro.html:79
+msgid "После этого сделайте короткое"
+msgstr "Після цього зробіть коротке"
+
+#: .\autostop\templates\others\brief_intro.html:79
+msgid "дополнение"
+msgstr "доповнення"
+
+#: .\autostop\templates\others\brief_intro.html:79
+msgid "Ваш комментарий к маршруту, в части 'Описание'"
+msgstr "Ваш коментар до маршруту, в частині 'Опис'"
+
+#: .\autostop\templates\others\brief_intro.html:80
+msgid "В конечном итоге поставьте метку на"
+msgstr "Зрештою поставте мітку на"
+
+#: .\autostop\templates\others\brief_intro.html:80
+msgid "карте"
+msgstr "карті"
+
+#: .\autostop\templates\others\brief_intro.html:80
+msgid "отправления и прибытия, или же найдите места по адресам"
+msgstr "відправлення та прибуття, або знайдіть місця за адресами"
+
+#: .\autostop\templates\others\brief_intro.html:81
+msgid ""
+"Нажимайте кнопку 'Добавить', и наша команда быстро проверит Ваш маршрут!"
+msgstr ""
+"Натисніть кнопку 'Додати', та наша команда швидко перевірить Ваш маршрут!"
+
+#: .\autostop\templates\others\brief_intro.html:85
+msgid ""
+"Здесь Вы можете просмотреть маршруты и, когда Вы примите достаточно заявок, "
+"проложить маршрут на"
+msgstr ""
+"Тут Ви можете переглянути маршрути і, коли Ви приймете достатньо заявок, "
+"прокласти маршрут на"
+
+#: .\autostop\templates\others\brief_intro.html:85
+msgid "Google Картах"
+msgstr "Google Картах"
+
+#: .\autostop\templates\others\brief_intro.html:86
+msgid "Как изменить точки маршрута?"
+msgstr "Як змінити точки маршруту?"
+
+#: .\autostop\templates\others\brief_intro.html:86
+msgid ""
+"Для этого Вы переходите к нужному Вам маршруту и видите поля (показано "
+"ниже), которые можно перетащить, чтобы поменять путь. Он автоматически "
+"перестроится, и будет Вам назначен новый маршрут"
+msgstr ""
+"Для цього Ви переходите до потрібного Вам маршруту та бачите поля (показано "
+"нижче), які можна перетягнути, щоб змінити шлях. Він автоматично "
+"перебудується, і буде призначено новий маршрут"
+
+#: .\autostop\templates\others\brief_intro.html:89
+msgid "Пункт назначения 1. Перетащи меня"
+msgstr "Пункт призначення 1. Перетягніть мене"
+
+#: .\autostop\templates\others\brief_intro.html:92
+msgid "Пункт назначения 2. Перетащи меня"
+msgstr "Пункт призначення 2. Перетягніть мене"
+
+#: .\autostop\templates\others\brief_intro.html:95
+msgid "Пункт назначения 3. Перетащи меня"
+msgstr "Пункт призначення 3. Перетягніть мене"
+
+#: .\autostop\templates\others\brief_intro.html:98
+msgid "Пункт назначения 4. Перетащи меня"
+msgstr "Пункт призначення 4. Перетягніть мене"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid "Вы можете принять или отклонить"
+msgstr "Ви можете прийняти чи відхилити"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid "заявку"
+msgstr "заявку"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid "на Ваш маршрут. Если Вы"
+msgstr "на Ваш маршрут. Якщо ви"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid "принимаете"
+msgstr "приймаєте"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid ""
+"то запрашиваемый пользователем маршрут автоматически добавляется к Вашему "
+"общему маршруту. Если"
+msgstr ""
+"то запитуваний користувачем маршрут автоматично додається до загального "
+"маршруту. Якщо"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid "отклоняете"
+msgstr "відхиляєте"
+
+#: .\autostop\templates\others\brief_intro.html:104
+msgid ""
+"то не добавляется, или же вычитается, если эта заявка ыла ранее принята Вами"
+msgstr ""
+"то не додається, або ж віднімається, якщо ця заявка була раніше прийнята "
+"Вами"
+
+#: .\autostop\templates\others\brief_intro.html:105
+msgid "Посмотреть все заявки, отправленные Вам, можно"
+msgstr "Переглянути всі заявки, надіслані Вам, можна"
+
+#: .\autostop\templates\others\brief_intro.html:106
+msgid "Посмотреть Ваши"
+msgstr "Переглянути Ваші"
+
+#: .\autostop\templates\others\brief_intro.html:106
+msgid "полные пути"
+msgstr "повні шляхи"
+
+#: .\autostop\templates\others\brief_intro.html:106
+msgid "Вы можете, перейдя по одному из Ваших маршрутов в"
+msgstr "Ви можете, перейшовши по одному з Ваших маршрутів у"
+
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "получать уведомления"
+msgstr "отримувати повідомлення"
+
+#: .\autostop\templates\others\brief_intro.html:110
+msgid "о новых заявках и статусе Ваших маршрутов через"
+msgstr "про нові заявки та статус Ваших маршрутів через"
+
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "Телеграм Бота"
+msgstr "Телеграм Бота"
+
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "Для этого перейдите в"
+msgstr "Для цього перейдіть до"
+
+#: .\autostop\templates\others\brief_intro.html:110
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "и включите уведомления"
+msgstr "та увімкніть повідомлення"
+
+#: .\autostop\templates\others\brief_intro.html:119
+msgid ""
+"Чтобы подать заявку, Вы должны найти маршрут, который Вам подходит, перейти "
+"по нему и найти кнопку"
+msgstr ""
+"Щоб подати заявку, Ви повинні знайти маршрут, який Вам підходить, перейти по"
+" ньому та знайти кнопку"
+
+#: .\autostop\templates\others\brief_intro.html:119
+msgid ""
+"Смело жмите на неё, и водитель узнает об этом, если он включил уведомления в"
+msgstr ""
+"Сміливо тисніть на неї, і водій дізнається про це, якщо він увімкнув "
+"повідомлення в"
+
+#: .\autostop\templates\others\brief_intro.html:119
+msgid "Телеграм Боте"
+msgstr "Телеграм Боте"
+
+#: .\autostop\templates\others\brief_intro.html:120
+msgid ""
+"После прочтения Вашего комментария и маршрута, он одобрит её, или же "
+"отклонит. Вы тоже получите уведомление о его решении, включив уведомления в"
+msgstr ""
+"Після прочитання Вашого коментаря та маршруту, він схвалить її, або ж "
+"відхиляє. Ви також отримаєте повідомлення про його рішення, включивши "
+"повідомлення у"
+
+#: .\autostop\templates\others\brief_intro.html:120
+msgid "Моём профиле"
+msgstr "Моєму профілі"
+
+#: .\autostop\templates\others\brief_intro.html:120
+msgid "и перейдя по этой ссылке к"
+msgstr "і перейшовши за цим посиланням"
+
+#: .\autostop\templates\others\brief_intro.html:120
+msgid "Телеграм Боту"
+msgstr "Телеграм Боту"
+
+#: .\autostop\templates\others\brief_intro.html:123
+msgid "Опубликовать свою заявку"
+msgstr "Опублікувати свою  заявку"
+
+#: .\autostop\templates\others\brief_intro.html:124
+msgid "Вы можете подать свою заявку на маршрут, перейдя по"
+msgstr "Ви можете подати свою заявку на маршрут, перейшовши за"
+
+#: .\autostop\templates\others\brief_intro.html:124
+msgid "этой ссылке"
+msgstr "цим посиланням"
+
+#: .\autostop\templates\others\brief_intro.html:124
+msgid ""
+"Как заполнить форму, описано в разделе 'Я водитель' в пункте 1.1. Но мы "
+"хотим Вас предупредить, что пока что наш сервис не отправляет водителям "
+"вблизи Ваши заявки, поэтому Вам стоит"
+msgstr ""
+"Як заповнити форму, описано в розділі 'Я водій' у пункті 1.1. Але ми хочемо "
+"Вас попередити, що поки що наш сервіс не надсилає водіям поблизу Ваших "
+"заявок, тому Вам варто"
+
+#: .\autostop\templates\others\brief_intro.html:124
+msgid "поискать водителей самим"
+msgstr "пошукати водіїв самим"
+
+#: .\autostop\templates\others\brief_intro.html:125
+msgid ""
+"Исходя из этого можно сказать, что Ваши заявки будут просматривать "
+"волонтёрские организации"
+msgstr ""
+"Виходячи з цього, можна сказати, що Ваші заявки будуть переглядати "
+"волонтерські організації."
+
+#: .\autostop\templates\others\brief_intro.html:129
+msgid "Когда Вы подали заявку, просмотреть все свои заявки можно"
+msgstr "Коли ви подали заявку, переглянути всі свої заявки можна"
+
+#: .\autostop\templates\others\brief_intro.html:133
+msgid "о новых статусе Ваших заявок через"
+msgstr "про новий статус Ваших заявок через"
+
+#: .\autostop\templates\others\exception.html:18
+msgid "Непредвиденная ошибка"
+msgstr "Непередбачена помилка"
+
+#: .\autostop\templates\others\exception.html:22
+msgid "Эту ошибку мы не ждали..."
+msgstr "На цю помилку ми не чекали..."
+
+#: .\autostop\templates\others\exception.html:23
+msgid "Не волнуйтесь, её мы обязательно найдём и устраним"
+msgstr "Не хвилюйтеся, її ми обов'язково знайдемо та усунемо"
+
+#: .\autostop\templates\others\others.html:28
+#: .\autostop\templates\others\others.html:46
+msgid "Дополнительно"
+msgstr "Додатково"
+
+#: .\autostop\templates\others\others.html:33
+msgid "Язык"
+msgstr "Мова"
+
+#: .\autostop\templates\others\others.html:35
+msgid "Войти/Зарегистрироваться"
+msgstr "Увійти/Зареєструватися"
+
+#: .\autostop\templates\others\pidvezu_rules.html:20
+msgid "Правила сервиса Pidvezu"
+msgstr "Правила сервісу Pidvezu"
+
+#: .\autostop\templates\others\pidvezu_rules.html:25
+msgid "Правила сервиса"
+msgstr "Правила сервісу"
+
+#: .\autostop\templates\others\pidvezu_rules.html:26
+#: .\autostop\templates\others\privacy_policy.html:26
+msgid "Обновлено"
+msgstr "Оновлено"
+
+#: .\autostop\templates\others\pidvezu_rules.html:27
+msgid ""
+"Администрация Pidvezu (далее команда, мы, наш) привели дальше правила сайта "
+"pidvezu.com.ua, чтобы рассказать Вам:"
+msgstr ""
+"Адміністрація Pidvezu (далі команда ми, наш) привели далі правила сайту "
+"pidvezu.com.ua, щоб розповісти Вам:"
+
+#: .\autostop\templates\others\pidvezu_rules.html:29
+msgid "общие правила пользования"
+msgstr "загальні правила користування"
+
+#: .\autostop\templates\others\pidvezu_rules.html:30
+msgid "основные «части» сайта и работа с ними"
+msgstr "основні «частини» сайту та робота з ними"
+
+#: .\autostop\templates\others\pidvezu_rules.html:31
+msgid "заключение правил"
+msgstr "укладання правил"
+
+#: .\autostop\templates\others\pidvezu_rules.html:35
+msgid "1.\tОбщие положения (общие правила пользования)"
+msgstr "1. Загальні положення (загальні правила користування)"
+
+#: .\autostop\templates\others\pidvezu_rules.html:36
+msgid ""
+"1.1. Сайт pidvezu.com.ua и его команда не являются стороной (участником) "
+"соглашения между водителем и пассажиром."
+msgstr ""
+"1.1. Сайт pidvezu.com.ua та його команда не є стороною (учасником) угоди між"
+" водієм та пасажиром."
+
+#: .\autostop\templates\others\pidvezu_rules.html:37
+msgid ""
+"1.2. Незарегистрированные пользователи могут пользоваться ограниченным "
+"функционалом веб-сервиса, зарегистрированные же пользователи – большинством."
+" Ограниченный функционал: просмотр страниц сайта; большинство функционала: "
+"просмотр сайта, публикация маршрутов, управление учётной записью, управление"
+" публикациями."
+msgstr ""
+"1.2. Незареєстровані користувачі можуть користуватися обмеженим функціоналом"
+" веб-сервісу, а зареєстровані користувачі – більшістю. Обмежений функціонал:"
+" перегляд сторінок сайту; більшість функціоналу: перегляд сайту, публікація "
+"маршрутів, керування обліковим записом, керування публікаціями."
+
+#: .\autostop\templates\others\pidvezu_rules.html:38
+msgid ""
+"1.3. Текстовые и фото- и/или видеоматериалы, расположенные на сайте являются"
+" объектами права интеллектуальной собственности (временное исключительное "
+"право, а также личные неимущественные права авторов на результат "
+"интеллектуальной деятельности или средства индивидуализации – Википедия), в "
+"частности авторские права и право промышленной собственности, сервиса "
+"Pidvezu, Пользователей и/или третьих лиц Запрещена обработка данных "
+"(информации) без письменного согласия её владельца или уполномоченного лица,"
+" которые предлагает веб-сайт, со злоумышленными целями."
+msgstr ""
+"1.3. Текстові та фото- та/або відеоматеріали, розміщені на сайті, є "
+"об'єктами права інтелектуальної власності (тимчасове виключне право, а також"
+" особисті немайнові права авторів на результат інтелектуальної діяльності "
+"або засоби індивідуалізації – Вікіпедія), зокрема авторські права та право "
+"промислової власності, сервісу Pidvezu , Користувачів та/або третіх осіб "
+"Заборонено обробку даних (інформації) без письмової згоди її власника або "
+"уповноваженої особи, яку пропонує веб-сайт, зі зловмисними цілями."
+
+#: .\autostop\templates\others\pidvezu_rules.html:39
+msgid "1.4. Работа сайта Pidvezu:"
+msgstr "1.4. Робота сайту Pidvezu:"
+
+#: .\autostop\templates\others\pidvezu_rules.html:40
+msgid ""
+"1.4.1. Наша администрация стремится поддерживать бесперебойную работу "
+"сервиса. В некоторых случаях, а именно: технический сбой (независящая от "
+"администрации ситуация) и технический перерыв (часы: 24:00-06:00 – Киевское "
+"время GMT+2), веб-сервис может быть недоступен для взаимодействия "
+"(добавление/изменение/удаление публикаций, личной информации; просмотр "
+"публикаций на сайте), а также работа Телеграм Бота. В случае простоя "
+"(недоступность), независимо от «некоторых случаев», просьба обратиться в "
+"службу поддержки и сообщить об этом."
+msgstr ""
+"1.4.1. Наша адміністрація прагне підтримувати безперебійну роботу сервісу. У"
+" деяких випадках, а саме: технічний збій (незалежна від адміністрації "
+"ситуація) та технічна перерва (години: 24:00-06:00 – Київський час GMT+2), "
+"веб-сервіс може бути недоступним для взаємодії (додавання/зміна/видалення) "
+"публікацій, особистої інформації, перегляд публікацій на сайті), а також "
+"робота Телеграм Бота. У разі простою (недоступність), незалежно від деяких "
+"випадків, прохання звернутися до служби підтримки та повідомити про це."
+
+#: .\autostop\templates\others\pidvezu_rules.html:41
+msgid ""
+"1.4.2. Администрация приложила все усилия, чтобы сделать адаптивность веб-"
+"сайта под все устройства, но на некоторых экранах, в частности телевизора, "
+"смартфона Samsung Galaxy Fold, дизайн сайта может отображаться некорректно. "
+"В случае если Вы заметили сбои в этой области или же пожеланий, то хотим Вам"
+" попросить сообщить в службу поддержки, мы обязательно рассмотрим Ваше "
+"сообщение. Если же Вы владеете другим устройством и также заметили неверно "
+"отображённый дизайн, также обратитесь в службу поддержки, нам действительно "
+"важно Ваше мнение."
+msgstr ""
+"1.4.2. Адміністрація доклала всіх зусиль, щоб зробити адаптивність веб-сайту"
+" під усі пристрої, але на деяких екранах, зокрема телевізора, смартфона "
+"Samsung Galaxy Fold, дизайн сайту може відображатися некоректно. Якщо Ви "
+"помітили збої в цій області або побажань, то хочемо Вам попросити повідомити"
+" службу підтримки, ми обов'язково розглянемо Ваше повідомлення. Якщо ж Ви "
+"володієте іншим пристроєм і також помітили неправильно відображений дизайн, "
+"також зверніться до служби підтримки, нам дійсно важлива Ваша думка."
+
+#: .\autostop\templates\others\pidvezu_rules.html:42
+msgid ""
+"1.4.3. В большинстве, если не во всех браузерах, поддерживаются javascript "
+"(файлы с кодом, который отвечает в основном за анимацию) и запись cookie-"
+"файлов (небольшие по размеру файлы с данными, расположенные на устройстве "
+"пользователя, которые не представляют угрозу и помогают запоминать Ваши "
+"предпочтения). Данные функции включены по умолчанию. Если же Вы отключили "
+"их, пожалуйста, включите, так дизайн сайта будет отображаться плавно и без "
+"сбоев. "
+msgstr ""
+"1.4.3. У більшості, якщо не у всіх браузерах, підтримуються javascript "
+"(файли з кодом, який відповідає в основному за анімацію) та запис cookie-"
+"файлів (невеликі за розміром файли з даними, розташовані на пристрої "
+"користувача, які не загрожують і допомагають запам'ятовувати Ваші уподобання"
+" ). Ці функції включені за замовчуванням. Якщо Ви відключили їх, будь ласка,"
+" увімкніть, так дизайн сайту буде відображатися плавно і без збоїв."
+
+#: .\autostop\templates\others\pidvezu_rules.html:45
+msgid "2. Основные «части» сайта и работа с ними"
+msgstr "2. Основні «частини» сайту та робота з ними"
+
+#: .\autostop\templates\others\pidvezu_rules.html:46
+msgid "2.1. Регистрация"
+msgstr "2.1. Реєстрація"
+
+#: .\autostop\templates\others\pidvezu_rules.html:47
+msgid ""
+"2.1.1. Регистрация пользователя нужна для расширения возможностей и "
+"функционала сайта, которые описаны в пункте 1.2. ВАЖНО! Перед регистрацией, "
+"мы советуем Вам ознакомиться с"
+msgstr ""
+"2.1.1. Реєстрація користувача потрібна для розширення можливостей та "
+"функціоналу сайту, описаних у пункті 1.2. ВАЖЛИВО! Перед реєстрацією ми "
+"радимо Вам ознайомитись з"
+
+#: .\autostop\templates\others\pidvezu_rules.html:47
+msgid ""
+"чтобы Вы понимали, для чего и какие мы собираем и обрабатываем персональные "
+"данные своих гостей и пользователей."
+msgstr ""
+"щоб Ви розуміли, для чого і які ми збираємо та обробляємо персональні дані "
+"своїх гостей та користувачів."
+
+#: .\autostop\templates\others\pidvezu_rules.html:48
+msgid ""
+"2.1.2. \tПользователем может быть только физическое лицо с соответствующим "
+"объемом дееспособности, юридическое лицо или компания. В случае юридических "
+"лиц и компаний, только лицо, уполномоченное действовать от их имени, может "
+"создать Учетную запись и взаимодействовать с сервисом Pidvezu. В случае "
+"регистрации физ. лица, не достигшего 18-тилетнего возраста, мы настоятельно "
+"рекомендуем прочитать данные правила и"
+msgstr ""
+"2.1.2. Користувачем може бути лише фізична особа з відповідним обсягом "
+"дієздатності, юридична особа чи компанія. У випадку юридичних осіб та "
+"компаній, тільки особа, уповноважена діяти від їхнього імені, може створити "
+"Обліковий запис та взаємодіяти з сервісом Pidvezu. У разі реєстрації фіз. "
+"особи, яка не досягла 18-річного віку, ми настійно рекомендуємо прочитати "
+"дані правила та"
+
+#: .\autostop\templates\others\pidvezu_rules.html:48
+msgid "Политику конфиденциальности"
+msgstr "Політику конфіденційності"
+
+#: .\autostop\templates\others\pidvezu_rules.html:48
+msgid ""
+"вместе с родителями и/или опекуном. В дальнейшем родителям и/или опекуну "
+"рекомендуется контролировать деятельность своих детей на веб-сервисе."
+msgstr ""
+"разом з батьками та/або опікуном. Надалі батькам та/або опікуну "
+"рекомендується контролювати діяльність своїх дітей на веб-сервісі."
+
+#: .\autostop\templates\others\pidvezu_rules.html:49
+msgid "2.1.3. Пользователь может иметь только одну учетную запись."
+msgstr "2.1.3. Користувач може мати лише один обліковий запис."
+
+#: .\autostop\templates\others\pidvezu_rules.html:50
+msgid ""
+"2.1.4. Порядок регистрации прост, для этого нужно: заполнить форму "
+"регистрации на сайте, просмотреть (ознакомиться) с"
+msgstr ""
+"2.1.4. Порядок реєстрації простий, для цього потрібно: заповнити форму "
+"реєстрації на сайті, переглянути (ознайомитись) з"
+
+#: .\autostop\templates\others\pidvezu_rules.html:50
+msgid ""
+"и Правилами сайта, проверить электронный почтовый ящик, который Вы указали "
+"при регистрации – там будет письмо с кнопкой, которая сделает Ваш профиль "
+"активным, нажмите её. Поздравляем, Вы теперь с нами!) Теперь можете создать "
+"свой первый маршрут, если до этого не пользовались сайтом, или же "
+"просмотреть существующие."
+msgstr ""
+"та Правилами сайту, перевірити електронну поштову скриньку, яку Ви вказали "
+"при реєстрації – там буде лист із кнопкою, яка зробить Ваш профіль активним,"
+" натисніть її. Вітаємо, Ви тепер з нами!) Тепер можете створити свій перший "
+"маршрут, якщо раніше не користувалися сайтом, або ж переглянути існуючі."
+
+#: .\autostop\templates\others\pidvezu_rules.html:51
+msgid ""
+"Пользователь гарантирует, что данные, предоставленные в ходе Регистрации и "
+"во время использования Веб-сайта, точны, верны и актуальны, и что он имеет "
+"право использовать эти данные. Пользователь обязуется обновлять данные в "
+"случае их изменения."
+msgstr ""
+"Користувач гарантує, що дані, надані в реєстрації та під час використання "
+"Веб-сайту, точні, вірні та актуальні, і що він має право використовувати ці "
+"дані. Користувач зобов'язується оновлювати дані у разі їх зміни."
+
+#: .\autostop\templates\others\pidvezu_rules.html:52
+msgid ""
+"2.1.5. Данные, которые были предоставлены при регистрации команда Pidvezu не"
+" советует разглашать третьим лицам, которые могут заполучить Ваши данные и "
+"использовать в личных целях. В таком случае мы, к сожалению, не сможем "
+"обратить этот процесс. В случае, если Ваши регистрационный данные утекли, в "
+"частности номер телефона и/или имя пользователя и/или email и пароль, мы "
+"настоятельно рекомендуем Вам обновить пароль, нажав на ссылку «Забыли "
+"пароль?» в окне регистрации или входа."
+msgstr ""
+"2.1.5. Дані, надані під час реєстрації, команда Pidvezu не радить "
+"розголошувати третім особам, які можуть отримати ваші дані та "
+"використовувати в особистих цілях. У такому разі ми, на жаль, не зможемо "
+"обернути цей процес. У випадку, якщо Ваші реєстраційні дані втекли, зокрема "
+"номер телефону та/або ім'я користувача та/або email та пароль, ми настійно "
+"рекомендуємо Вам оновити пароль, натиснувши на посилання «Забули пароль?» у "
+"вікні реєстрації або входу."
+
+#: .\autostop\templates\others\pidvezu_rules.html:53
+msgid "2.2. Учётная запись (профиль, аккаунт)"
+msgstr "2.2. Обліковий запис (профіль, обліковий запис)"
+
+#: .\autostop\templates\others\pidvezu_rules.html:54
+msgid ""
+"2.2.1. Вы можете удалить свой профиль, нажав на соответствующую кнопку "
+"«Удалить профиль» в разделе «Открыть профиль». В случае, если Вы решите "
+"удалить его, Ваши маршруты и личные данные также будут стёрты из системы."
+msgstr ""
+"2.2.1. Ви можете видалити свій профіль, натиснувши на відповідну кнопку "
+"«Видалити профіль» у розділі «Відкрити профіль». У випадку, якщо Ви вирішите"
+" видалити його, Ваші маршрути та особисті дані також будуть стерті із "
+"системи."
+
+#: .\autostop\templates\others\pidvezu_rules.html:55
+msgid ""
+"2.2.2. В разделе, описанном в п. 2.2.1 Вы можете отредактировать свои личные"
+" данные, которые будут видеть другие пользователи. Это нужно для связи "
+"посетителей сайта с Вами и для того, чтобы рассказать о себе в той мере, "
+"насколько позволяет форма заполнения данными. Чем больше будет данных о Вас "
+"заполнено, тем легче и доверчивее будет связь между Вами и Пользователем "
+"веб-сервиса."
+msgstr ""
+"2.2.2. У розділі, описаному в п. 2.2.1, Ви можете відредагувати свої "
+"особисті дані, які будуть бачити інші користувачі. Це потрібно для зв'язку "
+"відвідувачів сайту з Вами та для того, щоб розповісти про себе тією мірою, "
+"наскільки дозволяє форма заповнення даними. Чим більше даних про Вас "
+"заповнено, тим легшим і довірливішим буде зв'язок між Вами та Користувачем "
+"веб-сервісу."
+
+#: .\autostop\templates\others\pidvezu_rules.html:56
+msgid ""
+"2.2.3. Получение уведомлений о статусе маршрутов и заявок в Телеграм – для "
+"того, чтобы получать рассылку, нажмите на «чекбокс», чтобы он заполнился "
+"синим цветом, и нажмите кнопку «Изменить». Если же хотите отказаться от "
+"уведомлений, нажмите на «чекбокс», чтобы он заполнился белым цветом, и "
+"нажмите на кнопку «Изменить»."
+msgstr ""
+"2.2.3. Отримання повідомлень про статус маршрутів і заявок до Телеграм – для"
+" того, щоб отримувати розсилку, натисніть на чекбокс, щоб він заповнився "
+"синім кольором, та натисніть кнопку Змінити. Якщо хочете відмовитися від "
+"повідомлень, натисніть на чекбокс, щоб він заповнився білим кольором, і "
+"натисніть кнопку Змінити."
+
+#: .\autostop\templates\others\pidvezu_rules.html:57
+msgid ""
+"2.2.4. Если зарегистрированный Пользователь сервиса Pidvezu неоднократно "
+"попробует опубликовать объявления, которые будут противоречить правилам "
+"содержания объявления (описано ниже в разделе 2.3), или же, если поступят "
+"неоднократные жалобы на недобросовестность Пользователя, мы будем вынуждены "
+"заблокировать его профиль. В случае блокировки персональные данные не "
+"удаляются. Если заблокированный Пользователь хочет, чтобы его данные были "
+"удалены из системы, нужно обратиться в службу поддержки, предоставив "
+"добровольное, достоверно подписанное заявление в печатном виде, которое "
+"гласит о взаимодействии с сайтом Pidvezu, кроме просмотра публикаций."
+msgstr ""
+"2.2.4. Якщо зареєстрований Користувач сервісу Pidvezu неодноразово спробує "
+"опублікувати оголошення, які будуть суперечити правилам утримання оголошення"
+" (описано нижче в розділі 2.3), або якщо надійдуть неодноразові скарги на "
+"несумлінність Користувача, ми будемо змушені заблокувати його профіль. У "
+"разі блокування особисті дані не видаляються. Якщо заблокований Користувач "
+"хоче, щоб його дані були видалені із системи, потрібно звернутися до служби "
+"підтримки, надавши добровільну, достовірно підписану заяву в друкованому "
+"вигляді, яка говорить про взаємодію з сайтом Pidvezu, крім перегляду "
+"публікацій."
+
+#: .\autostop\templates\others\pidvezu_rules.html:58
+msgid "2.3. Объявления (маршруты, публикации)"
+msgstr "2.3. Оголошення (маршрути, публікації)"
+
+#: .\autostop\templates\others\pidvezu_rules.html:59
+msgid ""
+"2.3.1. Маршруты, опубликованные на нашем сайте, предварительно проходят "
+"проверку командой Pidvezu. Запрещённая тематика публикаций: "
+msgstr ""
+"2.3.1. Маршрути, опубліковані на нашому сайті, проходять перевірку командою "
+"Pidvezu. Заборонена тематика публікацій:"
+
+#: .\autostop\templates\others\pidvezu_rules.html:61
+msgid "порнографическая, насильственная и всё, что связано с этим;"
+msgstr "порнографічна, насильницька та все, що пов'язано з цим;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:62
+msgid ""
+"содержащая любые нецензурные слова, оскорбления, в частности на основании "
+"национальных, этнических, расовых, религиозных или нерелигиозных различий;"
+msgstr ""
+"що містить будь-які нецензурні слова, образи, зокрема на підставі "
+"національних, етнічних, расових, релігійних або нерелігійних відмінностей;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:63
+msgid "содержащая информацию о нацистской, коммунистической символики;"
+msgstr "містить інформацію про нацистську, комуністичну символіку;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:64
+msgid ""
+"пропаганда политических партий, общественных организаций и фондов, войны;"
+msgstr ""
+"пропаганда політичних партій, громадських організацій та фондів, війни;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:65
+msgid "несуществующий или ложный маршрут;"
+msgstr "неіснуючий або хибний маршрут;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:66
+msgid "рекламная;"
+msgstr "рекламна;"
+
+#: .\autostop\templates\others\pidvezu_rules.html:67
+msgid "противоречащее законодательству Украины."
+msgstr "що суперечить законодавству України."
+
+#: .\autostop\templates\others\pidvezu_rules.html:69
+msgid ""
+"2.3.2. Команда Pidvezu не переводит названия, описания публикаций и все "
+"поля, что заполняет создатель объявления."
+msgstr ""
+"2.3.2. Команда Pidvezu не переводить назви, описи публікацій та всі поля, що"
+" заповнює автор оголошення."
+
+#: .\autostop\templates\others\pidvezu_rules.html:72
+msgid "3. Заключение правил."
+msgstr "3. Висновок правил."
+
+#: .\autostop\templates\others\pidvezu_rules.html:73
+msgid ""
+"3.1. Команда Pidvezu оставляет за собой право вносить изменения в данные "
+"Правила."
+msgstr ""
+"3.1. Команда Pidvezu залишає за собою право вносити зміни до цих Правил."
+
+#: .\autostop\templates\others\pidvezu_rules.html:74
+msgid ""
+"3.2. Если Пользователь не согласен с правилами и не собирается "
+"придерживаться их, то мы настоятельно рекомендуем удалить учётную запись и "
+"прекратить использование веб-сервиса Pidvezu."
+msgstr ""
+"3.2. Якщо Користувач не згоден з правилами і не збирається дотримуватися їх,"
+" ми рекомендуємо видалити обліковий запис і припинити використання веб-"
+"сервісу Pidvezu."
+
+#: .\autostop\templates\others\pidvezu_rules.html:75
+msgid ""
+"3.3. После изменения новые правила вступят в силу на следующий день после "
+"обновления (указана дата вверху страницы)."
+msgstr ""
+"3.3. Після зміни нові правила набудуть чинності наступного дня після "
+"оновлення (зазначена дата зверху сторінки)."
+
+#: .\autostop\templates\others\pidvezu_rules.html:76
+msgid ""
+"3.4. Администрация Pidvezu никогда не запрашивает данные для посещения сайта"
+" (не путайте с авторизацией). Не стоит переходить с вашего сайта на другие и"
+" авторизовываться на них. Особенно если ссылку Вы увидели в полученном "
+"личном сообщении."
+msgstr ""
+"3.4. Адміністрація Pidvezu ніколи не просить даних для відвідування сайту "
+"(не плутайте з авторизацією). Не варто переходити з вашого сайту на інші та "
+"авторизуватись на них. Особливо якщо посилання ви побачили в отриманому "
+"особистому повідомленні."
+
+#: .\autostop\templates\others\pidvezu_rules.html:77
+msgid ""
+"3.5. Никому нельзя сообщать одноразовые пароли или ответы на секретные "
+"вопросы."
+msgstr ""
+"3.5. Нікому не можна повідомляти одноразові паролі або відповіді секретні "
+"питання."
+
+#: .\autostop\templates\others\privacy_policy.html:27
+msgid ""
+"Администрация (далее команда, мы, нас, наш) Pidvezu беспокоится об "
+"обеспечении безопасности данных наших Пользователей - поэтому мы составили "
+"Политику конфиденциальности, чтобы Вы не беспокоились о нашей работе с "
+"Вашими данными, которые были предоставлены нашему сервису, как при "
+"регистрации, так и после"
+msgstr ""
+"Адміністрація (далі команда, ми, нас, наш) Pidvezu турбується про "
+"забезпечення безпеки даних наших Користувачів - тому ми склали Політику "
+"конфіденційності, щоб Ви не турбувалися про нашу роботу з Вашими даними, які"
+" були надані нашому сервісу, як під час реєстрації, так і після"
+
+#: .\autostop\templates\others\privacy_policy.html:28
+msgid ""
+"Политика конфиденциальности, далее – Политика, действует в отношении "
+"обработки персональных данных, которые может получить веб-сервис Pidvezu "
+"(pidvezu.com.ua, https://pidvezu.com.ua) от физических лиц-пользователей"
+msgstr ""
+"Політика конфіденційності, далі – Політика, діє щодо обробки персональних "
+"даних, які може отримати веб-сервіс Pidvezu (pidvezu.com.ua, "
+"https://pidvezu.com.ua) від фізичних осіб-користувачів"
+
+#: .\autostop\templates\others\privacy_policy.html:31
+msgid "Данная Политика конфиденциальности разработана, чтобы рассказать Вам:"
+msgstr "Ця Політика конфіденційності розроблена, щоб розповісти Вам:"
+
+#: .\autostop\templates\others\privacy_policy.html:33
+msgid "общие положения по Политике;"
+msgstr "загальні положення щодо Політики;"
+
+#: .\autostop\templates\others\privacy_policy.html:34
+msgid "какие Ваши персональные данные мы собираем;"
+msgstr "які Ваші персональні дані ми збираємо;"
+
+#: .\autostop\templates\others\privacy_policy.html:35
+msgid "как и почему мы используем их;"
+msgstr "як і чому ми використовуємо їх;"
+
+#: .\autostop\templates\others\privacy_policy.html:36
+msgid "администрация – кому можно обрабатывать данные;"
+msgstr "адміністрація – кому можна обробляти дані;"
+
+#: .\autostop\templates\others\privacy_policy.html:37
+msgid "пользовательские права;"
+msgstr "права користувача;"
+
+#: .\autostop\templates\others\privacy_policy.html:38
+msgid "безопасность данных;"
+msgstr "безпека даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:39
+msgid "изменение Политики конфиденциальности;"
+msgstr "зміна Політики конфіденційності;"
+
+#: .\autostop\templates\others\privacy_policy.html:40
+msgid "к кому Вы можете обратиться для защиты Ваших персональных данных."
+msgstr "до кого Ви можете звернутися для захисту Ваших персональних даних."
+
+#: .\autostop\templates\others\privacy_policy.html:42
+msgid ""
+"Мы с полной серьёзностью относимся к безопасности личных данных как прежних,"
+" так и потенциальных Пользователей, обратившихся к нам, поэтому стремимся "
+"защищать конфиденциальность персональных данных. Команда Pidvezu обязуется "
+"принять все необходимые меры для предотвращения злоупотребления Вашими "
+"персональными данными, которые становятся нам известны. Мы будем "
+"обрабатывать их в строгом соответствии с требованиями Закона Украины «О "
+"защите персональных данных», исключительно при наличии законных оснований на"
+" такую обработку, в частности правилами, описанными в Политике "
+"конфиденциальности (далее)"
+msgstr ""
+"Ми з серйозністю ставимося до безпеки особистих даних як колишніх, так і "
+"потенційних Користувачів, які звернулися до нас, тому прагнемо захищати "
+"конфіденційність персональних даних. Команда Pidvezu зобов'язується вжити "
+"всіх необхідних заходів для запобігання зловживанню Вашими персональними "
+"даними, які стають нам відомими. Ми будемо обробляти їх у суворій "
+"відповідності до вимог Закону України «Про захист персональних даних» "
+"виключно за наявності законних підстав на таку обробку, зокрема правилами, "
+"описаними в Політиці конфіденційності (далі)"
+
+#: .\autostop\templates\others\privacy_policy.html:43
+msgid ""
+"Хотим заметить, что Вы абсолютно не обязаны раскрывать нам персональные "
+"данные, но без определенной информации о Вас мы не сможем предоставить "
+"большую часть функционала нашего сервиса"
+msgstr ""
+"Хочемо зауважити, що Ви абсолютно не зобов'язані розкривати нам персональні "
+"дані, але без певної інформації про Вас ми не зможемо надати більшу частину "
+"функціоналу нашого сервісу"
+
+#: .\autostop\templates\others\privacy_policy.html:46
+msgid "1. Общие положения "
+msgstr "1. Загальні положення"
+
+#: .\autostop\templates\others\privacy_policy.html:47
+msgid ""
+"1.1. Цель данной Политики заключается в доведении до Вас необходимой "
+"информации, которая позволяет оценить, какие персональные данные и с какими "
+"целями обрабатываются командой Pidvezu, методы их обработки и обеспечения "
+"безопасности."
+msgstr ""
+"1.1. Мета даної Політики полягає у доведенні до Вас необхідної інформації, "
+"яка дозволяє оцінити, які персональні дані та з якими цілями обробляються "
+"командою Pidvezu, методи їх обробки та забезпечення безпеки."
+
+#: .\autostop\templates\others\privacy_policy.html:48
+msgid ""
+"1.2. Личные данные как наших Пользователей обрабатываются на удалённых "
+"защищённых серверах, находящихся за пределами страны Украины."
+msgstr ""
+"1.2. Особисті дані як наших Користувачів обробляються на захищених "
+"віддалених серверах, що знаходяться за межами країни України."
+
+#: .\autostop\templates\others\privacy_policy.html:49
+msgid ""
+"1.3. Используя веб-сервис pidvezu.com.ua Пользователь предоставляет своё "
+"согласие на обработку своих личных данных, таких как: адрес электронной "
+"почты (email); контактный телефон; имя и фамилия, описание транспортного "
+"средства – по желанию; при регистрации в Телеграм Боте: личный id; а также "
+"даёт своё согласие на передачу своих персональных данных третьим лицам, в "
+"том числе  за границу, в любую третью страну, в соответствии с данной "
+"Политикой."
+msgstr ""
+"1.3. Використовуючи веб-сервіс pidvezu.com.ua Користувач надає свою згоду на"
+" обробку особистих даних, таких як: адреса електронної пошти (email); "
+"контактний телефон; ім'я та прізвище, опис транспортного засобу – за "
+"бажанням; при реєстрації в Телеграмі Боті: особистий id; а також дає свою "
+"згоду на передачу своїх персональних даних третім особам, у тому числі за "
+"кордон, у будь-яку третю країну відповідно до цієї Політики."
+
+#: .\autostop\templates\others\privacy_policy.html:50
+msgid ""
+"1.4. При использовании онлайн-сервиса Pidvezu, Вы, сообщив нам свои личные "
+"данные, признаете свое согласие на обработку своих персональных данных в "
+"соответствии с Политикой конфиденциальности. В случае несогласия с условиями"
+" Политики, Вы обязаны прекратить использовать данный сервис."
+msgstr ""
+"1.4. При використанні онлайн-сервісу Pidvezu, Ви, повідомивши свої особисті "
+"дані, визнаєте свою згоду на обробку своїх персональних даних відповідно до "
+"Політики конфіденційності. У разі незгоди з умовами Політики, Ви повинні "
+"припинити користуватися цим сервiсом."
+
+#: .\autostop\templates\others\privacy_policy.html:51
+msgid ""
+"1.5. Команда сайта не проверяет достоверность персональных данных, "
+"предоставляемых Пользователем, поэтому не имеет возможности оценивать его "
+"дееспособность. Однако мы исходим из того, что Пользователь действует "
+"добровольно, добросовестно, осмотрительно, предоставляет достоверные "
+"персональные данные и не нарушает права третьих лиц."
+msgstr ""
+"1.5. Команда сайту не перевіряє достовірність персональних даних, які надає "
+"Користувач, тому не має можливості оцінювати його дієздатність. Однак ми "
+"виходимо з того, що Користувач діє добровільно, сумлінно, обачно, надає "
+"достовірні персональні дані та не порушує права третіх осіб."
+
+#: .\autostop\templates\others\privacy_policy.html:52
+msgid ""
+"1.6. Соглашаясь с условиями Политики, Вы подтверждаете, что в момент сбора "
+"персональных данных Вы уведомлены о лицах, которым передаются персональные "
+"данные, содержании и целях сбора персональных данных. Вы подтверждаете "
+"(гарантируете), что персональные данные, которые переданы нам на обработку, "
+"переданы с согласия владельцев персональных данных и в рамках "
+"Законодательства."
+msgstr ""
+"1.6. Погоджуючись з умовами Політики, Ви підтверджуєте, що в момент збору "
+"персональних даних Ви повідомлені про осіб, яким передаються персональні "
+"дані, зміст та цілі збору персональних даних. Ви підтверджуєте (гарантуєте),"
+" що персональні дані, що передані нам на обробку, передані за згодою "
+"власників персональних даних та в рамках Законодавства."
+
+#: .\autostop\templates\others\privacy_policy.html:53
+msgid ""
+"1.7. Сервис Pidvezu и его администрация освобождается от ответственности за "
+"последствия, наступившие в связи с обработкой ими персональных данных, в "
+"случае если они не несут ответственности за событие, повлекшее наступление "
+"таких последствий."
+msgstr ""
+"1.7. Сервіс Pidvezu та його адміністрація звільняються від відповідальності "
+"за наслідки, що настали у зв'язку з обробкою ними персональних даних, якщо "
+"вони не несуть відповідальності за подію, що спричинила наступ таких "
+"наслідків."
+
+#: .\autostop\templates\others\privacy_policy.html:54
+msgid ""
+"1.8. Мы не стремимся целенаправленно собирать персональную информацию лиц "
+"моложе 18 лет. Родителям и/или опекуна рекомендуется контролировать "
+"связанную с этим деятельность своих детей."
+msgstr ""
+"1.8. Ми не прагнемо цілеспрямовано збирати персональну інформацію молодших "
+"18 років. Батькам та/або опікунам рекомендується контролювати пов'язану з "
+"цим діяльність своїх дітей."
+
+#: .\autostop\templates\others\privacy_policy.html:55
+msgid ""
+"1.9. Хотим предупредить, что ссылки, которые предоставляются сторонними "
+"лицами, могут быть небезопасны, и администрация сайта не сможет помочь "
+"Пользователю в случае утери данных и других непредвиденных обстоятельствах, "
+"потому что информация о Пользователях собирается вне прямого контроля "
+"сервиса Pidvezu и его команды. Будьте осторожны! Если у Вас возникли какие-"
+"либо проблемы с этим, обратитесь в нашу службу поддержки, мы постараемся Вам"
+" помочь! :)"
+msgstr ""
+"1.9. Хочемо попередити, що посилання, які надаються сторонніми особами, "
+"можуть бути небезпечними, і адміністрація сайту не зможе допомогти "
+"Користувачеві у разі втрати даних та інших непередбачених обставин, тому що "
+"інформація про Користувачів збирається поза прямим сервісом Pidvezu та його "
+"командою. Будьте обережні! Якщо у Вас виникли будь-які проблеми з цим, "
+"зверніться до нашої служби підтримки, ми намагатимемося Вам допомогти! :)"
+
+#: .\autostop\templates\others\privacy_policy.html:56
+msgid ""
+"1.10. Администрация сайта не может проверить на правдивость информацию, "
+"публикуемую другими пользователями, поэтому не может нести ответственность "
+"за достоверность."
+msgstr ""
+"1.10. Адміністрація сайту не може перевірити на правдивість інформацію, що "
+"публікується іншими користувачами, тому не може відповідати за "
+"достовірність."
+
+#: .\autostop\templates\others\privacy_policy.html:59
+msgid "2. Какие Ваши персональные данные мы собираем"
+msgstr "2. Які Ваші персональні дані ми збираємо"
+
+#: .\autostop\templates\others\privacy_policy.html:60
+msgid ""
+"2.1. Администрация, для осуществления своей деятельности и для выполнения "
+"своих обязательств, обрабатывает персональные данные Пользователя, "
+"предоставленные им при регистрации на сайте pidvezu.com.ua, публикации "
+"маршрутов и хранящиеся в личном кабинете. К персональным данным Пользователя"
+" относятся: адрес электронной почты (email), контактный телефон (при "
+"регистрации); описание т/с, имя и фамилия (по желанию заполняется в "
+"профиле); id (при запуске Телеграм Бота). "
+msgstr ""
+"2.1. Адміністрація, для здійснення своєї діяльності та для виконання своїх "
+"зобов'язань, опрацьовує персональні дані Користувача, надані ним при "
+"реєстрації на сайті pidvezu.com.ua, публікації маршрутів та збережені в "
+"особистому кабінеті. До персональних даних Користувача належать: адреса "
+"електронної пошти (email), контактний телефон (під час реєстрації); опис "
+"т/с, ім'я та прізвище (за бажанням заповнюється у профілі); id (під час "
+"запуску Телеграм Бота)."
+
+#: .\autostop\templates\others\privacy_policy.html:61
+msgid ""
+"2.3. Мы просим Вас сообщать только те персональные данные, которые "
+"необходимы для регистрации, ответа на Ваш запрос или замечание сервису. В "
+"тоже время, если Вы решите сообщить нам дополнительные персональные данные, "
+"мы будем этому рады и обязуемся обработать их с необходимым уровнем защиты."
+msgstr ""
+"2.3. Ми просимо Вас повідомляти лише ті персональні дані, які потрібні для "
+"реєстрації, відповіді на Ваш запит або зауваження сервісу. У той же час, "
+"якщо Ви вирішите повідомити нам додаткові персональні дані, ми будемо раді і"
+" зобов'язуємося обробити їх з необхідним рівнем захисту."
+
+#: .\autostop\templates\others\privacy_policy.html:62
+msgid ""
+"2.4. Пользователи несут ответственность за всю информацию, которую они "
+"размещают в общедоступных записях. "
+msgstr ""
+"2.4. Користувачі відповідають за всю інформацію, яку вони розміщують у "
+"загальнодоступних записах."
+
+#: .\autostop\templates\others\privacy_policy.html:63
+msgid ""
+"2.5. При обслуживании посетителей сайта команда Pidvezu вправе собирать "
+"личную информацию для выполнения запроса Пользователя и, в случае "
+"необходимости, обратного ответа."
+msgstr ""
+"2.5. При обслуговуванні відвідувачів сайту команда Pidvezu має право збирати"
+" особисту інформацію для виконання запиту Користувача та, у разі потреби, "
+"зворотної відповіді."
+
+#: .\autostop\templates\others\privacy_policy.html:64
+msgid ""
+"2.6. Мы не собираем и, соответственно, не обрабатываем персональные данные о"
+" расовом или этническом происхождении, политических, мировоззренческих или "
+"религиозных убеждениях, членстве в политических партиях и проф. союзах, "
+"осуждения к уголовному наказанию, а также данных, касающихся здоровья, "
+"половой жизни, биометрических и генетических данных."
+msgstr ""
+"2.6. Ми не збираємо і, відповідно, не обробляємо персональні дані про расове"
+" чи етнічне походження, політичні, світоглядні чи релігійні переконання, "
+"членство в політичних партіях та проф. союзах, засудження до кримінального "
+"покарання, а також даних, що стосуються здоров'я, статевого життя, "
+"біометричних та генетичних даних."
+
+#: .\autostop\templates\others\privacy_policy.html:67
+msgid "3. Как и почему мы используем их"
+msgstr "3. Як і чому ми використовуємо їх"
+
+#: .\autostop\templates\others\privacy_policy.html:68
+msgid ""
+"3.1. Наш сервис использует Cookies (куки). Это небольшие по размеру файлы с "
+"данными, расположенные на устройстве пользователя, которые не представляют "
+"угрозу и помогают запоминать Ваши предпочтения. Полный перечень Вы можете "
+"увидеть, перейдя в консоль разработчика -> Application -> Cookies -> дальше "
+"из выпавшего меню выбираете сервис Pidvezu и просматриваете."
+msgstr ""
+"3.1. Наш сервіс використовує Cookies. Це невеликі за розміром файли з "
+"даними, розташовані на пристрої користувача, які не загрожують і допомагають"
+" запам'ятовувати Ваші уподобання. Повний перелік Ви можете побачити, "
+"перейшовши в консоль розробника -> Application -> Cookies -> далі з меню "
+"вибираєте сервіс Pidvezu і переглядаєте."
+
+#: .\autostop\templates\others\privacy_policy.html:69
+msgid ""
+"3.2. Цели, для которых онлайн-сервис Pidvezu собирает и обрабатывает данные:"
+msgstr "3.2. Цілі, для яких онлайн-сервіс Pidvezu збирає та обробляє дані:"
+
+#: .\autostop\templates\others\privacy_policy.html:70
+msgid ""
+"3.2.1. Возможность посетителям пользоваться основным функционалом сайта "
+"(сбор на регистрации, куки)."
+msgstr ""
+"3.2.1. Можливість відвідувачам користуватися основним функціоналом сайту "
+"(збір на реєстрацію, кукі)."
+
+#: .\autostop\templates\others\privacy_policy.html:71
+msgid ""
+"3.2.2. Возможность отображения информации о пользователе в публикациях."
+msgstr ""
+"3.2.2. Можливість відображення інформації про користувача у публікаціях."
+
+#: .\autostop\templates\others\privacy_policy.html:72
+msgid ""
+"3.2.3. Возможность получать уведомления о статусе маршрута и заявок через "
+"Телеграм Бота."
+msgstr ""
+"3.2.3. Можливість отримувати повідомлення про статус маршруту та заявки "
+"через Телеграм Бота."
+
+#: .\autostop\templates\others\privacy_policy.html:73
+msgid ""
+"3.2.4. Связь с прежними и потенциальными пользователями сайта для решения "
+"вопросов, касающихся работы сайта, на сайте и связанных с этим."
+msgstr ""
+"3.2.4. Зв'язок із колишніми та потенційними користувачами сайту для "
+"вирішення питань, що стосуються роботи сайту, на сайті та пов'язаних із цим."
+
+#: .\autostop\templates\others\privacy_policy.html:74
+msgid ""
+"3.3. Сроки обработки персональных данных определяются исходя из целей "
+"обработки, но не дольше чем это определено Законодательством. Мы также "
+"учитываем периоды, для которых нам, возможно, потребуется сохранить Ваши "
+"персональные данные для выполнения наших юридических обязательств перед Вами"
+" или контролирующими органами. "
+msgstr ""
+"3.3. Терміни обробки персональних даних визначаються виходячи з цілей "
+"обробки, але не довше, ніж це визначено Законодавством. Ми також враховуємо "
+"періоди, для яких нам, можливо, потрібно буде зберегти Ваші персональні дані"
+" для виконання наших юридичних зобов'язань перед Вами або контролюючими "
+"органами."
+
+#: .\autostop\templates\others\privacy_policy.html:77
+msgid "4. Администрация – кому можно обрабатывать данные"
+msgstr "4. Адміністрація – кому можна обробляти дані"
+
+#: .\autostop\templates\others\privacy_policy.html:78
+msgid ""
+"4.1.  К обработке персональных данных допущены только те сотрудники "
+"администрации, на которых возложена такая обязанность в соответствии с их "
+"служебными обязанностями. Доступ других сотрудников может быть предоставлен "
+"исключительно в предусмотренных Законом случаях. Команда Pidvezu гарантирует"
+" от своих сотрудников соблюдения конфиденциальности и обеспечения "
+"безопасности персональных данных при их обработке."
+msgstr ""
+"4.1. До обробки персональних даних допущені лише ті співробітники "
+"адміністрації, на яких покладено такий обов'язок відповідно до їх службових "
+"обов'язків. Доступ інших працівників може бути наданий виключно у "
+"передбачених Законом випадках. Команда Pidvezu гарантує від своїх "
+"співробітників дотримання конфіденційності та забезпечення безпеки "
+"персональних даних під час їх обробки."
+
+#: .\autostop\templates\others\privacy_policy.html:79
+msgid ""
+"4.2.  Администрация имеет право передать персональные данные третьим лицам в"
+" следующих случаях:"
+msgstr ""
+"4.2. Адміністрація має право передати персональні дані третім особам у таких"
+" випадках:"
+
+#: .\autostop\templates\others\privacy_policy.html:81
+msgid ""
+"субъект персональных данных письменно выразил свое согласие на данные "
+"действия. Передача происходит на основании заключенного с третьим лицом "
+"договора, условием которого является соблюдение конфиденциальности и "
+"неразглашении персональных данных;"
+msgstr ""
+"суб'єкт персональних даних письмово висловив свою згоду на ці дії. Передача "
+"відбувається на підставі укладеного з третьою особою договору, умовою якого "
+"є дотримання конфіденційності та нерозголошення персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:82
+msgid ""
+"передача предусмотрена украинским или другим соответствующим "
+"законодательством в рамках установленной законодательством процедуры. "
+msgstr ""
+"передача передбачена українським чи іншим відповідним законодавством у межах"
+" встановленої законодавством процедури."
+
+#: .\autostop\templates\others\privacy_policy.html:83
+msgid ""
+"по требованию представителей органов государственной власти, в том числе, "
+"контролирующих, надзорных, правоохранительных и других органов в объеме и "
+"порядке, определенном Законодательством (при наличии соответственного "
+"официального документа, гласящий о предоставлении данных)."
+msgstr ""
+"на вимогу представників органів державної влади, в тому числі, контролюючих,"
+" наглядових, правоохоронних та інших органів в обсязі та порядку, "
+"визначеному Законодавством (за наявності відповідного офіційного документа, "
+"що свідчить про надання даних)."
+
+#: .\autostop\templates\others\privacy_policy.html:87
+msgid "5. Пользовательские права"
+msgstr "5. Користувальницькі права"
+
+#: .\autostop\templates\others\privacy_policy.html:88
+msgid ""
+"5.1. Пользователи, которые зарегистрировались и/или разместили объявление(я)"
+" на сайте pidvezu.com.ua, имеют непосредственный доступ к информации, а "
+"также возможность исправления и/или удаления, которую они предоставляют (не "
+"включая email). Незарегистрированные посетители имеют возможность только "
+"просматривать все публикации сайта. Пользователь несет ответственность за "
+"точность и достоверность предоставляемых данных на сервисе."
+msgstr ""
+"5.1. Користувачі, які зареєструвалися та/або розмістили оголошення на сайті "
+"pidvezu.com.ua, мають безпосередній доступ до інформації, а також можливість"
+" виправлення та/або видалення, яку вони надають (не включаючи email). "
+"Незареєстровані відвідувачі мають можливість переглядати всі публікації "
+"сайту. Користувач несе відповідальність за точність і достовірність даних, "
+"що надаються на сервісі."
+
+#: .\autostop\templates\others\privacy_policy.html:89
+msgid "5.2. Пользователь имеет право:"
+msgstr "5.2. Користувач має право:"
+
+#: .\autostop\templates\others\privacy_policy.html:90
+msgid ""
+"5.2.1. знать об источниках сбора, местонахождения своих персональных данных,"
+" цели их обработки, местонахождение распорядителя персональных данных;"
+msgstr ""
+"5.2.1. знати про джерела збору, місцезнаходження своїх персональних даних, "
+"мету їх обробки, місцезнаходження розпорядника персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:91
+msgid "5.2.2. на доступ к своим персональным данным;"
+msgstr "5.2.2. на доступ до своїх персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:92
+msgid ""
+"5.2.3. получать не позднее, чем за тридцать календарных дней со дня "
+"поступления запроса, кроме случаев, предусмотренных Законом, ответ о том, "
+"обрабатываются ли его персональные данные, а также получать содержание таких"
+" персональных данных;"
+msgstr ""
+"5.2.3. отримувати не пізніше ніж за тридцять календарних днів з дня "
+"надходження запиту, крім випадків, передбачених Законом, відповідь про те, "
+"чи обробляються його персональні дані, а також отримувати зміст таких "
+"персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:93
+msgid ""
+"5.2.4. предъявлять мотивированное требование с возражением против обработки "
+"своих персональных данных или об изменении, или уничтожение своих "
+"персональных данных, если данные обрабатываются незаконно или являются "
+"недостоверными;"
+msgstr ""
+"5.2.4. пред'являти мотивовану вимогу з запереченням проти обробки своїх "
+"персональних даних або про зміну або знищення своїх персональних даних, якщо"
+" дані обробляються незаконно або є недостовірними;"
+
+#: .\autostop\templates\others\privacy_policy.html:94
+msgid ""
+"5.2.5. обращаться с жалобами на обработку своих персональных данных к "
+"администрации к Уполномоченному Верховной Рады Украины по правам человека "
+"или в суд, а также применять средства правовой защиты в случае нарушения "
+"законодательства о защите персональных данных;"
+msgstr ""
+"5.2.5. звертатись зі скаргами на опрацювання своїх персональних даних до "
+"адміністрації до Уповноваженого Верховної Ради України з прав людини або до "
+"суду, а також застосовувати засоби правового захисту у разі порушення "
+"законодавства про захист персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:95
+msgid ""
+"5.2.6. вносить оговорки об ограничении права на обработку своих персональных"
+" данных при предоставлении согласия, а также отозвать согласие на обработку "
+"персональных данных;"
+msgstr ""
+"5.2.6. вносити застереження щодо обмеження права на обробку своїх персональних даних при наданні згоди, а також відкликати згоду на обробку персональних даних;\n"
+"VM274:2 5.2.7. на інформацію;"
+
+#: .\autostop\templates\others\privacy_policy.html:96
+msgid "5.2.7. на информацию;"
+msgstr "5.2.7. на інформацію;"
+
+#: .\autostop\templates\others\privacy_policy.html:97
+msgid "5.2.8. знать механизм автоматической обработки персональных данных;"
+msgstr "5.2.8. знати механізм автоматичного оброблення персональних даних;"
+
+#: .\autostop\templates\others\privacy_policy.html:98
+msgid "5.2.9. на исправление личных данных."
+msgstr "5.2.9. виправлення особистих даних."
+
+#: .\autostop\templates\others\privacy_policy.html:99
+msgid ""
+"Наша команда всегда рада и готова предоставлять Вам информацию о том, какие "
+"из Ваших личных данных мы обрабатываем. Для этого Вы можете сделать запрос "
+"на эту информацию в любое время, в том числе, путем обращения к "
+"администрации. При обращении Вы должны сообщить нам свои конкретные "
+"требования, чтобы мы могли на законных основаниях рассмотреть Ваш запрос и "
+"дать ответ."
+msgstr ""
+"Наша команда завжди рада та готова надавати Вам інформацію про те, які з "
+"Ваших особистих даних ми обробляємо. Для цього Ви можете зробити запит на цю"
+" інформацію у будь-який час, у тому числі шляхом звернення до адміністрації."
+" При зверненні Ви повинні повідомити свої конкретні вимоги, щоб ми могли на "
+"законних підставах розглянути Ваш запит і дати відповідь."
+
+#: .\autostop\templates\others\privacy_policy.html:100
+msgid ""
+"Хотим обратить Ваше внимание, что в случае, если мы не сможем удостоверить "
+"Вашу личность путем обмена электронными сообщениями или во время Вашего "
+"обращения по телефону, или в случае обоснованных сомнений относительно Вашей"
+" личности, мы можем попросить Вас предоставить документ, удостоверяющий "
+"личность, в том числе путем личной явки по адресу места нахождения "
+"администрации. Только таким образом мы сможем избежать огласки Ваших "
+"персональных данных лицу, которое может выдавать себя за Вас."
+msgstr ""
+"Бажаємо звернути Вашу увагу, що у випадку, якщо ми не зможемо засвідчити "
+"Вашу особу шляхом обміну електронними повідомленнями або під час Вашого "
+"звернення по телефону, або у разі обґрунтованих сумнівів щодо Вашої особи, "
+"ми можемо попросити Вас надати документ, який засвідчує особу, у тому числі "
+"шляхом особистої явки на адресу місця знаходження адміністрації. Тільки "
+"таким чином ми зможемо уникнути розголосу Ваших персональних даних особі, "
+"яка може видавати себе за Вас."
+
+#: .\autostop\templates\others\privacy_policy.html:103
+msgid "6. Безопасность данных"
+msgstr "6. Безпека даних"
+
+#: .\autostop\templates\others\privacy_policy.html:104
+msgid ""
+"6.1. Данные, которые мы собираем и обрабатываем, защищены техническими "
+"средствами и процедурами обеспечения безопасности в целях предотвращения "
+"несанкционированного доступа или их использования."
+msgstr ""
+"6.1. Дані, які ми збираємо та обробляємо, захищені технічними засобами та "
+"процедурами забезпечення безпеки з метою запобігання несанкціонованому "
+"доступу або їх використанню."
+
+#: .\autostop\templates\others\privacy_policy.html:105
+msgid ""
+"Хотим предупредить Вас, что сервис не сможет скрыть Ваши данные, которые "
+"остаются на фотографиях, которые Вы публикуете (EXIF), так как они могут "
+"содержать данные вашего месторасположения по GPS, ведь посетители могут "
+"извлечь эту информацию, скачав изображения с сайта. Процесс обработки файлов"
+" во время загрузки на сайт предусматривает очистку EXIF, но мы не даём "
+"гарантию, что они будут очищены, поэтому настоятельно рекомендуем их очищать"
+" вручную или через сторонний онлайн-сервис. "
+msgstr ""
+"Бажаємо попередити Вас, що сервіс не зможе приховати Ваші дані, які "
+"залишаються на фотографіях, які Ви публікуєте (EXIF), оскільки вони можуть "
+"містити дані вашого розташування по GPS, адже відвідувачі можуть отримати цю"
+" інформацію, завантаживши зображення з сайту. Процес обробки файлів під час "
+"завантаження на сайт передбачає очищення EXIF, але ми не даємо гарантію, що "
+"вони будуть очищені, тому рекомендуємо їх очищати вручну або через сторонній"
+" онлайн-сервіс."
+
+#: .\autostop\templates\others\privacy_policy.html:108
+msgid "7. Изменение Политики конфиденциальности"
+msgstr "7. Зміна Політики конфіденційності"
+
+#: .\autostop\templates\others\privacy_policy.html:109
+msgid ""
+"7.1. Политика может быть изменена или прекращена администрацией в "
+"одностороннем порядке без предварительного уведомления Пользователей, в том "
+"числе, если этого требует законодательство. Новая редакция Политики вступает"
+" в силу с момента ее размещения в онлайн-сервисе, поэтому мы просим Вас "
+"посещать онлайн-сервис pidvezu.com.ua, чтобы убедиться в том, что Вы "
+"обладаете актуальной информацией."
+msgstr ""
+"7.1. Політика може бути змінена або припинена адміністрацією в "
+"односторонньому порядку без попереднього повідомлення Користувачів, у тому "
+"числі якщо цього вимагає законодавство. Нова редакція Політики набирає "
+"чинності з моменту її розміщення в онлайн-сервісі, тому ми просимо Вас "
+"відвідувати онлайн-сервіс pidvezu.com.ua, щоб переконатися, що Ви маєте "
+"актуальну інформацію."
+
+#: .\autostop\templates\others\privacy_policy.html:110
+msgid ""
+"7.2. В случае если были внесены изменения в Политику конфиденциальности, с "
+"которыми Пользователь не согласен, он обязан прекратить использование "
+"сервиса. Факт продолжения использования сайта является подтверждением "
+"согласия и принятия Пользователем соответствующей редакции Политики "
+"конфиденциальности."
+msgstr ""
+"7.2. У разі якщо були внесені зміни до Політики конфіденційності, з якими "
+"Користувач не погоджується, він зобов'язаний припинити використання сервісу."
+" Факт продовження використання сайту є підтвердженням згоди та прийняття "
+"Користувачем відповідної редакції Політики конфіденційності."
+
+#: .\autostop\templates\others\privacy_policy.html:113
+msgid "8. К кому Вы можете обратиться для защиты Ваших персональных данных"
+msgstr "8. До кого Ви можете звернутися для захисту Ваших персональних даних"
+
+#: .\autostop\templates\others\privacy_policy.html:114
+msgid ""
+"8.1. Если у Вас возникнут вопросы, замечания, жалобы или пожелания в "
+"отношении защиты и обработки персональных данных, Вы можете обращаться к "
+"администрации сервиса Pidvezu еmail: help@pidvezu.com.ua. ответ будет "
+"отправлен в кратчайшие сроки."
+msgstr ""
+"8.1. Якщо у Вас виникнуть запитання, зауваження, скарги чи побажання щодо "
+"захисту та обробки персональних даних, Ви можете звертатися до адміністрації"
+" сервісу Pidvezu еmail: help@pidvezu.com.ua. відповідь буде надіслано у "
+"найкоротші терміни."
+
+#: .\autostop\templates\others\privacy_policy.html:115
+msgid ""
+"Пожалуйста, указывайте свои имя, фамилию, адрес электронной почты, а также "
+"подробные вопросы, замечания, жалобы или требования."
+msgstr ""
+"Будь ласка, вказуйте ім'я, прізвище, адресу електронної пошти, а також "
+"докладні запитання, зауваження, скарги або вимоги."
+
+#: .\autostop\templates\others\privacy_policy.html:116
+msgid ""
+"8.2. Административный орган по защите персональных данных в Украине - "
+"Управление по вопросам защиты персональных данных Секретариата "
+"Уполномоченного Верховной Рады Украины по правам человека. Вы можете "
+"обращаться к нему с жалобами или предложениями, если считаете, что нарушены "
+"Ваши права в связи с обработкой персональных данных. "
+msgstr ""
+"8.2. Адміністративний орган захисту персональних даних в Україні - "
+"Управління з питань захисту персональних даних Секретаріату Уповноваженого "
+"Верховної Ради України з прав людини. Ви можете звертатися до нього зі "
+"скаргами чи пропозиціями, якщо вважаєте, що порушено Ваші права у зв'язку з "
+"обробкою персональних даних."
+
+#: .\website\settings.py:54
+msgid "Ukrainian"
+msgstr "Український"
+
+#: .\website\settings.py:55
+msgid "Russian"
+msgstr "Російський"
+
+#~ msgid "Зарегистрируйтесь"
+#~ msgstr "Зареєструйтесь"
+
+#~ msgid "чтобы добавить маршрут или подать заявку"
+#~ msgstr "щоб додати маршрут або подати заявку"
+
+#~ msgid "Принять заявку"
+#~ msgstr "Прийняти заявку"
+
+#~ msgid "это"
+#~ msgstr "це"

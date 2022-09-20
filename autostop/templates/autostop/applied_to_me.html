@@ -1,0 +1,95 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/applied_to_me/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Ваш особистий кабінет (аккаунт) на Pidvezu">
+    <meta name="description" content="Перегляньте заявки на Ваші маршрути, які створили люди. Ви можете прийняти або відхилити їх.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/applied_to_me/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Заявки на Ваши маршруты на Pidvezu">
+    <meta name="description" content="Просмотрите заявки на Ваши маршруты, которые создали люди. Вы можете либо принять, либо отклонть их.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Мне сделали заявку" %}{% endblock %}
+
+{% block content %} 
+<h1 class="applied_header">{% translate "Заявки на" %} <strong>{% translate "Ваши" %}</strong> {% translate "маршруты" %}</h1>
+{% if routes %}
+<h2 class="applied_to_me_tip">{% translate "После подтверждения заявки, перейдите к маршруту, чтобы скорректировать путь" %}</h2>
+{% endif %}
+
+<div class="application_list">
+{% for route, applications in routes.items %}
+    <div class="applied_me_container">
+        <a href="{% url 'autostop:route' route.slug %}" class="applied_me_title">{{route.first_last_location.0|truncatewords:4}} --- {{route.first_last_location.1|truncatewords:4}}</a>
+        <ul class="applied_me_list">
+            {% for application in applications %}
+                <li>
+                    <p class="applied_comment"><strong>{% translate "Заявщик" %}:</strong>
+                        {% if application.author.first_name and application.author.last_name %}
+                            {{application.author.first_name}} {{application.author.last_name}}
+                        {% elif application.author.first_name %}
+                            {{application.author.first_name}}
+                        {% elif application.author.last_name %}
+                            {{application.author.last_name}}
+                        {% else %}
+                            {{application.author.email}}
+                        {% endif %}
+                        <span style="margin-left: 5px;"><a href="tel:{{author.phone_number}}">{{application.author.phone_number}}</a></span>
+                    </p>
+                    <p class="applied_comment"><strong>{% translate "Комментарий" %}:</strong> {{application.comment}}</p>
+                    <div style="margin-top: 7px;"><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{application.first_last_location.0}}</span></div>
+                    <div style="margin-bottom: 7px;"><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{application.first_last_location.1}}</span></div>
+
+                    <p class="applied_rubric">
+                        {% translate "Рубрика" %}:
+                        {% for rubric in application.rubric %}
+                            {% if rubric == 'people' %}
+                                🧍 {% translate "Люди" %}
+                            {% elif rubric == 'animals' %}
+                                🐕 {% translate "Животные" %}
+                            {% elif rubric == 'good' %}
+                                👖 {% translate "Вещи" %}
+                            {% elif rubric == 'food' %}
+                                🥕 {% translate "Продукты" %}
+                            {% elif rubric == 'others' %}
+                                {% translate "Другое" %}
+                            {% endif %}
+                        {% endfor %}
+                    </p>  
+
+                    <div class="applied_me_status">
+                        {% if application.status == 'justified' %}
+                            <a href="{% url 'autostop:reject_application' application.pk %}" class="reject_application">{% translate "Отклонить заявку" %}</a>
+                            <span><strong>{% translate "Подтверждена" %}</strong></span>
+                        {% elif application.status == 'considering' %}
+                            <a href="{% url 'autostop:confirm_application' application.pk %}" class="confirm_application">{% translate "Подвезу!" %}</a>
+                            <a href="{% url 'autostop:reject_application' application.pk %}" class="reject_application">{% translate "Отклонить заявку" %}</a>
+                            <span><strong>{% translate "На рассмотрении" %}</strong></span>
+                        {% elif application.status == 'rejected' %}
+                            <a href="{% url 'autostop:confirm_application' application.pk %}" class="confirm_application">{% translate "Подвезу!" %}</a>
+                            <span><strong>{% translate "Отклонена" %}</strong></span>
+                        {% endif %}
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% empty %}
+<style>
+.application_list{
+    display: block;
+}
+</style>
+<h3 class="empty_list">{% translate "Пока заявок нет. Вы можете" %} <a href="{% url 'autostop:add' %}">{% translate "опубликовать" %}</a> {% translate "новый маршрут" %}.</h3>
+<img src="{% static 'img/applied_to_me_empty.svg' %}" alt="" class="applied_to_me_image">
+{% endfor %}
+</div>
+{% endblock %}

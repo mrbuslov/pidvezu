@@ -1,0 +1,129 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}Підвезу{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="alternate" href="https://pidvezu.com.ua/" hreflang="uk-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/ru/" hreflang="ru-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Допомога у доставці людей, тварин, гуманітарної допомоги та речей від водіїв-волонтерів в Україну">
+    <meta name="description" content="Pidvezu - безкоштовна платформа, де водії-волонтери можуть опублікувати свій маршрут, а інші люди можуть передати речі, їжу, тварин, або бути пасажиром для доставки в або з гарячих точок України на pidvezu.com.ua.">
+    {% else %}
+    <link rel="alternate" href="https://pidvezu.com.ua/" hreflang="uk-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/ru/" hreflang="ru-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Помощь в доставке людей, животных, гуманитарной помощи и вещей от водителей-волонтеров в Украине">
+    <meta name="description" content="Pidvezu - бесплатная платформа, где водители-волонтеры могут опубликовать свой маршрут, а другие люди могут передать вещи, еду, животных, или же быть пассажиром для доставки в или из горячих точек Украины на pidvezu.com.ua.">
+    {% endif %}
+<style>
+    .index_page_explan{
+        text-align: center;
+        font-size: 27px;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        background: #fff;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %} 
+<form method="get" id="searchForm">
+    <div class="locations_search">
+        <input type="text" name="locations_search" id="id_locations_search" placeholder="{% translate 'Введите адрес или город' %}" value="{{locations_query}}">
+        <input type="submit" id="locations_search_btn" value='{% translate "Поиск" %}'>
+    </div>
+</form>
+
+<h1 class="index_page_explan">{% translate "Маршруты водителей" %}</h1>
+
+<div class="route_container">
+    {% for route in response %}
+        <div class="route">
+            <div class="route_author">
+                <a href="{% url 'account:account' route.author.pk %}" style="color:#000">
+                    {% if route.author.image %}
+                        <img src="{{route.author.image.url}}" alt="{% translate 'Фото автора маршрута' %}" class="route_author_image">
+                    {% else %}
+                        <img src="{% static 'img/user.svg' %}" alt="{% translate 'Нет фото автора маршрута' %}" class="route_author_image">
+                    {% endif %}
+            
+                    <p class="route_author_name">
+                            {% if route.author.first_name and route.author.last_name %}
+                                {{route.author.first_name}} {{route.author.last_name}}
+                            {% elif route.author.first_name %}
+                                {{route.author.first_name}}
+                            {% elif route.author.last_name %}
+                                {{route.author.last_name}}
+                            {% else %}
+                                {{route.author.email}}
+                            {% endif %}
+                        <br>
+                        
+                        <span style="margin-top:5px;display: block;font-size: 14px;">{% translate "Поездок" %}: <span style="font-size: 16px;">{{route.author.rides}}</span> </span> 
+                    </p>
+                </a>
+            </div>
+            <a href="{% url 'autostop:route' route.slug %}"class="route_content_index">
+                <ul class="route_addresses">
+                    <li><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{route.first_last_location.0}}</span></li>
+                    <li><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{route.first_last_location.1}}</span></li>
+                </ul>
+                <p>
+                    {% translate "Отправление" %}:
+                    {% if time_now1 == route.departure_time|date:"d.m.Y" %}
+                        {% translate "Сегодня" %} в {{route.departure_time|date:"H:i"}}
+                    {% elif time_now2 == route.departure_time|date:"d.m.Y" %}
+                        {% translate "Завтра" %} в {{route.departure_time|date:"H:i"}}
+                    {% else %}
+                        {{route.departure_time|date:"d E"}} в {{route.departure_time|date:"H:i"}}
+                    {% endif %}
+                </p>
+                <p>
+                    {% translate "Рубрика" %}:
+                    {% for rubric in route.rubric %}
+                        {% if rubric == 'people' %}
+                            🧍 {% translate "Люди" %}
+                        {% elif rubric == 'animals' %}
+                            🐕 {% translate "Животные" %}
+                        {% elif rubric == 'good' %}
+                            👖 {% translate "Вещи" %}
+                        {% elif rubric == 'food' %}
+                            🥕 {% translate "Продукты" %}
+                        {% elif rubric == 'others' %}
+                            {% translate "Другое" %}
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </a>
+        </div>
+    {% empty %}
+    <h3 class="empty_list">{% translate "Маршрутов пока нет, но Вы можете" %} <a href="{% url 'autostop:passenger_add' %}">{% translate "добавить" %}</a> {% translate "свой маршрут, чтобы волонтёрские организации смогли увидеть его" %}.</h3>
+    <div style="text-align: center; font-size: 15px; margin: 20px auto; color: #969696; max-width: 70%;">{% translate "Это" %} <strong>{% translate "бесплатная" %}</strong> {% translate "площадка, где водители-волонтёры публикуют свой маршрут, а другие люди могут передать вещи, еду, животных, или же быть пассажиром для доставки в/из горячих точек Украины" %}</div>
+
+    <img src="{% static 'img/main_image.svg' %}" alt="" class="main_image">
+    {% endfor %}
+</div>
+    {% if page.paginator.num_pages != 1 %}
+    <div class="pagination">  
+        <div class="pagination_content">
+            {% if page.has_previous %}
+                <a href="?page={{ page.previous_page_number }}" class="pag_arrow_back"></a>
+            {% endif %}
+        
+            {% if page.has_next %}
+                <span class="this_page">{{page.number}}</span> {% translate "из" %} {{page.paginator.num_pages}}
+                <a href="?page={{ page.next_page_number }}" class="pag_arrow_forw"></a>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

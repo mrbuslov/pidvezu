@@ -1,0 +1,156 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/brief_intro/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Короткий вступ у роботу сервісу Pidvezu">
+    <meta name="description" content="Тут описано, як отримувати повідомлення про Ваші маршрути та заявки у Телеграм Боті, як подати маршрут та заявку.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/brief_intro/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Краткое введение в работу сервиса Pidvezu">
+    <meta name="description" content="Здесь описано, как получать уведомления о Ваших маршрутах и заявках в Телеграм Боте, как подать маршрут и заявку.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Краткое введение" %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="applied_header" style="margin-bottom: 0;">{% translate "Краткое введение в работу сервиса Pidvezu" %}</h1>
+<div class="tabContainer">
+    <div class="buttonContainer">
+        <button onclick="showPanel(0,'#247dc9')">{% translate "Я водитель" %}</button>
+        <button onclick="showPanel(1,'#247dc9')">{% translate "Я заявитель" %}</button>
+    </div>
+    <div class="tabPanel">
+        <div class="info_block">
+            <h2 class="info_block_title">1. {% translate "Добавить маршрут" %}</h2>
+            <span class="info_text">{% translate "Рады, что Вы хотите помочь Украине, добавив свой маршрут" %} :)</span>
+            <span class="info_text" style="margin-top: 12px;">{% translate "Чтобы сделать это, Вы можете нажать на кнопку сверху (если Вы пользуетесь сервисом через ноутбук) или же на кнопку внизу" %}
+                <a href="{% url 'autostop:add' %}"><span>{% translate "Добавить маршрут" %}</span></a>
+                {% translate "(если Вы с мобильного устройства)" %}
+            </span>
+            <span class="info_text">{% translate "Далее укажите" %} <strong>{% translate "время отправления" %}</strong>, {% translate "сколько у Вас осталось" %} <strong>{% translate "мест" %}</strong> {% translate "в транспортном средстве и нажмите на один или несколько" %} <strong>{% translate "'чекбоксов'" %}</strong>, {% translate "чтобы указать, что Вы можете везти" %}</span>
+            <ul id="id_rubric">
+                <li>
+                    <label for="id_rubric_0">
+                        <input type="checkbox" name="rubric" value="people" id="id_rubric_0">
+                        <span class="fake_checkbox fake_checkbox_0"></span>
+                        <span class="rubric_name">{% translate "Люди" %}</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="id_rubric_1">
+                        <input type="checkbox" name="rubric" value="animals" id="id_rubric_1">
+                        <span class="fake_checkbox fake_checkbox_1"></span>
+                        <span class="rubric_name">{% translate "Животные" %}</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="id_rubric_2">
+                        <input type="checkbox" name="rubric" value="good" id="id_rubric_2">
+                        <span class="fake_checkbox fake_checkbox_2"></span>
+                        <span class="rubric_name">{% translate "Вещи" %}</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="id_rubric_3">
+                        <input type="checkbox" name="rubric" value="food" id="id_rubric_3">
+                        <span class="fake_checkbox fake_checkbox_3"></span>
+                        <span class="rubric_name">{% translate "Продукты" %}</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="id_rubric_4">
+                        <input type="checkbox" name="rubric" value="others" id="id_rubric_4">
+                        <span class="fake_checkbox fake_checkbox_4"></span>
+                        <span class="rubric_name">{% translate "Другое" %}</span>
+                    </label>
+                </li>
+            </ul>
+            <span class="info_text">{% translate "После этого сделайте короткое" %} <strong>{% translate "дополнение" %}</strong>, {% translate "Ваш комментарий к маршруту, в части 'Описание'" %}</span>
+            <span class="info_text">{% translate "В конечном итоге поставьте метку на" %} <strong>{% translate "карте" %}</strong> {% translate "отправления и прибытия, или же найдите места по адресам" %}</span>
+            <span class="info_text">{% translate "Нажимайте кнопку 'Добавить', и наша команда быстро проверит Ваш маршрут!" %}</span>
+        </div>
+        <div class="info_block">
+            <h2 class="info_block_title">2. {% translate "Мои маршруты" %}</h2>
+            <span class="info_text">{% translate "Здесь Вы можете просмотреть маршруты и, когда Вы примите достаточно заявок, проложить маршрут на" %} <strong>{% translate "Google Картах" %}</strong></span>
+            <span class="info_text"><strong>{% translate "Как изменить точки маршрута?" %}</strong> {% translate "Для этого Вы переходите к нужному Вам маршруту и видите поля (показано ниже), которые можно перетащить, чтобы поменять путь. Он автоматически перестроится, и будет Вам назначен новый маршрут" %}.</span>
+            <ul id="addresses_list_brief_info">
+                <li class="addresses_list_li">
+                    <span>{% translate "Пункт назначения 1. Перетащи меня" %}</span>
+                </li>
+                <li class="addresses_list_li">
+                    <span>{% translate "Пункт назначения 2. Перетащи меня" %}</span>
+                </li>
+                <li class="addresses_list_li">
+                    <span>{% translate "Пункт назначения 3. Перетащи меня" %}</span>
+                </li>
+                <li class="addresses_list_li">
+                    <span>{% translate "Пункт назначения 4. Перетащи меня" %}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="info_block">
+            <h2 class="info_block_title">3. {% translate "Заявки мне" %}</h2>
+            <span class="info_text">{% translate "Вы можете принять или отклонить" %} <strong>{% translate "заявку" %}</strong> {% translate "на Ваш маршрут. Если Вы" %} <strong>{% translate "принимаете" %}</strong>, {% translate "то запрашиваемый пользователем маршрут автоматически добавляется к Вашему общему маршруту. Если" %} <strong>{% translate "отклоняете" %}</strong>, {% translate "то не добавляется, или же вычитается, если эта заявка ыла ранее принята Вами" %}.</span>
+            <span class="info_text">{% translate "Посмотреть все заявки, отправленные Вам, можно" %} <a href="{% url 'autostop:applied_to_me' %}">тут</a></span>
+            <span class="info_text">{% translate "Посмотреть Ваши" %} <strong>{% translate "полные пути" %}</strong> {% translate "Вы можете, перейдя по одному из Ваших маршрутов в" %} <a href="{% url 'autostop:my_routes' %}">{% translate "Мои маршруты" %}</a></span>
+        </div>
+        <div class="info_block" style="margin-bottom: 0;">
+            <h2 class="info_block_title">4. {% translate "Телеграм Бот" %}</h2>
+            <span class="info_text">{% translate "Вы можете" %} <strong>{% translate "получать уведомления" %}</strong> {% translate "о новых заявках и статусе Ваших маршрутов через" %} <a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм Бота" %}</a>. {% translate "Для этого перейдите в" %} <a href="{% url 'account:profile' %}">{% translate "Мой профиль" %}</a> {% translate "и включите уведомления" %}.</span>
+        </div>
+    </div>
+
+
+
+    <div class="tabPanel">
+        <div class="info_block">
+            <h2 class="info_block_title">1. {% translate "Подать заявку" %}</h2>
+            <span class="info_text">{% translate "Чтобы подать заявку, Вы должны найти маршрут, который Вам подходит, перейти по нему и найти кнопку" %} <strong>{% translate "Подать заявку" %}</strong>. {% translate "Смело жмите на неё, и водитель узнает об этом, если он включил уведомления в" %} <a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм Боте" %}</a>.</span> 
+            <span class="info_text">{% translate "После прочтения Вашего комментария и маршрута, он одобрит её, или же отклонит. Вы тоже получите уведомление о его решении, включив уведомления в" %} <a href="{% url 'account:profile' %}">{% translate "Моём профиле" %}</a> {% translate "и перейдя по этой ссылке к" %} <a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм Боту" %}</a>.</span>
+        </div>
+        <div class="info_block">
+            <h2 class="info_block_title">2. {% translate "Опубликовать свою заявку" %}</h2>
+            <span class="info_text">{% translate "Вы можете подать свою заявку на маршрут, перейдя по" %} <a href="{% url 'autostop:passenger_add' %}">{% translate "этой ссылке" %}</a>. {% translate "Как заполнить форму, описано в разделе 'Я водитель' в пункте 1.1. Но мы хотим Вас предупредить, что пока что наш сервис не отправляет водителям вблизи Ваши заявки, поэтому Вам стоит" %} <a href="{% url 'autostop:passenger_add' %}">{% translate "поискать водителей самим" %}</a>.</span>
+            <span class="info_text">{% translate "Исходя из этого можно сказать, что Ваши заявки будут просматривать волонтёрские организации" %}.</span>
+        </div>
+        <div class="info_block">
+            <h2 class="info_block_title">3. {% translate "Мои заявки" %}</h2>
+            <span class="info_text">{% translate "Когда Вы подали заявку, просмотреть все свои заявки можно" %} <a href="{% url 'autostop:i_applied' %}">тут</a></span>
+        </div>
+        <div class="info_block" style="margin-bottom: 0;">
+            <h2 class="info_block_title">4. {% translate "Телеграм Бот" %}</h2>
+            <span class="info_text">{% translate "Вы можете" %}<strong>{% translate "получать уведомления" %}</strong> {% translate "о новых статусе Ваших заявок через" %} <a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм Бота" %}</a>. {% translate "Для этого перейдите в" %} <a href="{% url 'account:profile' %}">{% translate "Мой профиль" %}</a> {% translate "и включите уведомления" %}.</span>
+        </div>
+    </div>
+
+<script>
+var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
+var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
+
+function showPanel(panelIndex,colorCode) {
+    tabButtons.forEach(function(node){
+        node.style.backgroundColor="";
+        node.style.color="";
+    });
+    tabButtons[panelIndex].style.backgroundColor=colorCode;
+    tabButtons[panelIndex].style.color="white";
+    tabPanels.forEach(function(node){
+        node.style.display="none";
+    });
+    tabPanels[panelIndex].style.display="block";
+    tabPanels[panelIndex].style.backgroundColor=colorCode;
+}
+showPanel(0,'#247dc9');
+</script>
+{% endblock %}

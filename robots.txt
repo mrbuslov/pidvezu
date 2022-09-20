@@ -1,0 +1,4 @@
+Host: https://pidvezu.com.ua
+User-agent: *
+Disallow: /update_addresses_info/
+Allow: /

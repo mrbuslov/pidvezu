@@ -1,0 +1,26 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Помилка 404 на Pidvezu">
+    <meta name="description" content="Ця помилка означає те, що такої сторінки на цьому сайті не існує.">
+    {% else %}
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Ошибка 404 на Pidvezu">
+    <meta name="description" content="Эта ошибка значит то, что такой страницы на этом сайте не существует.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Ошибка 404" %}{% endblock %}
+
+{% block content %} 
+<div class="exception_block">
+    <h1 class="exception_h1">{% translate "Ошибка 404" %}</h1>
+    <h3 class="exception_h3">{% translate "Мы искали Вашу страницу, но так ничего не нашли (" %}</h3>
+    <img src="{% static 'img/404.svg' %}" alt="" class="error_image">
+</div>
+{% endblock %}

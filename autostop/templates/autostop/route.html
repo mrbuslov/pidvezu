@@ -1,0 +1,128 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/route/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Маршрут {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}">
+    <meta name="description" content="{{route.content|truncatechars:100}}">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/route/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Маршрут {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}">
+    <meta name="description" content="{{route.content|truncatechars:100}}">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}Маршрут {{route.first_last_location.0|truncatechars:30}} - {{route.first_last_location.1|truncatechars:30}}{% endblock %}
+
+{% block styles %}
+    {{map.header.render|safe}}
+{% endblock %}
+
+{% block content %}  
+    <div class="content">
+        {% if route.author == request.user %}
+            <div class="change_route_block">
+                <span class="change_route_header">{% translate "Перетащите адрес, чтобы поменять порядок движения, и посмотрите приблизительный путь" %}</span>
+                <ul id="addresses_list">
+                    {% for location in addresses_array %}
+                        {% for key, value in location.items %}
+                            <li class="addresses_list_li">
+                                <span>{{key}}</span>
+                                <input type="hidden" value="{{value}}">
+                            </li>
+                        {% endfor %}
+                    {% endfor %}
+                    <input type="hidden" value="{{route.slug}}" id="route_slug">
+                </ul>
+                <div class="change_route_btns">
+                    <a href="{% url 'autostop:delete' route.slug %}" class="change_route_btn delete_btn">{% translate "Удалить" %}</a>
+                    <a href="{% url 'autostop:edit' route.slug %}" class="change_route_btn change_btn">{% translate "Изменить" %}</a>
+                </div>
+            </div>
+        {% else %}
+            <div class="author_block">
+                <div class="author_card">
+                    {% if author.image %}
+                        <img src="{{author.image.url}}" alt="Фото получателя" class="author_image">
+                    {% else %}
+                        <img src="{% static 'img/user.svg' %}" alt="Нет фото получателя" class="author_image">
+                    {% endif %}
+            
+                    <p class="author_contacts">
+                        {% if author.first_name and author.last_name %}
+                            {{author.first_name}} {{author.last_name}}
+                        {% elif author.first_name %}
+                            {{author.first_name}}
+                        {% elif author.last_name %}
+                            {{author.last_name}}
+                        {% else %}
+                            {{author.email}}
+                        {% endif %}
+                    </p>
+                    <p class="author_contacts"><a href="tel:{{author.phone_number}}">{{author.phone_number}}</a></p>
+            
+                    {% if author.car_description %}
+                        <p>{% translate "Описание автомобиля" %}: <span class="car_description">{{author.car_description}}</span></p>
+                    {% endif %}
+                </div>
+                
+                <div class="apply_field">
+                    {% if user_applied %}
+                        <a href="{{route.get_google_routing}}" class="check_google_route_button" style="width: 100%;">{% translate "Google Карты" %}</a>
+                    {% else %}
+                    <a href="{{route.get_google_routing}}" class="check_google_route_button">{% translate "Google Карты" %}</a>
+                    <a href="{% url 'autostop:apply' route.slug %}" class="apply_button">{% translate "Подать заявку" %}</a> 
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="route_content">
+            <div class="route_description">
+                <ul class="route_addresses">
+                    <li><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{fist_address}}</span></li>
+                    {% for address in addresses %}
+                        <li style="margin-left: 24px;"><span>{{address}}</span></li>
+                    {% endfor %}
+                    <li><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{last_address}}</span></li>
+                </ul>
+
+                <br>
+                <p>{% translate "Время отправления" %}: <span class="departure_time">{{route.departure_time|date:"d E в H:i"}}</span></p>
+                <p>{% translate "Свободных мест" %}: <span class="departure_time">{{route.seats_left}}</span></p>
+                <p>{% translate "Рубрика" %}:
+                    {% for rubric in rubrics %}
+                        {{rubric}}
+                    {% endfor %}
+                </p>
+                <p>Описание:</p>
+                <div class="description">{{route.content}}</div>
+                <span class="published"> {% translate "Опубликовано" %}:
+                    {% if time_now1 == route.published|date:"d.m.Y" %}
+                        {% translate "Сегодня" %} в {{route.published|date:"H:i"}}
+                    {% elif time_now2 == route.published|date:"d.m.Y" %}
+                        {% translate "Вчера" %} в {{route.published|date:"H:i"}}
+                    {% else %}
+                        {{route.published|date:"d E"}} в {{route.published|date:"H:i"}}
+                    {% endif %}
+                </span>
+            
+            </div>
+            <div class="map">
+                <span>
+                    {{map.html.render|safe}}
+                </span>
+                <script id="map_script" async>
+                    {{map.script.render|safe}}
+                    $('.map').css('opacity','1')
+                </script>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

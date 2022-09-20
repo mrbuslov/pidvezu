@@ -1,0 +1,168 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/edit/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Ви на сторінці зміни маршруту">
+    <meta name="description" content="Ви на сторінці зміни маршруту. Змініть дані, щоб інші люди бачили актуальну інформацію про Ваш маршрут.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/edit/{{route.slug}}/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Вы на странице изменения маршрута">
+    <meta name="description" content="Вы на странице изменения маршрута. Измените данные, чтобы другие людивидели актуальную информацию о Вашем маршруте.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Изменить свой маршрут" %}{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+<link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive.css' %}">
+
+<!-- Load Leaflet from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+<!-- Load Esri Leaflet from CDN -->
+<script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+crossorigin=""></script>
+
+<!-- Load Esri Leaflet Geocoder from CDN -->
+<link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+crossorigin="">
+<script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+crossorigin=""></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block content %}  
+<div class="adaptive_slide">
+    <a href="#" onclick="event.preventDefault();history.back();" class="come_back"><em class="arrow_back"></em></a>
+    <span>{% translate "Изменить маршрут" %}</span>
+</div>
+
+<div class="add_content">
+    <div class="fields">
+        <form method = "POST" action="{% url 'autostop:edit' route_slug %}" id="addForm">
+            {% csrf_token %}
+            <div class="text_content">
+                <div class="small_text_content">
+                    <div class="field"><span>{% translate "Время отправления" %}:</span> <input type="text" name="departure_time" id="id_departure_time" class="flatpickr-input" readonly="readonly" value='{{departure_time|date:"d-m-Y H:i"}}'></div>
+                    <div class="field"><span>{% translate "Осталось мест" %}:</span> {{form.seats_left}}</div>
+                    <div class="field"><span>{% translate "Рубрика" %}:</span>
+                        <ul id="id_rubric">
+                            <li>
+                                <label for="id_rubric_0">
+                                    <input type="checkbox" name="rubric" value="people" id="id_rubric_0" {{people_checkbox}}>
+                                    <span class="fake_checkbox fake_checkbox_0"></span>
+                                    <span class="rubric_name">{% translate "Люди" %}</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="id_rubric_1">
+                                    <input type="checkbox" name="rubric" value="animals" id="id_rubric_1" {{animals_checkbox}}>
+                                    <span class="fake_checkbox fake_checkbox_1"></span>
+                                    <span class="rubric_name">{% translate "Животные" %}</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="id_rubric_2">
+                                    <input type="checkbox" name="rubric" value="good" id="id_rubric_2" {{good_checkbox}}>
+                                    <span class="fake_checkbox fake_checkbox_2"></span>
+                                    <span class="rubric_name">{% translate "Вещи" %}</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="id_rubric_3">
+                                    <input type="checkbox" name="rubric" value="food" id="id_rubric_3" {{food_checkbox}}>
+                                    <span class="fake_checkbox fake_checkbox_3"></span>
+                                    <span class="rubric_name">{% translate "Продукты" %}</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label for="id_rubric_4">
+                                    <input type="checkbox" name="rubric" value="others" id="id_rubric_4" {{others_checkbox}}>
+                                    <span class="fake_checkbox fake_checkbox_4"></span>
+                                    <span class="rubric_name">{% translate "Другое" %}</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="big_text_content">
+                    <div>{% translate "Описание" %}:</div>
+                    {{form.content}}
+                </div>
+            </div>
+            <p>
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png" alt="" style="width: 16px; position: relative; bottom: -3px;">
+                {% translate "Нажмите на карту, чтобы переставить точку, или измените улицу по адресу" %}
+            </p>
+            <div class="maps">
+                <div class="map_field">
+                    <span class="departure_text_span">{% translate "Отправление из" %}...</span> 
+                    <div id="search1">
+                        <input type="text" name="addr_input_1" id="addr_input_1" placeholder="{% translate 'Пример: Гагарина 1, Днепр' %}"/>
+                        <button type="button" id="search_address_btn1">{% translate "Поиск" %}</button>
+                        <div id="results1"></div>
+                    </div>
+                    <div id="map1"></div>
+                </div>
+                <div class="map_field">
+                    <span class="departure_text_span">{% translate "Прибытие в" %}...</span>
+                    <div id="search2">
+                        <input type="text" name="addr_input_2" id="addr_input_2"/>
+                        <button type="button" id="search_address_btn2">{% translate "Поиск" %}</button>
+                        <div id="results2"></div>
+                    </div>
+                    <div id="map2"></div>
+                </div>
+            </div>
+
+
+            <input type="hidden" id="departure_point" name="departure_point" value="{{departure_point}}">
+            <input type="hidden" id="departure_address" name="departure_address" value="{{departure_address}}">
+            <input type="hidden" id="arrival_point" name="arrival_point" value="{{arrival_point}}">
+            <input type="hidden" id="arrival_address" name="arrival_address" value="{{arrival_address}}">
+            <div class="submit_button_div">
+                <div id="fields_are_empty">{% translate "Вы случайно пропустили одно из полей" %} <br> {% translate "Заполните поле" %} <span id="fields_are_empty_span"></span></div>
+                <button type="submit" name="submit"  class="submit_button">{% translate "Изменить" %}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Дата и время -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+<script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>
+
+<script src="{% static 'js/add.js' %}?v=5"></script>
+<script>
+// -------------------------------- Если мы на странице изменения, нужно поставить маркер на прошлой локации --------------------------------------
+chooseAddr($('#departure_point').val().split(',')[0], $('#departure_point').val().split(',')[1], 'street', map1);
+chooseAddr($('#arrival_point').val().split(',')[0], $('#arrival_point').val().split(',')[1], 'street', map2);
+chooseAddr($('#departure_point').val().split(',')[0], $('#departure_point').val().split(',')[1], 'street', map1);
+chooseAddr($('#arrival_point').val().split(',')[0], $('#arrival_point').val().split(',')[1], 'street', map2);
+
+marker1 = new L.marker([$('#departure_point').val().split(',')[0], $('#departure_point').val().split(',')[1]]); // , {draggable:true}
+map1.addLayer(marker1);
+marker2 = new L.marker([$('#arrival_point').val().split(',')[0], $('#arrival_point').val().split(',')[1]]); // , {draggable:true}
+map2.addLayer(marker2);
+</script>
+
+{% endblock %}
+

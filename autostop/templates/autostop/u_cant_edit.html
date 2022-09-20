@@ -1,0 +1,26 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+  {% if current_lang == 'uk' %}
+  <meta http-equiv="Content-Language" content="uk">
+  <meta name="subject" content="Змінити маршрут вже неможливо">
+  <meta name="description" content="Ви вже почали приймати заявки, тому, на жаль, Ви не можете внести зміни до цього маршруту.">
+  {% else %}
+  <meta http-equiv="Content-Language" content="ru">
+  <meta name="subject" content="Изменить маршрут уже невозможно">
+  <meta name="description" content="Вы уже начали принимать заявки, поэтому, к сожалению, Вы не можете внести изменения в данный маршрут.">
+  {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Вы не можете изменить маршрут" %}{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive.css' %}">
+{% endblock %}
+
+{% block content %} 
+<h3 class="empty_list">{% translate "Вы уже начали принимать заявки, поэтому, к сожалению, Вы не можете внести изменения в данный маршрут" %}</h3>
+<a href="#" onclick="event.preventDefault();history.back();" style="display: block; text-align: center;">Вернуться назад</a>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% load static %} 
+{% load i18n %} 
+<!DOCTYPE html>
+{% block language %}{% endblock %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>  
+
+  {% block head %}{% endblock %}
+ 
+  <meta name="robots" content="index,follow,noodp"><!-- Все поисковые системы -->
+  <meta name="googlebot" content="index,follow"><!-- Указание отдельно для Google -->
+  <style>
+    *{
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  </style>
+  
+  {% block styles %}{% endblock %}
+  <link href="{% static 'css/style.css' %}?v=3" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}?v=3">
+  <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+</head>
+<body>
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <div class="top_slider">
+    <a href="{% url 'autostop:start' %}" class="logo">Pidvezu</a>
+    <span class="slider_lang">
+      <a href="/">Українська</a> / <a href="/{{languages.1.code}}/">Русский</a>
+    </span>
+    <div class="login_btn">
+      {% if request.user.is_authenticated %}
+        <span>
+          {% if request.user.first_name and request.user.last_name %}
+            {{request.user.first_name}} {{request.user.last_name}}
+          {% elif request.user.first_name %}
+            {{request.user.first_name}}
+          {% elif request.user.last_name %}
+            {{request.user.last_name}}
+          {% else %}
+            {{request.user.get_first_part_email}}
+          {% endif %}
+        <i class="arrow down"></i></span>
+        <ul class="slider_options">
+          <a href="{% url 'autostop:my_routes' %}">{% translate "Мои маршруты" %}</a>
+          <a href="{% url 'account:profile' %}">{% translate "Мой профиль" %}</a>
+          <a href="{% url 'autostop:applied_to_me' %}">{% translate "Заявки мне" %}</a>
+          <a href="{% url 'autostop:i_applied' %}">{% translate "Мои заявки" %}</a>
+          <a href="{% url 'account:logout' %}">{% translate "Выйти" %}</a>
+        </ul>
+      {% else %}
+        <a href="{% url 'account:login' %}"><span>{% translate "Войти в аккаунт" %}</span></a>
+      {% endif %}
+    </div>
+    {% if request.user.is_staff %}
+      <a href="{% url 'autostop:add_blog_post' %}" class="go_to_bot"><img src="{% static 'img/icons/add_blog.svg' %}" alt="">{% translate "Добавить блог" %}</a>
+    {% endif %}
+    <a href="{% url 'account:get_unique_code' %}" class="go_to_bot"><img src="{% static 'img/telegram.svg' %}" alt="">{% translate "Телеграм Бот" %}</a>
+    <a href="{% url 'autostop:add' %}" class="add_route"><img src="{% static 'img/add_route.svg' %}" alt="">{% translate "Добавить маршрут" %}</a>
+  </div>
+
+  <div class="top_slider_mobile">
+    <a href="{% url 'autostop:start' %}" class="mobile_logo">Pidvezu</a>
+    <a href="{% url 'account:profile' %}"><img src="{% static 'img/slider_mobile_user.svg' %}" alt=""></a>
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'account:logout' %}"><img src="{% static 'img/slider_mobile_logout.svg' %}" alt=""></a>
+    {% else %}
+      <a href="{% url 'account:login' %}"><img src="{% static 'img/slider_mobile_login.svg' %}" alt=""></a>
+    {% endif %}
+  </div>
+
+
+  <div class="main">
+    {% block content %}{% endblock %}
+  </div>
+  <div class="bottom_navigation">
+    <ul>
+      <li><a href="{% url 'autostop:start' %}"><img src="{% static 'img/icons/home_icon.svg' %}" alt=""><span>{% translate "Главная" %}</span></a></li>
+      <li id="bottom_search_btn"><img src="{% static 'img/icons/search_icon.svg' %}" alt=""><span>{% translate "Поиск" %}</span></li>
+      <li><a href="{% url 'autostop:add' %}"><img src="{% static 'img/icons/add_icon.svg' %}" alt=""><span>{% translate "Добавить маршрут" %}</span></a></li>
+      {% if request.user.is_staff %}
+        <li><a href="{% url 'autostop:add_blog_post' %}"><img src="{% static 'img/icons/add_blog.svg' %}" alt=""><span>Блог</span></a></li>
+      {% endif %}
+      <li><a href="{% url 'autostop:others' %}"><img src="{% static 'img/icons/others_icon.svg' %}" alt=""><span>{% translate "Другое" %}</span></a></li>
+    </ul>
+  </div>
+
+  <footer>
+    <div class="website_nav">
+      <span class="footer_title">{% translate "Навигация по сайту" %}</span>
+      <ul>
+        <li><a href="{% url 'autostop:index' %}">{% translate "Главная" %}</a></li>
+        <li><a href="{% url 'autostop:add' %}">{% translate "Добавить маршрут" %}</a></li>
+        <li><a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм Бот" %}</a></li>
+        <li><a href="{% url 'autostop:my_routes' %}">{% translate "Мои маршруты" %}</a></li>
+        <li><a href="{% url 'account:profile' %}">{% translate "Мой профиль" %}</a></li>
+        <li><a href="{% url 'autostop:applied_to_me' %}">{% translate "Заявки мне" %}</a></li>
+        <li><a href="{% url 'autostop:i_applied' %}">{% translate "Мои заявки" %}</a></li>
+      </ul>
+    </div>
+    <div class="to_read">
+      <span class="footer_title">{% translate "Как пользоваться сервисом и прочее" %}</span>
+      <ul>
+        <li><a href="{% url 'autostop:privacy_policy' %}">{% translate "Политика конфиденциальности" %}</a></li>
+        <li><a href="{% url 'autostop:pidvezu_rules' %}">{% translate "Правила сайта" %}</a></li>
+        <li><a href="{% url 'autostop:brief_intro' %}">{% translate "Краткое введние" %}</a></li>
+        <li><a href="{% url 'autostop:blog' %}">Наш блог</a></li>
+      </ul>
+    </div>
+    <div class="footer_contacts">
+      <span class="footer_title">{% translate "Контакты" %}</span>
+      <ul>
+        <li>{% translate "Почта:" %} help@pidvezu.com.ua</li>
+      </ul>
+    </div>
+    <div class="footer_about_us">
+      <span class="footer_title">Про нас</span>
+      <span class="about_us_span">{% translate "Pidvezu - площадка, где водители опубликовывают свой маршрут, а другие люди могут бесплатно передать вещи, еду, животных, или же быть пассажиром для доставки в/из горячих точек Украины." %}</span>
+      </ul>
+    </div>
+  </footer>
+</body>   
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script async src="{% static 'js/script.js' %}?v=2" type="text/javascript"></script>
+  {% block scripts %}{% endblock %}
+</html>

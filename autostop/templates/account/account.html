@@ -1,0 +1,114 @@
+{% extends 'autostop/base.html' %}
+{% load static %}
+{% load i18n %} 
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/account/{{requested_user.pk}}/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Профіль користувача {{requested_user.email}} на Pidvezu">
+    <meta name="description" content="Pidvezu – профіль користувача {{requested_user.email}}. Перегляньте профіль цього користувача та знайдіть маршрут для себе.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/account/{{requested_user.pk}}/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Профиль пользователя {{requested_user.email}} на Pidvezu">
+    <meta name="description" content="Pidvezu - профиль пользователя {{requested_user.email}}. Просмотрите профиль данного пользователя и найдите маршрут для себя.">
+    {% endif %}
+{% endblock %}
+
+{% block title %}{% translate "Профиль" %} {{requested_user.email}}{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block content %}
+<style>
+</style>
+
+<h1 class="profile_header" style="font-weight: normal; font-size: 24px;">{% translate "Вы на профиле" %}
+    {% if requested_user.first_name and requested_user.last_name %}
+        {{requested_user.first_name}} {{requested_user.last_name}}
+    {% elif requested_user.first_name %}
+        {{requested_user.first_name}}
+    {% elif requested_user.last_name %}
+        {{requested_user.last_name}}
+    {% else %}
+        {{requested_user.email}}
+    {% endif %}
+    - {{requested_user.rides}} {% translate "поездок" %}
+</h1>
+
+
+<h2 style="font-weight: normal;">{% translate "Маршруты" %}:</h2>
+
+<div class="route_container">
+{% for route in autostop_obj %}
+    <div class="route">
+        <div class="route_author">
+            {% if route.author.image %}
+                <img src="{{route.author.image.url}}" alt="Фото получателя" class="route_author_image">
+            {% else %}
+                <img src="{% static 'img/user.svg' %}" alt="Нет фото получателя" class="route_author_image">
+            {% endif %}
+    
+            <p class="route_author_name">
+                {% if route.author.first_name and route.author.last_name %}
+                    {{route.author.first_name}} {{route.author.last_name}}
+                {% elif route.author.first_name %}
+                    {{route.author.first_name}}
+                {% elif route.author.last_name %}
+                    {{route.author.last_name}}
+                {% else %}
+                    {{route.author.email}}
+                {% endif %}
+                <br>
+            </p>
+        </div>
+        <div class="route_content my_routes_content">
+            <a href="{% url 'autostop:route' route.slug %}" style="color: #000;">
+                <ul class="route_addresses">
+                    <li><img src="{% static 'img/departure_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{route.first_last_location.0}}</span></li>
+                    <li><img src="{% static 'img/arrival_arrow.svg' %}" alt="" class="departure_arrival_icon"><span>{{route.first_last_location.1}}</span></li>
+                </ul>
+                <p>
+                    {% translate "Отправление" %}:
+                    {% if time_now1 == route.departure_time|date:"d.m.Y" %}
+                        {% translate "Сегодня" %} в {{route.departure_time|date:"H:i"}}
+                    {% elif time_now2 == route.departure_time|date:"d.m.Y" %}
+                        {% translate "Завтра" %} в {{route.departure_time|date:"H:i"}}
+                    {% else %}
+                        {{route.departure_time|date:"d E"}} в {{route.departure_time|date:"H:i"}}
+                    {% endif %}
+                </p>
+                <p>
+                    {% translate "Рубрика" %}:
+                    {% for rubric in route.rubric %}
+                        {% if rubric == 'people' %}
+                            🧍 {% translate "Люди" %}
+                        {% elif rubric == 'animals' %}
+                            🐕 {% translate "Животные" %}
+                        {% elif rubric == 'good' %}
+                            👖 {% translate "Вещи" %}
+                        {% elif rubric == 'food' %}
+                            🥕 {% translate "Продукты" %}
+                        {% elif rubric == 'others' %}
+                            {% translate "Другое" %}
+                        {% endif %}
+                    {% endfor %}
+                </p>
+            </a>
+            
+            <a href="{{route.get_google_routing}}" class="my_routes_btns my_routes_map">{% translate "Google Карты" %}</a> 
+        </div>
+    </div>
+{% empty %}
+    <h3 class="empty_list">{% translate "Пока что маршрутов нет, давайте" %} <a href="{% url 'autostop:index' %}">{% translate "поищем" %}<i class="arrow-forward"></i></a></h3>
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

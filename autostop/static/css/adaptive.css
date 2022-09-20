@@ -1,0 +1,83 @@
+/* Этот файл предназначен только для телефонов */
+
+/*--------------------------------- Телефон ВЕРТИКАЛЬНО --------------------------------------*/
+@media (orientation:portrait) and (max-width:480px){
+    .adaptive_slide{
+        display: flex !important;
+        height: 40px;
+        background: #fff;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 7px;
+    }
+    .come_back, .adaptive_slide span{
+        margin-right: auto;
+    }
+    .come_back{
+        margin-left: 10px;
+    }
+    .arrow_back{
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      margin-bottom: 2px;
+    }
+}
+@media (max-width:420px){
+
+}
+@media (max-width:380px){
+
+}
+@media (max-width:360px){
+
+}
+@media (max-width:320px){
+
+}
+
+@media (max-width:280px){	
+
+}
+
+
+/*--------------------------------- Телефон Горизонтально --------------------------------------*/
+@media (orientation:landscape) and (max-width:900px){
+    .adaptive_slide{
+        display: flex !important;
+        height: 40px;
+        background: #fff;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 7px;
+    }
+    .come_back, .adaptive_slide span{
+        margin-right: auto;
+    }
+    .come_back{
+        margin-left: 10px;
+    }
+    .arrow_back{
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 5px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+      margin-bottom: 2px;
+    }
+}
+@media (orientation:landscape) and (max-width:850px){
+    
+}
+@media (orientation:landscape) and (max-width:740px){
+    
+}
+@media (orientation:landscape) and (max-width:600px){
+
+}

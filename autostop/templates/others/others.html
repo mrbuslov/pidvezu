@@ -1,0 +1,54 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/others/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Додаткові опції для мобільних пристроїв на Pidvezu">
+    <meta name="description" content="Додаткові настройки для мобільних пристроїв. Виберіть потрібний розділ для себе.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/others/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Дополнительные опции для мобильных устройств на Pidvezu">
+    <meta name="description" content="Дополнительные опции для мобильных устройств. Выберите нужный раздел для себя.">
+    {% endif %}
+{% endblock %}
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Другое" %}{% endblock %}
+{% block styles %}
+  <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive.css' %}">
+{% endblock %}
+
+{% block content %} 
+<div class="adaptive_slide">
+    <a href="#" onclick="event.preventDefault();history.back();" class="come_back"><em class="arrow_back"></em></a>
+    <span>{% translate "Дополнительно" %}</span>
+</div>
+
+<ul class="others_ul">
+    <li><img src="{% static 'img/language.svg' %}" alt="" class="others_image">
+        {% translate "Язык" %}: <a href="#">Українська</a> / <a href="#">Русский</a></li>
+    {% if not request.user.is_authenticated %}
+        <a href="{% url 'account:login' %}"><img src="{% static 'img/login.svg' %}" alt="" class="others_image">{% translate "Войти/Зарегистрироваться"%}</a>
+    {% endif %}
+    <a href="{% url 'account:get_unique_code' %}"><img src="{% static 'img/telegram.svg' %}" alt="" class="others_image">{% translate "Телеграм Бот"%}</a>
+    <a href="{% url 'account:profile' %}"><img src="{% static 'img/profile.svg' %}" alt="" class="others_image">{% translate "Мой профиль"%}</a>
+    <a href="{% url 'autostop:my_routes' %}"><img src="{% static 'img/my_routes.svg' %}" alt="" class="others_image">{% translate "Мои маршруты"%}</a>
+    <a href="{% url 'autostop:i_applied' %}"><img src="{% static 'img/i_applied.svg' %}" alt="" class="others_image">{% translate "Мои заявки"%}</a>
+    <a href="{% url 'autostop:applied_to_me' %}"><img src="{% static 'img/applied_to_me.svg' %}" alt="" class="others_image">{% translate "Заявки мне"%}</a>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'account:logout' %}"><img src="{% static 'img/logout.svg' %}" alt="" class="others_image">{% translate "Выйти" %}</a>
+    {% endif %}
+</ul>
+<div style="padding: 10px; margin-left: 10px;"><strong>{% translate "Дополнительно" %}</strong></div>
+<ul class="others_ul">
+    <a href="{% url 'autostop:privacy_policy' %}">{% translate "Политика конфиденциальности" %}</a>
+    <a href="{% url 'autostop:pidvezu_rules' %}">{% translate "Правила сайта" %}</a>
+    <a href="{% url 'autostop:brief_intro' %}">{% translate "Краткое введние" %}</a>
+    <a href="{% url 'autostop:blog' %}">{% translate "Наш блог" %}</a>
+    <li>{% translate "Почта:" %} help@pidvezu.com.ua</li>
+</ul>
+{% endblock %}

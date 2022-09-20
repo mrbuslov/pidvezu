@@ -1,0 +1,132 @@
+
+.blog{
+    width: 70%;
+    margin: auto;
+    letter-spacing: -0.1px;
+    line-height: 1.4;
+}
+.blog a{
+    color: #2b84cd;
+    text-decoration: none;
+}
+.blog_block{
+    background: #fff;
+    border-radius: 7px;
+    padding: 15px 25px 25px 25px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.blog_title{
+    display: block;
+    font-size: 22px;
+    margin: 10px auto;
+    text-align: center;
+}
+.blog_published{
+    display: block;
+    margin: 10px 0 20px 0;
+    font-size: 13px;
+    color: #979797;
+}
+.blog_publ{
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+}
+.blog_block li{
+    display: list-item;
+    list-style-position: inside;
+    list-style-type: disc;
+}
+/*--------------------------------- Телефон ВЕРТИКАЛЬНО --------------------------------------*/
+@media (orientation:portrait) and (max-width:480px){
+    .page_title{
+        display: block;
+    }
+    .blog{
+        margin-top: 50px; 
+        width: 98%;
+    }
+    .blog_block{
+        padding: 7px;
+    }
+    .blog_block ul{
+        padding: 0;
+    }
+}
+/*--------------------------------- Телефон Горизонтально --------------------------------------*/
+@media (orientation:landscape) and (max-width:900px){
+    .page_title{
+        display: block;
+    }
+    .blog{
+        margin-top: 50px; 
+        width: 98%;
+    }
+    .blog_block{
+        padding: 7px;
+    }
+    .blog_block ul{
+        padding: 0;
+    }
+}
+
+.blog_h1{
+    text-align: center;
+    font-size: 27px;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.article{
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    border-radius: 2px;
+}
+.article:hover{
+    background: rgba(0,0,0,0.05);
+}
+.a_title, .a_content, .a_publ{
+    color: initial;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.a_content{
+    font-size: 13px;
+    color: #979797;
+    margin-top: 5px;
+    height: 18px;
+}
+.a_content p{
+    margin: 0;
+}
+.a_title{
+    max-width: calc(100% - 160px);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.a_publ, .fresh{
+    font-size: 14px;
+    float: right;
+    color: #979797;
+}
+.fresh{
+    padding: 0 5px;
+    box-sizing: border-box;
+    background: #ff4c4c;
+    color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.blog_content img{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}

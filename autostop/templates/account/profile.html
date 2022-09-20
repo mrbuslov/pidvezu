@@ -1,0 +1,107 @@
+{% extends 'autostop/base.html' %} 
+{% load static %}
+{% load i18n %} 
+
+{% block language %}<html lang="{{current_lang}}">{% endblock %}
+{% block title %}{% translate "Ваш профиль" %}{% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/profile/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Ваш особистий кабінет (аккаунт) на Pidvezu">
+    <meta name="description" content="Pidvezu – Ваш профіль. Додайте дані про себе, щоб більше людей надіслали Вам заявки на маршрут.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/profile/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Ваш личный кабинет (аккаунт) на Pidvezu">
+    <meta name="description" content="Pidvezu - Ваш профиль. Добавьте данные о себе, чтобы больше людей отправили Вам заявки на маршрут.">
+    {% endif %}
+    
+    <style>
+        .profile_email{
+            margin: 11px 0;
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+        }
+        .user_data_fields, .user_data_labels{
+            width: 50%;
+        }
+        #id_first_name, #id_last_name, #id_phone_number{
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block content %} 
+    <h1 class='profile_header'>{% translate "Дополните данные о себе, чтобы больше людей отправили Вам заявки" %}</h1>
+
+    <form method="post" action="{% url 'account:profile' %}" enctype="multipart/form-data"> 
+        <div class="profile_data" style="margin-bottom: 50px;">
+            {% csrf_token %}
+            <div class="photo_field">
+                {% if account.image %}
+                    <img src="{{account.image.url}}" class="profile_photo">
+                {% else %}
+                    <img src="{% static 'img/user.svg' %}" class="profile_photo">
+                {% endif %}
+                <br>
+                <input type="file" name="img" id="file" accept="image/*">
+                <label for="file" class="input_label">{% translate "Загрузить фото" %}</label> 
+                <div id="uploaded_image_name"></div>
+            </div>
+
+            <div class="user_data">
+                <div class="user_data_labels">
+                    <p>{% translate "Email" %}:</p>
+                    <p>{% translate "Имя" %}:</p>
+                    <p>{% translate "Фамилия" %}:</p>
+                    <p>{% translate "Номер телефона" %}:</p>
+                    <p><a href="{% url 'account:get_unique_code' %}">{% translate "Телеграм уведомления" %}</a>:</p>
+                </div>
+                <div class="user_data_fields">
+                    <p class="profile_email">{{account.email}}</p>
+                    <p>{{form.first_name}}</p>
+                    <p>{{form.last_name}}</p>
+                    <p>{{form.phone_number}}</p>
+                    <p style="position: relative;">
+                        <label for="id_telegram">
+                            <input type="checkbox" name="telegram" id="id_telegram" {{checked}}>
+                            <span class="profile_checkbox"></span>
+                        </label>
+                        <span class="go_to_tel_popup">{% translate "Нажмите 'Изменить', переходите к" %} <a href="{% url 'account:get_unique_code' %}">Телеграм Боту</a> {% translate "и нажимайте 'Старт', чтобы начать получать уведомления" %}</span>
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="car_desc">
+                <p>{% translate "Описание Т/С" %}:</p>
+                <p>{{form.car_description}}</p>
+                <input type="submit" id="profile_submit" value='{% translate "Изменить" %}'> 
+            </div>
+
+        </div>
+    </form>
+{% endblock %}  
+
+
+{% block scripts %} 
+<script>
+/* -------------------------------- ЗАГРУЗКА ФОТО  ------------------------------------------------------- */
+if(document.getElementById('file')){
+    document.getElementById('file').onchange = function() {
+        if (this.files[0]){ // если выбрали файл
+            document.getElementById('uploaded_image_name').innerHTML = this.files[0].name;
+            document.querySelector('.profile_photo').style.opacity = '0.7';
+            document.querySelector('.profile_photo').style.filter = 'blur(2px)';
+            document.getElementById('profile_submit').click();
+        }
+    };
+}
+</script>
+{% endblock %} 

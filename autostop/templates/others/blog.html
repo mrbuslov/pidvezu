@@ -1,0 +1,103 @@
+{% extends 'autostop/base.html' %} 
+{% load static %} 
+{% load i18n %} 
+
+{% block language %}
+    <html lang="{{current_lang}}">
+{% endblock %}
+
+{% block head %}
+    {% if current_lang == 'uk' %}
+    <link rel="alternate" href="https://pidvezu.com.ua/blog/" hreflang="ru-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/uk/blog/" hreflang="uk-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/uk/blog/">
+
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Teenwork блог">
+    <meta name="description" content="Це розділ Pidvezu, де можна дізнатися корисні поради під час війни, як виїхати з гарячих точок України або вивезти продукти, тварин, речі та інше.">
+    {% else %}
+    <link rel="alternate" href="https://pidvezu.com.ua/blog/" hreflang="ru-UA">
+    <link rel="alternate" href="https://pidvezu.com.ua/uk/blog/" hreflang="uk-UA">
+    <link rel="canonical" href="https://pidvezu.com.ua/blog/">
+
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Teenwork блог">
+    <meta name="description" content="Это раздел Pidvezu, где можно узнать полезные советы во время войны, как уехать из горячих точек Украины или же вывезти продукты, животных , вещи и прочее.">
+    {% endif %}
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block title %}Teenwork Блог{% endblock %}
+
+{% block content %}  
+
+    <h1 class="blog_h1">{% translate "Pidvezu блог - статьи для развития и не только" %}</h1>
+
+
+    <div class="blog">
+        <div class="blog_block">
+            {% if current_lang == 'uk' %}
+                {% for val in values %}
+                    <a href="{% url 'autostop:blog_post' val.slug %}" class="article">
+                        <span>
+                            <span class="a_title">{{val.title_uk}}</span>
+                            {% if time_now1 == val.published|date:"d.m.Y" %}
+                                <span class="a_publ">{% translate "Сегодня" %}</span>
+                                <span class="fresh">{% translate "Свежее" %}</span>
+                            {% elif time_now2 == val.published|date:"d.m.Y" %}
+                                <span class="a_publ">{% translate "Вчера" %}</span>
+                                <span class="fresh">{% translate "Свежее" %}</span>
+                            {% else %}
+                                <span class="a_publ">{{val.published|date:"d.m.Y"}}</span>
+                            {% endif %}
+                        </span>
+                        {% autoescape off %}
+                            <span class="a_content">{{val.post_content_uk}}</span>
+                        {% endautoescape %}
+                    </a>
+                {% empty %}
+                    <p>{% translate "Публикаций пока нет, но мы вскоре напишем что-то интересное" %}</p>
+                {% endfor %}
+            {% else %}
+                {% for val in values %}
+                    <a href="{% url 'autostop:blog_post' val.slug %}" class="article">
+                        <span>
+                            <span class="a_title">{{val.title_ru}}</span>
+                            {% if time_now1 == val.published|date:"d.m.Y" %}
+                                <span class="a_publ">{% translate "Сегодня" %}</span>
+                                <span class="fresh">{% translate "Свежее" %}</span>
+                            {% elif time_now2 == val.published|date:"d.m.Y" %}
+                                <span class="a_publ">{% translate "Вчера" %}</span>
+                                <span class="fresh">{% translate "Свежее" %}</span>
+                            {% else %}
+                                <span class="a_publ">{{val.published|date:"d.m.Y"}}</span>
+                            {% endif %}
+                        </span>
+                        {% autoescape off %}
+                            <span class="a_content">{{val.post_content_ru}}</span>
+                        {% endautoescape %}
+                    </a>
+                {% empty %}
+                    <p>{% translate "Публикаций пока нет, но мы вскоре напишем что-то интересное" %}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    {% if blog_obj.paginator.num_pages > 1 %}
+        <div class="pagination">  
+            <div class="pagination_content">
+                {% if blog_obj.has_previous %}
+                    <a href="?page={{ blog_obj.previous_page_number }}"><span class="pag_arrow_back"></span></a>
+                {% endif %}
+                    Страница <span class="this_page">{{blog_obj.number}}</span> из {{blog_obj.paginator.num_pages}}
+                {% if blog_obj.has_next %}
+                    <a href="?page= {{ blog_obj.next_page_number }}"><span class="pag_arrow_forw"></span></a>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

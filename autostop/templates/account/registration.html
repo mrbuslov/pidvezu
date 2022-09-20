@@ -1,0 +1,76 @@
+{% load static %}
+{% load i18n %} 
+<!DOCTYPE html>
+<html lang="{{current_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% if current_lang == 'uk' %}
+    <link rel="canonical" href="https://pidvezu.com.ua/registration/">
+    <meta http-equiv="Content-Language" content="uk">
+    <meta name="subject" content="Реєстрація на Pidvezu">
+    <meta name="description" content="Зареєструйтесь на Pidvezu, щоб опублікувати свій маршрут, прийняти заявки та багато іншого.">
+    {% else %}
+    <link rel="canonical" href="https://pidvezu.com.ua/ru/registration/">
+    <meta http-equiv="Content-Language" content="ru">
+    <meta name="subject" content="Регистрация на Pidvezu">
+    <meta name="description" content="Зарегистрируйтесь на Pidvezu, чтобы опубликовать свой маршрут, принять заявки и многое другое.">
+    {% endif %}
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/registration.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+    <title>{% translate "Регистрация" %}</title>
+</head>
+<body>
+    <div class="box"> 
+        <h1 class="header">{% translate "Регистрация" %}</h1>
+        <form method="POST" action="{% url 'account:registration' %}" id="registrationForm">
+            {% csrf_token %}
+                <div class="input_textbox">
+                    <input type="text" name="email" required id="email" placeholder="Email" style="margin-bottom: 0;"><br>
+                    <span id="email_error_text" style="color: #f00; font-size: 12px; margin-bottom: 20px; display: block; margin-left: 5px;"></span>
+                </div>	
+                <div class="input_textbox">
+                    <input type="text" name="phone_number" required id="phone_number" placeholder="{% translate 'Номер телефона' %}"><br>
+                    <span id="phone_error_text"></span>
+                </div>
+                <div class="input_textbox">
+                    <input type="password" id="password" name="password" required placeholder="Пароль"><br>
+                </div>		    
+                <label class="agree_checkbox_label">
+                    <input type="checkbox" class="agree_checkbox">
+                    <span class="agree_over"></span>
+                    <span class="registr_privacy">{% translate "Я соглашаюсь с" %} <a href="{% url 'autostop:privacy_policy' %}">{% translate "Правилами сайта" %}</a> {% translate "и" %} <a href="{% url 'autostop:pidvezu_rules' %}">{% translate "Политикой конфиденциальности" %}</a> {% translate "и даю согласие на обработку личных данных" %}.</span>
+                </label>
+                <button type="submit" class="button">
+                    <span class="button_text">{% translate "Зарегистрироваться" %}</span>
+                </button>
+                <p class="go_to_register">{% translate "Уже есть аккаунт" %}? <a href="{% url 'account:login' %}">{% translate "Войти" %}</a></p>
+                <p class="forgot_password"><a href="{% url 'account:reset_email' %}">{% translate "Забыли пароль" %}?</a></p>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+<script>
+    if(document.querySelector('.agree_checkbox')){
+        document.querySelector('.button').setAttribute("disabled", "disabled");
+
+        document.querySelector('.agree_checkbox').onclick = function(){
+            if (document.querySelector('.agree_checkbox').checked) {
+                document.querySelector('.button').removeAttribute("disabled", "disabled");
+                document.querySelector('.button').style.opacity = '1';
+            }
+            else {
+                document.querySelector('.button').setAttribute("disabled", "disabled");
+                document.querySelector('.button').style.opacity = '0.7';
+            }
+        }
+    }
+</script>
+</html>

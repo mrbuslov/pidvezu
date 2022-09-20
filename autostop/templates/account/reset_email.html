@@ -1,0 +1,43 @@
+{% load static %}
+{% load i18n %} 
+<!DOCTYPE html>
+<html lang="{{current_lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% if current_lang == 'uk' %}
+        <link rel="canonical" href="https://pidvezu.com.ua/reset_email/">
+        <meta http-equiv="Content-Language" content="uk">
+        <meta name="subject" content="Скидання пароля від особистого кабінету на Pidvezu">
+        <meta name="description" content="Напишіть пошту для скидання пароля для доступу до особистого кабінету.">
+    {% else %}
+        <link rel="canonical" href="https://pidvezu.com.ua/ru/reset_email/">
+        <meta http-equiv="Content-Language" content="ru">
+        <meta name="subject" content="Сброс пароля от личного кабинета на Pidvezu">
+        <meta name="description" content="Напишите почту для сброса пароля для доступа в личный кабинет.">
+    {% endif %}
+
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'css/registration.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" media="(max-width: 1367px)" href="{% static 'css/adaptive_style.css' %}">
+
+    <link rel="shortcut icon" href="{% static 'img/icons/pidvezu.ico' %}" type="image/x-icon">
+    <title>{% translate "Введите Вашу почту" %}</title>
+</head>
+<body>
+    <div class="box"> 
+        <h1 class="header">{% translate "Введите Ваш email для сброса пароля" %}</h1>
+        <form method="POST" action="{% url 'account:reset_email' %}">
+        {% csrf_token %}
+            <div class="input_textbox">
+                <input type="text" name="email" required placeholder="Email" id="email"><br>
+            </div>	
+            <button type="submit" class="button login">
+                <span class="button_text">{% translate "Отправить" %}</span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
